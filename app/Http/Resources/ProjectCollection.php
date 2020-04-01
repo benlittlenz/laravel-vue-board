@@ -2,12 +2,12 @@
 
 namespace App\Http\Resources;
 
-use App\Project;
+use App\Http\Resources\ProjectResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class ProjectCollection extends ResourceCollection
 {
-    public $collects = Project::class;
+    public $collects = ProjectResource::class;
     /**
      * Transform the resource collection into an array.
      *
