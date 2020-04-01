@@ -40,6 +40,13 @@ class User extends Authenticatable
     ];
 
     public function projects() {
-        return $this->BelongsToMany(Project::class);
+        return $this->BelongsToMany(Project::class)->withTimestamps();
     }
+
+    // public function notesFromProjects()
+    // {
+    //     return $this->hasManyThrough(
+    //         Note::class, Project::class
+    //     );
+    // }
 }
