@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        dd($request->user()->projects);
+        return view('home');
+        //dd($request->user()->projects);
     }
 }

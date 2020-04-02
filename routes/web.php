@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/api/projects', 'Api\Project\ProjectController@index');
+Route::get('/projects', 'Api\Project\ProjectController@index');
