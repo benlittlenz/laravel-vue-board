@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="flex">
-        <div class="w-3/12">
+        <div class="w-1/12">
             nav
         </div>
-        <div class="w-7/12">
+        <div class="w-full">
             <project-timeline />
         </div>
     </div>
