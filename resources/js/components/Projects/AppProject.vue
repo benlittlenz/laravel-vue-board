@@ -31,8 +31,8 @@
                   </div>
                 </div>
               </td>
-              <td class="px-6 py-4 border-b border-gray-200 w-3/6">
-                <div class="w-full text-sm leading-5 text-gray-900 break-all ">
+              <td class="px-6 py-4 border-b border-gray-200 w-5/6">
+                <div class="w-full text-sm leading-5 text-gray-900 break-words">
                   <p class="break-words">
                     {{ project.description }}
                   </p>

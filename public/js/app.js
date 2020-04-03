@@ -38397,13 +38397,13 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "td",
-                    { staticClass: "px-6 py-4 border-b border-gray-200 w-3/6" },
+                    { staticClass: "px-6 py-4 border-b border-gray-200 w-5/6" },
                     [
                       _c(
                         "div",
                         {
                           staticClass:
-                            "w-full text-sm leading-5 text-gray-900 break-all "
+                            "w-full text-sm leading-5 text-gray-900 break-words"
                         },
                         [
                           _c("p", { staticClass: "break-words" }, [
