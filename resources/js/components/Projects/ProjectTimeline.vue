@@ -69,23 +69,26 @@
 </template>
 
 <script>
-import axios from "axios";
+import { mapGetters, mapActions } from 'vuex'
+
+//import AppProject from './AppProject.vue'
 
 export default {
-    data() {
-        return {
-            projects: []
-        };
-    },
-    mounted() {
-        this.getProjects();
-    },
-    methods: {
-        async getProjects() {
-            let res = await axios.get("/api/projects");
-            console.log(res);
-            this.projects = res.data.data;
-        }
-    }
+  computed: {
+    ...mapGetters({
+      projects: 'timeline/projects'
+    })
+  },
+  mounted() {
+    this.getProjects()
+  },
+
+  methods: {
+    ...mapActions({
+        getProjects: 'timeline/getProjects'
+    })
+  }
+
+
 };
 </script>
