@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use App\Company;
 use App\Project;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -41,6 +42,10 @@ class User extends Authenticatable
 
     public function projects() {
         return $this->BelongsToMany(Project::class)->withTimestamps();
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 
     // public function notesFromProjects()
