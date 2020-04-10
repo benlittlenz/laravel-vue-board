@@ -1,5 +1,7 @@
 <template>
   <div class="">
+
+    <project-compose />
     <app-project
       v-for="project in projects"
       :key="project.id"

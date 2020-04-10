@@ -19,7 +19,8 @@
             </ul>
         </div>
         <div class="w-full">
-            <project-timeline />
+            <App></App>
+            {{-- <project-timeline /> --}}
         </div>
     </div>
 @endsection
