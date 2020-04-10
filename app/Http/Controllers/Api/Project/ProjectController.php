@@ -9,8 +9,8 @@ use App\Http\Resources\ProjectCollection;
 class ProjectController extends Controller
 {
     public function index(Request $request) {
-        $projects = $request->user()->projects()->paginate(6);
-        //dd($request->user());
+        //$projects = $request->user()->projects()->paginate(6);
+        $projects = $request->user()->company->projects()->paginate(6);
         return new ProjectCollection($projects);
     }
 }
