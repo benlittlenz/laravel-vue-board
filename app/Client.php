@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    protected $guarded = [];
+
+    protected $fillable = [
+        'company',
+        'address',
+        'suburb',
+        'city',
+        'description',
+        'email',
+        'phone',
+        'contact'
+    ];
 
 }

@@ -23,7 +23,11 @@ class ContactsController extends Controller
             'company' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
-            'contact' => 'required',
+            'contact' => '',
+            'address' => '',
+            'suburb' => '',
+            'city' => '',
+            'description' => ''
         ]);
         Client::create($data);
     }
