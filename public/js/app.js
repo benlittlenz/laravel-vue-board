@@ -2149,9 +2149,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log(_this.form);
+                //console.log(this.form)
                 axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/clients', _this.form).then(function (response) {
-                  console.log('successful', response);
+                  _this.$router.push("/clients/".concat(response.data.id));
                 })["catch"](function (error) {
                   if (error.response.status == 422) {
                     _this.errors = error.response.data.errors;
@@ -2163,7 +2163,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 //        //this.errors = err.response.data.data.errors
                 //    }
 
-              case 2:
+              case 1:
               case "end":
                 return _context.stop();
             }
@@ -2329,11 +2329,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ClientDetails',
   data: function data() {
     return {
+      loading: true,
       client: []
     };
   },
@@ -2343,8 +2349,10 @@ __webpack_require__.r(__webpack_exports__);
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/clients/".concat(this.$route.params.id)).then(function (res) {
       _this.client = res.data;
       console.log(res, 'success');
+      _this.loading = false;
     })["catch"](function (error) {
       console.log(error);
+      _this.loading = false;
     });
   }
 });
@@ -39163,329 +39171,384 @@ var render = function() {
     "div",
     { staticClass: "bg-white shadow overflow-hidden sm:rounded-lg" },
     [
-      _c("div", { staticClass: "flex justify-between" }, [
-        _c("div", { staticClass: "text-blue-400" }, [
-          _vm._v("\n      Back\n    ")
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {},
-          [
-            _c(
-              "router-link",
-              {
-                staticClass:
-                  "px-4 py-2 rounded text-sm text-green-500 border border-green-500 font-bold mr-2",
-                attrs: { to: "/client/" + _vm.client.id + "/edit" }
-              },
-              [_vm._v("\n        Edit\n      ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "px-4 py-2 border border-red-500 rounded text-sm font-bold text-red-500",
-                attrs: { href: "" }
-              },
-              [_vm._v("Delete")]
-            )
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "px-4 py-5 border-b border-gray-200 sm:px-6" }, [
-        _c(
-          "h3",
-          { staticClass: "text-lg leading-6 font-medium text-gray-900" },
-          [_vm._v("\n      " + _vm._s(_vm.client.company) + "\n    ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "p",
-          { staticClass: "mt-1 max-w-2xl text-sm leading-5 text-gray-500" },
-          [_vm._v("\n      Client Details\n    ")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("dl", [
-          _c(
-            "div",
-            {
-              staticClass:
-                "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
-            },
-            [
-              _c(
-                "dt",
-                { staticClass: "text-sm leading-5 font-medium text-gray-500" },
-                [_vm._v("\n          Client\n        ")]
-              ),
+      _vm.loading
+        ? _c("div", [_vm._v("\n    Loading...\n  ")])
+        : _c("div", [
+            _c("div", { staticClass: "flex justify-between" }, [
+              _c("div", { staticClass: "text-blue-400" }, [
+                _vm._v("\n        Back\n      ")
+              ]),
               _vm._v(" "),
               _c(
-                "dd",
-                {
-                  staticClass:
-                    "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
-                },
-                [
-                  _vm._v(
-                    "\n          " + _vm._s(_vm.client.company) + "\n        "
-                  )
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
-            },
-            [
-              _c(
-                "dt",
-                { staticClass: "text-sm leading-5 font-medium text-gray-500" },
-                [_vm._v("\n          Address\n        ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "dd",
-                {
-                  staticClass:
-                    "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
-                },
-                [
-                  _vm._v("\n          " + _vm._s(_vm.client.address) + " "),
-                  _c("br"),
-                  _vm._v("\n          " + _vm._s(_vm.client.suburb) + " "),
-                  _c("br"),
-                  _vm._v("\n          " + _vm._s(_vm.client.city) + " "),
-                  _c("br")
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
-            },
-            [
-              _c(
-                "dt",
-                { staticClass: "text-sm leading-5 font-medium text-gray-500" },
-                [_vm._v("\n          Email address\n        ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "dd",
-                {
-                  staticClass:
-                    "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
-                },
-                [
-                  _vm._v(
-                    "\n          " + _vm._s(_vm.client.email) + "\n        "
-                  )
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
-            },
-            [
-              _c(
-                "dt",
-                { staticClass: "text-sm leading-5 font-medium text-gray-500" },
-                [_vm._v("\n          Contact Number\n        ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "dd",
-                {
-                  staticClass:
-                    "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
-                },
-                [
-                  _vm._v(
-                    "\n          " + _vm._s(_vm.client.phone) + "\n        "
-                  )
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
-            },
-            [
-              _c(
-                "dt",
-                { staticClass: "text-sm leading-5 font-medium text-gray-500" },
-                [_vm._v("\n          Description\n        ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "dd",
-                {
-                  staticClass:
-                    "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
-                },
-                [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.client.description) +
-                      "\n        "
-                  )
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
-            },
-            [
-              _c(
-                "dt",
-                { staticClass: "text-sm leading-5 font-medium text-gray-500" },
-                [_vm._v("\n          Attachments\n        ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "dd",
-                {
-                  staticClass:
-                    "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
-                },
+                "div",
+                {},
                 [
                   _c(
-                    "ul",
-                    { staticClass: "border border-gray-200 rounded-md" },
-                    [
-                      _c(
-                        "li",
-                        {
-                          staticClass:
-                            "pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "w-0 flex-1 flex items-center" },
-                            [
-                              _c(
-                                "svg",
-                                {
-                                  staticClass:
-                                    "flex-shrink-0 h-5 w-5 text-gray-400",
-                                  attrs: {
-                                    fill: "currentColor",
-                                    viewBox: "0 0 20 20"
-                                  }
-                                },
-                                [
-                                  _c("path", {
-                                    attrs: {
-                                      "fill-rule": "evenodd",
-                                      d:
-                                        "M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z",
-                                      "clip-rule": "evenodd"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                { staticClass: "ml-2 flex-1 w-0 truncate" },
-                                [
-                                  _vm._v(
-                                    "\n                  resume_back_end_developer.pdf\n                "
-                                  )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _vm._m(0)
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        {
-                          staticClass:
-                            "border-t border-gray-200 pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "w-0 flex-1 flex items-center" },
-                            [
-                              _c(
-                                "svg",
-                                {
-                                  staticClass:
-                                    "flex-shrink-0 h-5 w-5 text-gray-400",
-                                  attrs: {
-                                    fill: "currentColor",
-                                    viewBox: "0 0 20 20"
-                                  }
-                                },
-                                [
-                                  _c("path", {
-                                    attrs: {
-                                      "fill-rule": "evenodd",
-                                      d:
-                                        "M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z",
-                                      "clip-rule": "evenodd"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                { staticClass: "ml-2 flex-1 w-0 truncate" },
-                                [
-                                  _vm._v(
-                                    "\n                  coverletter_back_end_developer.pdf\n                "
-                                  )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _vm._m(1)
-                        ]
-                      )
-                    ]
+                    "router-link",
+                    {
+                      staticClass:
+                        "px-4 py-2 rounded text-sm text-green-500 border border-green-500 font-bold mr-2",
+                      attrs: { to: "/client/" + _vm.client.id + "/edit" }
+                    },
+                    [_vm._v("\n          Edit\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "px-4 py-2 border border-red-500 rounded text-sm font-bold text-red-500",
+                      attrs: { href: "" }
+                    },
+                    [_vm._v("Delete")]
                   )
-                ]
+                ],
+                1
               )
-            ]
-          )
-        ])
-      ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "px-4 py-5 border-b border-gray-200 sm:px-6" },
+              [
+                _c(
+                  "h3",
+                  {
+                    staticClass: "text-lg leading-6 font-medium text-gray-900"
+                  },
+                  [
+                    _vm._v(
+                      "\n        " + _vm._s(_vm.client.company) + "\n      "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "mt-1 max-w-2xl text-sm leading-5 text-gray-500"
+                  },
+                  [_vm._v("\n        Client Details\n      ")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", [
+              _c("dl", [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  },
+                  [
+                    _c(
+                      "dt",
+                      {
+                        staticClass:
+                          "text-sm leading-5 font-medium text-gray-500"
+                      },
+                      [_vm._v("\n            Client\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      {
+                        staticClass:
+                          "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.client.company) +
+                            "\n          "
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  },
+                  [
+                    _c(
+                      "dt",
+                      {
+                        staticClass:
+                          "text-sm leading-5 font-medium text-gray-500"
+                      },
+                      [_vm._v("\n            Address\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      {
+                        staticClass:
+                          "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " + _vm._s(_vm.client.address) + " "
+                        ),
+                        _c("br"),
+                        _vm._v(
+                          "\n            " + _vm._s(_vm.client.suburb) + " "
+                        ),
+                        _c("br"),
+                        _vm._v(
+                          "\n            " + _vm._s(_vm.client.city) + " "
+                        ),
+                        _c("br")
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  },
+                  [
+                    _c(
+                      "dt",
+                      {
+                        staticClass:
+                          "text-sm leading-5 font-medium text-gray-500"
+                      },
+                      [_vm._v("\n            Email address\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      {
+                        staticClass:
+                          "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.client.email) +
+                            "\n          "
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  },
+                  [
+                    _c(
+                      "dt",
+                      {
+                        staticClass:
+                          "text-sm leading-5 font-medium text-gray-500"
+                      },
+                      [_vm._v("\n            Contact Number\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      {
+                        staticClass:
+                          "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.client.phone) +
+                            "\n          "
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  },
+                  [
+                    _c(
+                      "dt",
+                      {
+                        staticClass:
+                          "text-sm leading-5 font-medium text-gray-500"
+                      },
+                      [_vm._v("\n            Description\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      {
+                        staticClass:
+                          "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.client.description) +
+                            "\n          "
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  },
+                  [
+                    _c(
+                      "dt",
+                      {
+                        staticClass:
+                          "text-sm leading-5 font-medium text-gray-500"
+                      },
+                      [_vm._v("\n            Attachments\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      {
+                        staticClass:
+                          "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                      },
+                      [
+                        _c(
+                          "ul",
+                          { staticClass: "border border-gray-200 rounded-md" },
+                          [
+                            _c(
+                              "li",
+                              {
+                                staticClass:
+                                  "pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "w-0 flex-1 flex items-center"
+                                  },
+                                  [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass:
+                                          "flex-shrink-0 h-5 w-5 text-gray-400",
+                                        attrs: {
+                                          fill: "currentColor",
+                                          viewBox: "0 0 20 20"
+                                        }
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "fill-rule": "evenodd",
+                                            d:
+                                              "M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z",
+                                            "clip-rule": "evenodd"
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass: "ml-2 flex-1 w-0 truncate"
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                    resume_back_end_developer.pdf\n                  "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(0)
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "li",
+                              {
+                                staticClass:
+                                  "border-t border-gray-200 pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "w-0 flex-1 flex items-center"
+                                  },
+                                  [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass:
+                                          "flex-shrink-0 h-5 w-5 text-gray-400",
+                                        attrs: {
+                                          fill: "currentColor",
+                                          viewBox: "0 0 20 20"
+                                        }
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            "fill-rule": "evenodd",
+                                            d:
+                                              "M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z",
+                                            "clip-rule": "evenodd"
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass: "ml-2 flex-1 w-0 truncate"
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                    coverletter_back_end_developer.pdf\n                  "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(1)
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
     ]
   )
 }
@@ -39502,7 +39565,7 @@ var staticRenderFns = [
             "font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out",
           attrs: { href: "#" }
         },
-        [_vm._v("\n                  Download\n                ")]
+        [_vm._v("\n                    Download\n                  ")]
       )
     ])
   },
@@ -39518,7 +39581,7 @@ var staticRenderFns = [
             "font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out",
           attrs: { href: "#" }
         },
-        [_vm._v("\n                  Download\n                ")]
+        [_vm._v("\n                    Download\n                  ")]
       )
     ])
   }

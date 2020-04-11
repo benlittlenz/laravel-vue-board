@@ -175,11 +175,11 @@ export default {
     },
     methods: {
         async submit () {
-           console.log(this.form)
+           //console.log(this.form)
 
            axios.post('/api/clients', this.form)
                 .then(response => {
-                    console.log('successful', response)
+                    this.$router.push(`/clients/${response.data.id}`)
                 }).catch(error => {
                     if (error.response.status == 422){
                         this.errors = error.response.data.errors

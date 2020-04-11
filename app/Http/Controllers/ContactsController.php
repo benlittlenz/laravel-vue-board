@@ -29,7 +29,7 @@ class ContactsController extends Controller
             'city' => '',
             'description' => ''
         ]);
-        Client::create($data);
+        return Client::create($data);
     }
 
     public function show(Client $client)
