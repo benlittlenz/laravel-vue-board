@@ -2165,44 +2165,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
  //import AppProject from './AppProject.vue'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -38403,7 +38365,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex flex-col" }, [
+  return _c("div", { staticClass: "flex flex-col " }, [
     _c(
       "div",
       {
@@ -38647,6 +38609,8 @@ var render = function() {
     [
       _c("project-compose"),
       _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
       _vm._l(_vm.projects, function(project) {
         return _c("app-project", {
           key: project.id,
@@ -38654,110 +38618,64 @@ var render = function() {
         })
       }),
       _vm._v(" "),
-      _c("div", [
-        _c("span", { staticClass: "relative z-0 inline-flex shadow-sm" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150",
-              attrs: { type: "button" }
-            },
-            [
-              _c(
-                "svg",
-                {
-                  staticClass: "h-5 w-5",
-                  attrs: { fill: "currentColor", viewBox: "0 0 20 20" }
-                },
-                [
-                  _c("path", {
-                    attrs: {
-                      "fill-rule": "evenodd",
-                      d:
-                        "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z",
-                      "clip-rule": "evenodd"
-                    }
-                  })
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150",
-              attrs: { type: "button" }
-            },
-            [_vm._v("\n        1\n      ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150",
-              attrs: { type: "button" }
-            },
-            [_vm._v("\n        2\n      ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "hidden md:inline-flex -ml-px relative items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150",
-              attrs: { type: "button" }
-            },
-            [_vm._v("\n        3\n      ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "hidden md:inline-flex -ml-px relative items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150",
-              attrs: { type: "button" }
-            },
-            [_vm._v("\n        4\n      ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150",
-              attrs: { type: "button" }
-            },
-            [
-              _c(
-                "svg",
-                {
-                  staticClass: "h-5 w-5",
-                  attrs: { fill: "currentColor", viewBox: "0 0 20 20" }
-                },
-                [
-                  _c("path", {
-                    attrs: {
-                      "fill-rule": "evenodd",
-                      d:
-                        "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-                      "clip-rule": "evenodd"
-                    }
-                  })
-                ]
-              )
-            ]
-          )
-        ])
-      ])
+      _vm._m(1)
     ],
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c(
+        "div",
+        { staticClass: "h-16 px-6 flex items-center justify-between" },
+        [
+          _c("div", [_vm._v("\n        Jobs\n      ")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "justify-end" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              },
+              [_vm._v("\n          Add Job\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center" })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex justify-end mr-8 mt-4" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+        },
+        [_vm._v("\n      Prev\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+        },
+        [_vm._v("\n      Next\n    ")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
