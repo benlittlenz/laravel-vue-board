@@ -11,10 +11,16 @@ class ContactsController extends Controller
     {
         $data = request()->validate([
             'company' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'contact' => 'required',
         ]);
         Client::create($data);
+    }
+
+    public function show(Client $client)
+    {
+        //dd($client);
+        return $client;
     }
 }

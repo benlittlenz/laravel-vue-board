@@ -23,4 +23,5 @@ Route::get('/projects', 'Api\Project\ProjectController@index');
 
 
 //Clients
+Route::get('/clients/{client}','ContactsController@show');
 Route::post('/clients','ContactsController@store');

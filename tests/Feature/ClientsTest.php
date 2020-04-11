@@ -36,6 +36,31 @@ class ClientsTest extends TestCase
             }); 
     }
 
+    /** @test */
+    public function email_must_be_valid()
+    {
+        $response = $this->post('/api/clients', 
+        array_merge($this->data(), [ 'email' => 'Not an email' ]));
+
+        $response->assertSessionHasErrors('email');
+        $this->assertCount(0, Client::all());
+    }
+
+    /** @test */
+    public function a_client_can_be_retrieved()
+    {
+        $client = factory(Client::class)->create();
+
+        $response = $this->get('/api/clients/' . $client->id);
+
+        $response->assertJson([
+            'company' => $client->company,
+            'email' => $client->email,
+            'phone' => $client->phone,
+            'contact' => $client->contact
+        ]);
+    }
+
     private function data() {
         return [
             'company' => 'Test Client',
