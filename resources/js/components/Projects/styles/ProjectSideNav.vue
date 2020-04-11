@@ -1,8 +1,6 @@
 <template>
   <nav class="pt-4 text-center">
-    <router-view>
-      <a href="#">Home</a>
-    </router-view>
+
 
     <p class="pt-12 text-gray-500 text-xs uppercase font-bold">
       Create

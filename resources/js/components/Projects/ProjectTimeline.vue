@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <project-compose />
+
     <div class="">
       <div class="h-16 px-6 flex items-center justify-between">
         <div>
@@ -15,7 +15,7 @@
       </div>
     </div>
     
-    <app-project
+    <AppProject
       v-for="project in projects"
       :key="project.id"
       :project="project"
@@ -35,12 +35,12 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-//import AppProject from './AppProject.vue'
+import AppProject from './AppProject.vue'
 
 export default {
-    // components: {
-    //   AppProject
-    // },
+    components: {
+      AppProject
+    },
   computed: {
     ...mapGetters({
       projects: 'timeline/projects'

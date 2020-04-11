@@ -65,6 +65,7 @@
 
 <script>
 export default {
+  name: "AppProject",
     props: {
         project: {
             required: true,
