@@ -8,7 +8,7 @@
         <div class="text-blue-400">
           Back
         </div>
-        <div class="">
+        <div class="relative">
           <router-link 
             :to="`/client/${client.id}/edit`"
             class="px-4 py-2 rounded text-sm text-green-500 border border-green-500 font-bold mr-2"
@@ -16,9 +16,31 @@
             Edit
           </router-link>
           <a 
-            href=""
+            href="#"
             class="px-4 py-2 border border-red-500 rounded text-sm font-bold text-red-500"
+            @click="modal = ! modal"
           >Delete</a>
+
+          <div 
+            v-if="modal"
+            class="absolute bg-blue-900 text-white rounded-lg z-20 p-8 w-64 right-0 mt-2 mr-6"
+          >
+            <p>Are you sure you wish to delete this record?</p>
+            <div class="flex items-center mt-6 justify-end">
+              <button
+                class="text-white pr-4"
+                @click="modal = !modal"
+              >
+                Cancel
+              </button>
+              <button 
+                class="px-4 py-2 bg-red-500 rounded text-sm font-bold text-white"
+                @click="destroy"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
@@ -148,8 +170,21 @@ export default {
     data() {
         return {
             loading: true,
+            modal: false,
             client: []
         }
+    },
+
+    methods: {
+      destroy() {
+        axios.delete(`/api/clients/${this.$route.params.id}`)
+          .then(res => {
+            console.log('success', res)
+            this.$router.push('/clients')
+          }).catch(err => {
+            console.log(err);
+          })
+      }
     },
 
     mounted() {

@@ -2334,25 +2334,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ClientDetails',
   data: function data() {
     return {
       loading: true,
+      modal: false,
       client: []
     };
   },
+  methods: {
+    destroy: function destroy() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/api/clients/".concat(this.$route.params.id)).then(function (res) {
+        console.log('success', res);
+
+        _this.$router.push('/clients');
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/clients/".concat(this.$route.params.id)).then(function (res) {
-      _this.client = res.data;
+      _this2.client = res.data;
       console.log(res, 'success');
-      _this.loading = false;
+      _this2.loading = false;
     })["catch"](function (error) {
       console.log(error);
-      _this.loading = false;
+      _this2.loading = false;
     });
   }
 });
@@ -39181,7 +39217,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                {},
+                { staticClass: "relative" },
                 [
                   _c(
                     "router-link",
@@ -39198,10 +39234,63 @@ var render = function() {
                     {
                       staticClass:
                         "px-4 py-2 border border-red-500 rounded text-sm font-bold text-red-500",
-                      attrs: { href: "" }
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          _vm.modal = !_vm.modal
+                        }
+                      }
                     },
                     [_vm._v("Delete")]
-                  )
+                  ),
+                  _vm._v(" "),
+                  _vm.modal
+                    ? _c(
+                        "div",
+                        {
+                          staticClass:
+                            "absolute bg-blue-900 text-white rounded-lg z-20 p-8 w-64 right-0 mt-2 mr-6"
+                        },
+                        [
+                          _c("p", [
+                            _vm._v(
+                              "Are you sure you wish to delete this record?"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "flex items-center mt-6 justify-end"
+                            },
+                            [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "text-white pr-4",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.modal = !_vm.modal
+                                    }
+                                  }
+                                },
+                                [_vm._v("\n              Cancel\n            ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "px-4 py-2 bg-red-500 rounded text-sm font-bold text-white",
+                                  on: { click: _vm.destroy }
+                                },
+                                [_vm._v("\n              Delete\n            ")]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
                 ],
                 1
               )
