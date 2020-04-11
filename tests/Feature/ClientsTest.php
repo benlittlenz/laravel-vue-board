@@ -20,12 +20,12 @@ class ClientsTest extends TestCase
             factory(User::class)->create(),
             ['*']
         );
+        //dd($user);
         if($user) {
             $this->post('/api/clients', $this->data());
+            $client = Client::first();
         }
         
-        $client = Client::first();
-
         $this->assertEquals('Test Client', $client->company);
         $this->assertEquals('test@gmail.com', $client->email);
         $this->assertEquals('123556677', $client->phone);
@@ -35,6 +35,11 @@ class ClientsTest extends TestCase
     /** @test */
     public function fields_are_required()
     {
+        $user = Sanctum::actingAs(
+            factory(User::class)->create(),
+            ['*']
+        );
+        if($user) {
         collect(['company', 'email', 'phone', 'contact'])
             ->each(function($field) {
                 $response = $this->post('/api/clients', 
@@ -43,22 +48,37 @@ class ClientsTest extends TestCase
                 $response->assertSessionHasErrors($field);
                 $this->assertCount(0, Client::all());
             }); 
+        }
+
     }
 
     /** @test */
     public function email_must_be_valid()
     {
-        $response = $this->post('/api/clients', 
-        array_merge($this->data(), [ 'email' => 'Not an email' ]));
+        $user = Sanctum::actingAs(
+            factory(User::class)->create(),
+            ['*']
+        );
+        if($user) {
+            $response = $this->post('/api/clients', 
+            array_merge($this->data(), [ 'email' => 'Not an email' ]));
+        }
 
         $response->assertSessionHasErrors('email');
         $this->assertCount(0, Client::all());
     }
 
     /** @test */
-    public function a_client_can_be_retrieved()
+    public function an_authenticated_user_can_retrieve_a_client()
     {
-        $client = factory(Client::class)->create();
+        $user = Sanctum::actingAs(
+            factory(User::class)->create(),
+            ['*']
+        );
+        if($user) {
+            $client = factory(Client::class)->create();
+        }
+        
 
         $response = $this->get('/api/clients/' . $client->id);
 
@@ -71,12 +91,19 @@ class ClientsTest extends TestCase
     }
 
     /** @test */
-    public function a_client_can_be_edited()
+    public function an_authenticated_user_can_edit_a_client()
     {
 
         $this->withoutExceptionHandling();
 
-        $client = factory(Client::class)->create();
+        $user = Sanctum::actingAs(
+            factory(User::class)->create(),
+            ['*']
+        );
+        if($user) {
+            $client = factory(Client::class)->create();
+        }
+        
 
         $response = $this->patch('/api/clients/' . $client->id, $this->data());
 
@@ -89,9 +116,15 @@ class ClientsTest extends TestCase
     }
 
     /** @test */
-    public function a_client_can_be_deleted()
+    public function an_authenticated_user_can_delete_a_client()
     {
-        $client = factory(Client::class)->create();
+        $user = Sanctum::actingAs(
+            factory(User::class)->create(),
+            ['*']
+        );
+        if($user) {
+            $client = factory(Client::class)->create();
+        }
 
         $response = $this->delete('/api/clients/' . $client->id);
 
