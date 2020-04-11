@@ -15,6 +15,7 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('company_id')->nullable();
             $table->string('company');
             $table->string('email');
             $table->string('phone');

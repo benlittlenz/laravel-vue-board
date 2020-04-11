@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use Illuminate\Http\Request;
+use App\Http\Resources\ClientCollection;
+
 
 class ContactsController extends Controller
 {
+
+    public function index()
+    {
+        $clients = request()->user()->company->clients()->paginate(6);
+        //dd($clients);
+        return new ClientCollection($clients);
+    }
+
     public function store()
     {
         $data = request()->validate([

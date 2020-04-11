@@ -17,7 +17,6 @@ class CreateProjectOwnerTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable(false);
             $table->unsignedInteger('project_id')->nullable(false);
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();

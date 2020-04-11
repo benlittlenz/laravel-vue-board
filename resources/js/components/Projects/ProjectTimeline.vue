@@ -48,11 +48,13 @@ export default {
   },
   mounted() {
     this.getProjects()
+    this.getClients();
   },
 
   methods: {
     ...mapActions({
-        getProjects: 'timeline/getProjects'
+        getProjects: 'timeline/getProjects',
+        getClients: 'timeline/getClients',
     })
   }
 

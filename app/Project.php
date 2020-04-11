@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use App\Client;
 use App\Company;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,5 +22,10 @@ class Project extends Model
     public function notes()
     {
         return $this->hasMany(Project::class, 'project_id')->orderBy('updated_at', 'desc');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
     }
 }

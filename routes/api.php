@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function () {
 
     //Clients
+    Route::get('/clients','ContactsController@index');
     Route::get('/clients/{client}','ContactsController@show');
     Route::post('/clients','ContactsController@store');
     Route::patch('/clients/{client}','ContactsController@update');

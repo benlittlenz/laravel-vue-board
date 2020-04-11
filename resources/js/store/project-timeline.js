@@ -24,6 +24,11 @@ export default {
             let res = await axios.get("/api/projects");
             console.log(res)
             commit('PUSH_PROJECTS', res.data.data)
+        },
+        async getClients() {
+            let clients = await axios.get("/api/clients");
+            console.log(clients)
+            //commit('PUSH_PROJECTS', res.data.data)
         }
     }
 }
