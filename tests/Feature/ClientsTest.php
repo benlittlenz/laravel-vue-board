@@ -20,15 +20,16 @@ class ClientsTest extends TestCase
             factory(User::class)->create(),
             ['*']
         );
-        dd($user);
-        // $this->post('/api/clients', $this->data());
+        if($user) {
+            $this->post('/api/clients', $this->data());
+        }
+        
+        $client = Client::first();
 
-        // $client = Client::first();
-
-        // $this->assertEquals('Test Client', $client->company);
-        // $this->assertEquals('test@gmail.com', $client->email);
-        // $this->assertEquals('123556677', $client->phone);
-        // $this->assertEquals('Bob Doe', $client->contact);
+        $this->assertEquals('Test Client', $client->company);
+        $this->assertEquals('test@gmail.com', $client->email);
+        $this->assertEquals('123556677', $client->phone);
+        $this->assertEquals('Bob Doe', $client->contact);
     }
 
     /** @test */
