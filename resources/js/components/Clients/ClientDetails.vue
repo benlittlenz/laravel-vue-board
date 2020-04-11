@@ -42,6 +42,11 @@
             </div>
           </div>
         </div>
+        <div 
+          v-if="modal"
+          class="bg-black opacity-25 absolute right-0 left-0 top-0 bottom-0 z-10"
+          @click="modal = ! modal"
+        />
       </div>
       <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -175,6 +180,23 @@ export default {
         }
     },
 
+    mounted() {
+        axios.get(`/api/clients/${this.$route.params.id}`)
+            .then(response => {
+                this.client = response.data;
+                console.log(response, 'success')
+
+                this.loading = false;
+            }).catch(error => {
+                console.log(error)
+                this.loading = false;
+                
+                if(error.response.status === 404) {
+                  this.$router.push('/clients')
+                }
+            })
+    },
+
     methods: {
       destroy() {
         axios.delete(`/api/clients/${this.$route.params.id}`)
@@ -185,19 +207,6 @@ export default {
             console.log(err);
           })
       }
-    },
-
-    mounted() {
-        axios.get(`/api/clients/${this.$route.params.id}`)
-            .then(res => {
-                this.client = res.data;
-                console.log(res, 'success')
-
-                this.loading = false;
-            }).catch(error => {
-                console.log(error)
-                this.loading = false;
-            })
     }
 }
 </script>
