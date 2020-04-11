@@ -19,7 +19,7 @@ export default new VueRouter({
         //Clients
         { path: '/clients/create', component: ClientCreate },
         { path: '/clients', component: AppClient },
-        // { path: '/clients/:id', component: ClientDetails }
+        { path: '/clients/:id', component: ClientDetails }
     ],
     mode: 'history'
 })

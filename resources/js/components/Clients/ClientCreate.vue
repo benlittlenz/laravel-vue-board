@@ -13,14 +13,12 @@
               <legend class="uppercase tracking-wide text-sm">
                 CLIENT
               </legend>
-              <p class="text-xs font-light text-red">
-                This entire section is required.
-              </p>
             </div>
             
             <div class="md:flex-1 mt-2 mb:mt-0 md:px-3 bg-gray-200">
               <div class="mb-4">
                 <label class="block uppercase tracking-wide text-xs font-bold">Client</label>
+                
                 <input
                   v-model="form.company"
                   class="w-full shadow-inner p-4 border-0"
@@ -28,6 +26,10 @@
                   name="client"
                   placeholder="Client Name"
                 >
+                <p
+                  class="text-xs font-light text-red-500"
+                  :errors="errors"
+                />
               </div>
               <div class="md:flex mb-4">
                 <div class="md:flex-1 md:pr-3">
@@ -75,6 +77,7 @@
             <div class="md:flex-1 mt-2 mb:mt-0 md:px-3 bg-gray-200">
               <div class="mb-4">
                 <label class="block uppercase tracking-wide text-xs font-bold">Contact Name</label>
+                
                 <input
                   v-model="form.contact"
                   class="w-full shadow-inner p-4 border-0"
@@ -82,6 +85,10 @@
                   name="name"
                   placeholder=""
                 >
+                <p
+                  class="text-xs font-light text-red-500"
+                  :errors="errors"
+                />
               </div>
               <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
                 <div class="mb-4">
@@ -96,6 +103,7 @@
                 </div>
                 <div class="mb-4">
                   <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold">Email</label>
+                  
                   <input
                     v-model="form.email"
                     class="w-full shadow-inner p-4 border-0"
@@ -103,6 +111,10 @@
                     name="email"
                     placeholder="contact@email.co.nz"
                   >
+                  <p
+                    class="text-xs font-light text-red-500"
+                    :errors="errors"
+                  />
                 </div>
               </div>
             </div>
@@ -157,18 +169,35 @@ export default {
                 email: '',
                 phone: '',
                 contact: ''
-            }
+            },
+            errors: null,
         }
     },
     methods: {
         async submit () {
            console.log(this.form)
-           try {
-                await axios.post('/api/clients', this.form)
-           } catch(err) {
-               console.error(err)
-           }
+
+           axios.post('/api/clients', this.form)
+                .then(response => {
+                    console.log('successful', response)
+                }).catch(error => {
+                    if (error.response.status == 422){
+                        this.errors = error.response.data.errors
+                    }
+                })
+        //    try {
+        //         await axios.post('/api/clients', this.form)
+        //    } catch(err) {
+        //        console.log(err.data.errors)
+        //        //this.errors = err.response.data.data.errors
+        //    }
            
+        },
+
+        errorMessage (field) {
+            if(this.errors && this.errors[field] && this.errors[field].length > 0) {
+                return this.errors[field][0]
+            } 
         }
     }
 }
