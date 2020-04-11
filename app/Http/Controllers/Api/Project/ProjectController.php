@@ -10,6 +10,7 @@ class ProjectController extends Controller
 {
     public function index(Request $request) {
         $projects = $request->user()->company->projects()->paginate(6);
+        //dd($request->user());
         return new ProjectCollection($projects);
     }
 }

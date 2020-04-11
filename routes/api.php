@@ -18,10 +18,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:sanctum')->group(function () {
+
+    //Clients
+    Route::get('/clients/{client}','ContactsController@show');
+    Route::post('/clients','ContactsController@store');
+    Route::patch('/clients/{client}','ContactsController@update');
+    Route::delete('/clients/{client}','ContactsController@destroy');
+});
+
 //Projects
 Route::get('/projects', 'Api\Project\ProjectController@index');
 
 
-//Clients
-Route::get('/clients/{client}','ContactsController@show');
-Route::post('/clients','ContactsController@store');

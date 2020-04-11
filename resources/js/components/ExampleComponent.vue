@@ -7,6 +7,8 @@
 <script>
 import axios from 'axios'
     export default {
+        name: 'ExampleComponent',
+        
         data() {
             return {
                 user: null

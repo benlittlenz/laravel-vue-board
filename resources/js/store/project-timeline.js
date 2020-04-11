@@ -22,7 +22,7 @@ export default {
     actions: {
         async getProjects({ commit }) {
             let res = await axios.get("/api/projects");
-
+            console.log(res)
             commit('PUSH_PROJECTS', res.data.data)
         }
     }

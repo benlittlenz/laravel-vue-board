@@ -76,6 +76,9 @@ import { mapGetters, mapActions } from 'vuex'
 //import AppProject from './AppProject.vue'
 
 export default {
+    // components: {
+    //   AppProject
+    // },
   computed: {
     ...mapGetters({
       projects: 'timeline/projects'

@@ -21,8 +21,8 @@ Vue.use(Vuex);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+const files = require.context('./', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 const store = new Vuex.Store({
     modules: {
@@ -32,9 +32,6 @@ const store = new Vuex.Store({
 
 const app = new Vue({
     el: '#app',
-    components: {
-        App
-    },
     store,
     router
 });

@@ -23,4 +23,19 @@ class ContactsController extends Controller
         //dd($client);
         return $client;
     }
+
+    public function update(Client $client)
+    {
+        $client->update([
+            'company' => request('company'),
+            'email' => request('email'),
+            'phone' => request('phone'),
+            'contact' => request('contact'),
+        ]);
+    }
+
+    public function destroy(Client $client)
+    {
+        $client->delete();
+    }
 }
