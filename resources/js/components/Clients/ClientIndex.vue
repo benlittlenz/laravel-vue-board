@@ -23,10 +23,13 @@
             <thead>
               <tr>
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  Title
+                  Company
                 </th>
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  Description
+                  Contact
+                </th>
+                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                  Phone
                 </th>
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                   Status
@@ -37,6 +40,7 @@
             </thead>
             <tbody
               v-for="client in clients"
+              :key="client.id"
               class="bg-white"
             >
               <tr>
@@ -44,14 +48,19 @@
                   <div class="flex items-center">
                     <div class="ml-4">
                       <div class="text-sm leading-5 font-medium text-gray-900 break-all">
-                        <p class="break-words">{{client.email}}</p>
+                        <p class="break-words">{{client.company}}</p>
                       </div>
                     </div>
                   </div>
                 </td>
-                <td class="px-6 py-4 border-b border-gray-200 w-5/6">
+                <td class="px-6 py-4 border-b border-gray-200 w-2/6">
                   <div class="w-full text-sm leading-5 text-gray-900 break-words">
-                    <p class="break-words" />
+                    <p class="break-words">{{client.contact}}</p>
+                  </div>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-200 w-2/6">
+                  <div class="w-full text-sm leading-5 text-gray-900 break-words">
+                    <p class="break-words">{{client.phone}}</p>
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 w-1/6">

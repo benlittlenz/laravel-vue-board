@@ -2749,6 +2749,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ClientIndex',
@@ -40655,49 +40664,105 @@ var render = function() {
                           _vm._m(0),
                           _vm._v(" "),
                           _vm._l(_vm.clients, function(client) {
-                            return _c("tbody", { staticClass: "bg-white" }, [
-                              _c("tr", [
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-6 py-4 border-b border-gray-200 w-2/6"
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "flex items-center" },
-                                      [
-                                        _c("div", { staticClass: "ml-4" }, [
+                            return _c(
+                              "tbody",
+                              { key: client.id, staticClass: "bg-white" },
+                              [
+                                _c("tr", [
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-6 py-4 border-b border-gray-200 w-2/6"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "flex items-center" },
+                                        [
+                                          _c("div", { staticClass: "ml-4" }, [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "text-sm leading-5 font-medium text-gray-900 break-all"
+                                              },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass: "break-words"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(client.company)
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ])
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-6 py-4 border-b border-gray-200 w-2/6"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "w-full text-sm leading-5 text-gray-900 break-words"
+                                        },
+                                        [
                                           _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "text-sm leading-5 font-medium text-gray-900 break-all"
-                                            },
-                                            [
-                                              _c(
-                                                "p",
-                                                { staticClass: "break-words" },
-                                                [_vm._v(_vm._s(client.email))]
-                                              )
-                                            ]
+                                            "p",
+                                            { staticClass: "break-words" },
+                                            [_vm._v(_vm._s(client.contact))]
                                           )
-                                        ])
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _vm._m(1, true),
-                                _vm._v(" "),
-                                _vm._m(2, true),
-                                _vm._v(" "),
-                                _vm._m(3, true),
-                                _vm._v(" "),
-                                _vm._m(4, true)
-                              ])
-                            ])
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-6 py-4 border-b border-gray-200 w-2/6"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "w-full text-sm leading-5 text-gray-900 break-words"
+                                        },
+                                        [
+                                          _c(
+                                            "p",
+                                            { staticClass: "break-words" },
+                                            [_vm._v(_vm._s(client.phone))]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _vm._m(1, true),
+                                  _vm._v(" "),
+                                  _vm._m(2, true),
+                                  _vm._v(" "),
+                                  _vm._m(3, true)
+                                ])
+                              ]
+                            )
                           })
                         ],
                         2
@@ -40722,7 +40787,7 @@ var staticRenderFns = [
             staticClass:
               "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
           },
-          [_vm._v("\n                Title\n              ")]
+          [_vm._v("\n                Company\n              ")]
         ),
         _vm._v(" "),
         _c(
@@ -40731,7 +40796,16 @@ var staticRenderFns = [
             staticClass:
               "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
           },
-          [_vm._v("\n                Description\n              ")]
+          [_vm._v("\n                Contact\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Phone\n              ")]
         ),
         _vm._v(" "),
         _c(
@@ -40748,22 +40822,6 @@ var staticRenderFns = [
         })
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      { staticClass: "px-6 py-4 border-b border-gray-200 w-5/6" },
-      [
-        _c(
-          "div",
-          { staticClass: "w-full text-sm leading-5 text-gray-900 break-words" },
-          [_c("p", { staticClass: "break-words" })]
-        )
-      ]
-    )
   },
   function() {
     var _vm = this
