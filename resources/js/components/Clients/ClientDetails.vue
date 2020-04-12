@@ -27,18 +27,20 @@
 
           <div 
             v-if="modal"
-            class="absolute bg-blue-900 text-white rounded-lg z-20 p-8 w-64 right-0 mt-2 mr-6"
+            class="absolute bg-white text-white rounded-lg z-20 p-8 width-100 right-0 mt-2 mr-20 mt-8"
           >
-            <p>Are you sure you wish to delete this record?</p>
+            <p class="text-lg leading-6 font-medium text-gray-900">
+              Are you sure you want to delete this client? All of your data will be permanantly removed. This action cannot be undone.
+            </p>
             <div class="flex items-center mt-6 justify-end">
               <button
-                class="text-white pr-4"
+                class="mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5"
                 @click="modal = !modal"
               >
                 Cancel
               </button>
               <button 
-                class="px-4 py-2 bg-red-500 rounded text-sm font-bold text-white"
+                class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
                 @click="destroy"
               >
                 Delete

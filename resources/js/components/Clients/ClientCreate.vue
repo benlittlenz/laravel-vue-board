@@ -168,7 +168,8 @@ export default {
                 description: '',
                 email: '',
                 phone: '',
-                contact: ''
+                contact: '',
+                company_id: 1
             },
             errors: null,
         }

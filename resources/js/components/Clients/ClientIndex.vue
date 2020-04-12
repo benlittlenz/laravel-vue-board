@@ -18,6 +18,9 @@
         v-else
         class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
       >
+        <router-link to="/clients/create">
+          Create Client
+        </router-link>
         <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
           <table class="min-w-full table-fixed">
             <thead>
@@ -48,19 +51,30 @@
                   <div class="flex items-center">
                     <div class="ml-4">
                       <div class="text-sm leading-5 font-medium text-gray-900 break-all">
-                        <p class="break-words">{{client.company}}</p>
+                        <router-link
+                          :to="`/clients/${client.id}`"
+                          class="text-blue-400 font-bold"
+                        >
+                          <p class="break-words">
+                            {{ client.company }}
+                          </p>
+                        </router-link>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="px-6 py-4 border-b border-gray-200 w-2/6">
                   <div class="w-full text-sm leading-5 text-gray-900 break-words">
-                    <p class="break-words">{{client.contact}}</p>
+                    <p class="break-words">
+                      {{ client.contact }}
+                    </p>
                   </div>
                 </td>
                 <td class="px-6 py-4 border-b border-gray-200 w-2/6">
                   <div class="w-full text-sm leading-5 text-gray-900 break-words">
-                    <p class="break-words">{{client.phone}}</p>
+                    <p class="break-words">
+                      {{ client.phone }}
+                    </p>
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 w-1/6">
@@ -73,12 +87,6 @@
                     href="#"
                     class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline"
                   >Edit</a>
-                </td>
-                <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                  <a
-                    href="#"
-                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline"
-                  >Details</a>
                 </td>
               </tr>
             </tbody>

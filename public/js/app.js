@@ -2135,7 +2135,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         description: '',
         email: '',
         phone: '',
-        contact: ''
+        contact: '',
+        company_id: 1
       },
       errors: null
     };
@@ -2192,6 +2193,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
 //
 //
 //
@@ -2667,6 +2670,14 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39647,14 +39658,21 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "absolute bg-blue-900 text-white rounded-lg z-20 p-8 w-64 right-0 mt-2 mr-6"
+                            "absolute bg-white text-white rounded-lg z-20 p-8 width-100 right-0 mt-2 mr-20 mt-8"
                         },
                         [
-                          _c("p", [
-                            _vm._v(
-                              "Are you sure you wish to delete this record?"
-                            )
-                          ]),
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "text-lg leading-6 font-medium text-gray-900"
+                            },
+                            [
+                              _vm._v(
+                                "\n            Are you sure you want to delete this client? All of your data will be permanantly removed. This action cannot be undone.\n          "
+                              )
+                            ]
+                          ),
                           _vm._v(" "),
                           _c(
                             "div",
@@ -39665,7 +39683,8 @@ var render = function() {
                               _c(
                                 "button",
                                 {
-                                  staticClass: "text-white pr-4",
+                                  staticClass:
+                                    "mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5",
                                   on: {
                                     click: function($event) {
                                       _vm.modal = !_vm.modal
@@ -39679,7 +39698,7 @@ var render = function() {
                                 "button",
                                 {
                                   staticClass:
-                                    "px-4 py-2 bg-red-500 rounded text-sm font-bold text-white",
+                                    "inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5",
                                   on: { click: _vm.destroy }
                                 },
                                 [_vm._v("\n              Delete\n            ")]
@@ -40650,6 +40669,10 @@ var render = function() {
                     "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
                 },
                 [
+                  _c("router-link", { attrs: { to: "/clients/create" } }, [
+                    _vm._v("\n        Create Client\n      ")
+                  ]),
+                  _vm._v(" "),
                   _c(
                     "div",
                     {
@@ -40689,17 +40712,36 @@ var render = function() {
                                               },
                                               [
                                                 _c(
-                                                  "p",
+                                                  "router-link",
                                                   {
-                                                    staticClass: "break-words"
+                                                    staticClass:
+                                                      "text-blue-400 font-bold",
+                                                    attrs: {
+                                                      to:
+                                                        "/clients/" + client.id
+                                                    }
                                                   },
                                                   [
-                                                    _vm._v(
-                                                      _vm._s(client.company)
+                                                    _c(
+                                                      "p",
+                                                      {
+                                                        staticClass:
+                                                          "break-words"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "\n                          " +
+                                                            _vm._s(
+                                                              client.company
+                                                            ) +
+                                                            "\n                        "
+                                                        )
+                                                      ]
                                                     )
                                                   ]
                                                 )
-                                              ]
+                                              ],
+                                              1
                                             )
                                           ])
                                         ]
@@ -40724,7 +40766,13 @@ var render = function() {
                                           _c(
                                             "p",
                                             { staticClass: "break-words" },
-                                            [_vm._v(_vm._s(client.contact))]
+                                            [
+                                              _vm._v(
+                                                "\n                    " +
+                                                  _vm._s(client.contact) +
+                                                  "\n                  "
+                                              )
+                                            ]
                                           )
                                         ]
                                       )
@@ -40748,7 +40796,13 @@ var render = function() {
                                           _c(
                                             "p",
                                             { staticClass: "break-words" },
-                                            [_vm._v(_vm._s(client.phone))]
+                                            [
+                                              _vm._v(
+                                                "\n                    " +
+                                                  _vm._s(client.phone) +
+                                                  "\n                  "
+                                              )
+                                            ]
                                           )
                                         ]
                                       )
@@ -40757,9 +40811,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _vm._m(1, true),
                                   _vm._v(" "),
-                                  _vm._m(2, true),
-                                  _vm._v(" "),
-                                  _vm._m(3, true)
+                                  _vm._m(2, true)
                                 ])
                               ]
                             )
@@ -40769,7 +40821,8 @@ var render = function() {
                       )
                     ]
                   )
-                ]
+                ],
+                1
               )
         ])
   ])
@@ -40864,29 +40917,6 @@ var staticRenderFns = [
             attrs: { href: "#" }
           },
           [_vm._v("Edit")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticClass:
-          "px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass:
-              "text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline",
-            attrs: { href: "#" }
-          },
-          [_vm._v("Details")]
         )
       ]
     )
@@ -41405,7 +41435,7 @@ var render = function() {
         "router-link",
         {
           staticClass: "flex items-center py-2 hover:text-blue-600 text-center",
-          attrs: { to: "/" }
+          attrs: { to: "/clients" }
         },
         [
           _c("div", { staticClass: "tracking-wide pl-3 text-center" }, [
@@ -41420,7 +41450,7 @@ var render = function() {
         "router-link",
         {
           staticClass: "flex items-center py-2 hover:text-blue-600",
-          attrs: { to: "/" }
+          attrs: { to: "/projects" }
         },
         [
           _c("div", { staticClass: "tracking-wide pl-3 text-center" }, [

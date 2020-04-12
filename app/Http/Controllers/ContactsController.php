@@ -20,6 +20,7 @@ class ContactsController extends Controller
     public function store()
     {
         $data = request()->validate([
+            'company_id' => '',
             'company' => 'required',
             'email' => 'required|email',
             'phone' => 'required',

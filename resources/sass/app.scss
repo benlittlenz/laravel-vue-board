@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 
+.width-100 {
+  width: 32rem;
+}
 #main {
   display: grid;
   grid-template-columns: 6rem auto;

@@ -11,7 +11,7 @@
       General
     </p>
     <router-link
-      to="/"
+      to="/clients"
       class="flex items-center py-2 hover:text-blue-600 text-center"
     >
       <div class="tracking-wide pl-3 text-center">
@@ -21,7 +21,7 @@
       </div>
     </router-link>
     <router-link
-      to="/"
+      to="/projects"
       class="flex items-center py-2 hover:text-blue-600"
     >
       <div class="tracking-wide pl-3 text-center">
