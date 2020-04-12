@@ -20,9 +20,15 @@ class ProjectController extends Controller
     }
 
     public function store() {
-        Project::create([
-            'title' => request('title'),
-            'description' => request('description')
+        $data = request()->validate([
+            'title' => 'required',
+            'description' => 'required'
         ]);
+        return Project::create($data);
+    }
+
+    public function show(Project $project)
+    {
+        return $project;
     }
 }

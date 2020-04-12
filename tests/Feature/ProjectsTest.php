@@ -44,7 +44,34 @@ class ProjectsTest extends TestCase
 
         $this->assertEquals('Hey this is a title', $project->title);
         $this->assertEquals('hey this is a description', $project->description);
+
     } 
+
+    /** @test */
+    public function project_fields_are_required()
+    {
+        collect(['title', 'description'])
+        ->each(function($field) {
+            $response = $this->post('/api/projects', 
+            array_merge($this->data(), [ $field => '' ]));
+
+            $response->assertSessionHasErrors($field);
+            $this->assertCount(0, Project::all());
+        }); 
+    }
+
+    /** @test */
+    public function a_user_can_retrieve_a_client()
+    {
+        $project = factory(Project::class)->create();
+
+        $response = $this->get('/api/projects/' . $project->id);
+
+        $response->assertJson([
+            'title' => $project->title,
+            'description' => $project->description
+        ]);
+    }
 
 
     private function data() {
