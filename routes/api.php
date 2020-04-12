@@ -26,13 +26,15 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/clients','ContactsController@store');
     Route::patch('/clients/{client}','ContactsController@update');
     Route::delete('/clients/{client}','ContactsController@destroy');
+
+    //Projects
+    Route::get('/projects', 'Api\Project\ProjectController@index');
+    Route::get('/projects/{project}', 'Api\Project\ProjectController@show');
+    Route::post('/projects', 'Api\Project\ProjectController@store');
+    Route::patch('/projects/{project}', 'Api\Project\ProjectController@update');
+    Route::delete('/projects/{project}', 'Api\Project\ProjectController@destroy');
 });
 
-//Projects
-Route::get('/projects', 'Api\Project\ProjectController@index');
-Route::get('/projects/{project}', 'Api\Project\ProjectController@show');
-Route::post('/projects', 'Api\Project\ProjectController@store');
-Route::patch('/projects/{project}', 'Api\Project\ProjectController@update');
-Route::delete('/projects/{project}', 'Api\Project\ProjectController@destroy');
+
 
 

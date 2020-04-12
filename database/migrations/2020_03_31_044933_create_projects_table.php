@@ -18,7 +18,10 @@ class CreateProjectsTable extends Migration
             $table->unsignedInteger('company_id')->nullable();
             $table->unsignedInteger('client_id')->nullable();
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->nullable(false);
+            $table->string('address')->nullable();
+            $table->string('suburb')->nullable();
+            $table->string('city')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
 

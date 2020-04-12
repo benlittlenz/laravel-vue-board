@@ -8,6 +8,7 @@ import ClientDetails from './components/Clients/ClientDetails'
 import ClientEdit from './components/Clients/ClientEdit'
 //Projects
 import ProjectTimeline from './components/Projects/ProjectTimeline.vue'
+import ProjectDetails from './components/Projects/ProjectDetails'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,7 @@ export default new VueRouter({
     routes: [
         //Projects
         { path: '/jobs', component: ProjectTimeline },
+        { path: '/jobs/:id', component: ProjectDetails },
 
         //Clients
         { path: '/clients', component: ClientIndex },

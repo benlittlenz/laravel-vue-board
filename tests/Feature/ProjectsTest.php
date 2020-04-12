@@ -2,8 +2,10 @@
 
 namespace Tests\Feature;
 
+use App\User;
 use App\Project;
 use Tests\TestCase;
+use Laravel\Sanctum\Sanctum;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -45,14 +47,14 @@ class ProjectsTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_add_a_project()
+    public function an_auth_user_can_add_a_project()
     {
-        $this->withoutExceptionHandling();
-        $this->post('/api/projects', $this->data());
 
-        //$this->assertCount(1, Project::all());
-        $project = Project::first();
-
+        if($this->user) {
+            $this->post('/api/projects', $this->data());
+            $project = Project::first();
+        }
+        
         $this->assertEquals('Hey this is a title', $project->title);
         $this->assertEquals('hey this is a description', $project->description);
 
@@ -72,42 +74,50 @@ class ProjectsTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_retrieve_a_client()
+    public function an_auth_user_can_retrieve_a_client()
     {
-        $project = factory(Project::class)->create();
+        if($this->user) {
+            $project = factory(Project::class)->create();
 
-        $response = $this->get('/api/projects/' . $project->id);
+            $response = $this->get('/api/projects/' . $project->id);
 
-        $response->assertJson([
-            'title' => $project->title,
-            'description' => $project->description
-        ]);
+            $response->assertJson([
+                'title' => $project->title,
+                'description' => $project->description
+            ]);
+        }
+        
+
+        
     }
 
     /** @test */
-    public function a_user_can_edit_a_project()
+    public function an_auth_user_can_edit_a_project()
     {
-        $this->withoutExceptionHandling();
+        if($this->user) {
+            $project = factory(Project::class)->create();
 
-        $project = factory(Project::class)->create();
+            $response = $this->patch('/api/projects/' . $project->id, $this->data());
 
-        $response = $this->patch('/api/projects/' . $project->id, $this->data());
+            $project = $project->fresh();
 
-        $project = $project->fresh();
+            $this->assertEquals('Hey this is a title', $project->title);
+            $this->assertEquals('hey this is a description', $project->description);
+        }
 
-        $this->assertEquals('Hey this is a title', $project->title);
-        $this->assertEquals('hey this is a description', $project->description);
     }
 
     /** @test */
-    public function a_user_can_delete_a_project()
+    public function an_auth_user_can_delete_a_project()
     {
-        $this->withoutExceptionHandling();
-        $project = factory(Project::class)->create();
+        if($this->user) {
+            $project = factory(Project::class)->create();
 
-        $response = $this->delete('/api/projects/' . $project->id);
-        //dd($response);
-        $this->assertCount(0, Project::all());
+            $response = $this->delete('/api/projects/' . $project->id);
+            //dd($response);
+            $this->assertCount(0, Project::all());
+        }
+        
     }
 
 
