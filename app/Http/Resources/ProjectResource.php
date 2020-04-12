@@ -24,7 +24,8 @@ class ProjectResource extends JsonResource
             'address' => $this->description,
             'suburb' => $this->description,
             'city' => $this->description,
-            //'user' => $this->users()->pluck('name')->flatten(),
+            'client' => $this->client::where('id', $this->id)->get()->implode('company'),
+            'client_phone' => $this->client::where('id', $this->id)->get()->implode('phone'),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

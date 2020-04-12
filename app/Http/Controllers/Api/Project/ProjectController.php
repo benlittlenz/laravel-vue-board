@@ -17,7 +17,7 @@ class ProjectController extends Controller
     
     public function index(Request $request) {
         $projects = $request->user()->company->projects()->paginate(6);
-        //dd($request->user());
+        //dd($request->client);
         return new ProjectCollection($projects);
     }
 
@@ -38,15 +38,6 @@ class ProjectController extends Controller
         //$result   = $merged->all();
 
         return $merged;
-        //dd($arr2);
-        //return array_merge($arr1, $arr2);
-
-        // $project = $project;
-        // $client = Client::where('id', $project->company_id)->get();
-        // $merged_arr = array_merge($project, $client);
-        // dd($merged_arr);
-        //dd(new ProjectCollection($project));
-        //return $project;
     }
 
     public function update(Project $project)

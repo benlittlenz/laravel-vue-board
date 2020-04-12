@@ -7,16 +7,18 @@ import ClientIndex from './components/Clients/ClientIndex'
 import ClientDetails from './components/Clients/ClientDetails'
 import ClientEdit from './components/Clients/ClientEdit'
 //Projects
-import ProjectTimeline from './components/Projects/ProjectTimeline.vue'
+import ProjectIndex from './components/Projects/ProjectIndex.vue'
 import ProjectDetails from './components/Projects/ProjectDetails'
+import ProjectEdit from './components/Projects/ProjectEdit'
 
 Vue.use(VueRouter)
 
 export default new VueRouter({
     routes: [
         //Projects
-        { path: '/jobs', component: ProjectTimeline },
+        { path: '/jobs', component: ProjectIndex },
         { path: '/jobs/:id', component: ProjectDetails },
+        { path: '/jobs/:id/edit', component: ProjectEdit },
 
         //Clients
         { path: '/clients', component: ClientIndex },
