@@ -11,6 +11,17 @@ class ProjectsTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected $user;
+
+    protected function setUp(): void {
+        parent::setUp();
+
+        $this->user = Sanctum::actingAs(
+            factory(User::class)->create(['company_id' => 1]),
+            ['*']
+        );
+    }
+
     /**
      * A basic feature test example.
      *
@@ -72,6 +83,33 @@ class ProjectsTest extends TestCase
             'description' => $project->description
         ]);
     }
+
+    /** @test */
+    public function a_user_can_edit_a_project()
+    {
+        $this->withoutExceptionHandling();
+
+        $project = factory(Project::class)->create();
+
+        $response = $this->patch('/api/projects/' . $project->id, $this->data());
+
+        $project = $project->fresh();
+
+        $this->assertEquals('Hey this is a title', $project->title);
+        $this->assertEquals('hey this is a description', $project->description);
+    }
+
+    /** @test */
+    public function a_user_can_delete_a_project()
+    {
+        $this->withoutExceptionHandling();
+        $project = factory(Project::class)->create();
+
+        $response = $this->delete('/api/projects/' . $project->id);
+        //dd($response);
+        $this->assertCount(0, Project::all());
+    }
+
 
 
     private function data() {

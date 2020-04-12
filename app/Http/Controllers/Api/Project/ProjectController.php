@@ -31,4 +31,19 @@ class ProjectController extends Controller
     {
         return $project;
     }
+
+    public function update(Project $project)
+    {
+        $project->update([
+            'title' => request('title'),
+            'description' => request('description')
+        ]);
+    }
+
+    public function destroy(Project $project)
+    {
+        $project->delete();
+    }
+
+
 }
