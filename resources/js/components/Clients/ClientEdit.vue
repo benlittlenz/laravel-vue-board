@@ -1,10 +1,19 @@
 <template>
   <body class="bg-cream text-charcoal min-h-screen font-sans leading-normal overflow-x-hidden lg:overflow-auto">
+    <div class="flex justify-between">
+      <a
+        href="#"
+        class="text-blue-400"
+        @click="$router.back()"
+      >
+        Back
+      </a>
+    </div>
     <main class="flex-1 md:p-0 lg:pt-8 lg:px-8 md:ml-24 flex flex-col">
       <section class="bg-cream-lighter p-4 shadow">
         <div class="md:flex">
           <h2 class="md:w-1/3 uppercase tracking-wide text-sm sm:text-lg mb-6 ">
-            Create New Client
+            Edit Client
           </h2>
         </div>
         <form @submit.prevent="submit">
@@ -25,6 +34,7 @@
                   type="text"
                   name="client"
                   placeholder="Client Name"
+                  :data="form.client"
                 >
                 <p
                   class="text-xs font-light text-red-500"
@@ -40,6 +50,7 @@
                     type="text"
                     name="street"
                     placeholder="123 Fake St."
+                    :data="form.address"
                   >
                 </div>
                 <div class="md:flex-1 md:pl-3">
@@ -50,6 +61,7 @@
                     type="text"
                     name="suburb"
                     placeholder="Suburb"
+                    :data="form.suburb"
                   >
                   <span class="text-xs mb-4 font-thin text-red-600" />
                 </div>
@@ -63,6 +75,7 @@
                     type="text"
                     name="city"
                     placeholder="City"
+                    :data="form.city"
                   >
                 </div>
               </div>
@@ -84,6 +97,7 @@
                   type="text"
                   name="name"
                   placeholder=""
+                  :data="form.contact"
                 >
                 <p
                   class="text-xs font-light text-red-500"
@@ -99,6 +113,7 @@
                     type="tel"
                     name="phone"
                     placeholder="(09) 945 3444"
+                    :data="form.phone"
                   >
                 </div>
                 <div class="mb-4">
@@ -110,6 +125,7 @@
                     type="email"
                     name="email"
                     placeholder="contact@email.co.nz"
+                    :data="form.email"
                   >
                   <p
                     class="text-xs font-light text-red-500"
@@ -131,6 +147,7 @@
                 class="w-full shadow-inner p-4 border-0"
                 placeholder=""
                 rows="6"
+                :data="form.description"
               />
             </div>
           </div>
@@ -142,7 +159,7 @@
               <input
                 class="button text-cream-lighter bg-blue-500 py-2 px-4 text-white rounded"
                 type="submit"
-                value="Create Client"
+                value="Save"
               >
             </div>
           </div>
@@ -156,7 +173,7 @@
 import axios from 'axios';
 
 export default {
-    name: 'ClientCreate',
+    name: 'ClientEdit',
 
     data() {
         return {
@@ -171,33 +188,51 @@ export default {
                 contact: ''
             },
             errors: null,
+            id: null
         }
     },
-    methods: {
-        async submit () {
-           //console.log(this.form)
 
-           axios.post('/api/clients', this.form)
+    mounted() {
+        console.log(this.$route)
+        axios.get(`/api/clients/${this.$route.params.id}`)
+            .then(response => {
+                this.form = response.data;
+                this.id = response.data.id;
+                console.log(response, 'success')
+
+                this.loading = false;
+            }).catch(error => {
+                console.log(error)
+                this.loading = false;
+                
+                if(error.response.status === 404) {
+                  this.$router.push('/clients')
+                }
+            })
+    },
+    methods: {
+        submit () {
+           axios.patch(`/api/clients/${this.$route.params.id}`, this.form)
                 .then(response => {
-                    this.$router.push(`/clients/${response.data.id}`)
+                    console.log(response, 'success hey')
+                    this.$router.push(`/clients/${this.id}`)
                 }).catch(error => {
                     if (error.response.status == 422){
                         this.errors = error.response.data.errors
                     }
-                })
-        //    try {
-        //         await axios.post('/api/clients', this.form)
-        //    } catch(err) {
-        //        console.log(err.data.errors)
-        //        //this.errors = err.response.data.data.errors
-        //    }
-           
+                })        
         },
 
         errorMessage (field) {
             if(this.errors && this.errors[field] && this.errors[field].length > 0) {
                 return this.errors[field][0]
             } 
+        },
+
+        watch: {
+            data: function(val) {
+                this.value = val;
+            }
         }
     }
 }

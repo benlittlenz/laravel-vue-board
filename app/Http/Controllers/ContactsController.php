@@ -45,6 +45,10 @@ class ContactsController extends Controller
             'email' => request('email'),
             'phone' => request('phone'),
             'contact' => request('contact'),
+            'address' => request('address'),
+            'suburb' => request('suburb'),
+            'city' => request('city'),
+            'description' => request('description')
         ]);
     }
 

@@ -3,9 +3,9 @@ import VueRouter from 'vue-router';
 
 //Clients
 import ClientCreate from './components/Clients/ClientCreate'
-import AppClient from './components/Clients/AppClient'
+import ClientIndex from './components/Clients/ClientIndex'
 import ClientDetails from './components/Clients/ClientDetails'
-
+import ClientEdit from './components/Clients/ClientEdit'
 //Projects
 import ProjectTimeline from './components/Projects/ProjectTimeline.vue'
 
@@ -17,9 +17,10 @@ export default new VueRouter({
         { path: '/jobs', component: ProjectTimeline },
 
         //Clients
+        { path: '/clients', component: ClientIndex },
         { path: '/clients/create', component: ClientCreate },
-        { path: '/clients', component: AppClient },
-        { path: '/clients/:id', component: ClientDetails }
+        { path: '/clients/:id', component: ClientDetails },
+        { path: '/clients/:id/edit', component: ClientEdit }
     ],
     mode: 'history'
 })
