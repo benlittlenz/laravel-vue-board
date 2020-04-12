@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api\Project;
 
+use App\Client;
 use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProjectCollection;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -29,7 +31,22 @@ class ProjectController extends Controller
 
     public function show(Project $project)
     {
-        return $project;
+        $clients = Client::where('id', $project->company_id)->get();
+
+        $collection = collect($project);
+        $merged     = $collection->merge($clients);
+        //$result   = $merged->all();
+
+        return $merged;
+        //dd($arr2);
+        //return array_merge($arr1, $arr2);
+
+        // $project = $project;
+        // $client = Client::where('id', $project->company_id)->get();
+        // $merged_arr = array_merge($project, $client);
+        // dd($merged_arr);
+        //dd(new ProjectCollection($project));
+        //return $project;
     }
 
     public function update(Project $project)

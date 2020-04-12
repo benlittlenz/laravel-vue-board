@@ -41597,13 +41597,18 @@ var render = function() {
                       [
                         _vm._v(
                           "\n            " +
-                            _vm._s(_vm.project.address) +
-                            " \n            " +
-                            _vm._s(_vm.project.suburb) +
-                            " \n            " +
-                            _vm._s(_vm.project.city) +
-                            " \n          "
-                        )
+                            _vm._s(_vm.project[0].address) +
+                            " "
+                        ),
+                        _c("br"),
+                        _vm._v(
+                          "\n            " + _vm._s(_vm.project[0].suburb) + " "
+                        ),
+                        _c("br"),
+                        _vm._v(
+                          "\n            " + _vm._s(_vm.project[0].city) + " "
+                        ),
+                        _c("br")
                       ]
                     )
                   ]
@@ -41644,7 +41649,44 @@ var render = function() {
                 _vm._v(" "),
                 _vm._m(0),
                 _vm._v(" "),
-                _vm._m(1),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  },
+                  [
+                    _c(
+                      "dt",
+                      {
+                        staticClass:
+                          "text-sm leading-5 font-medium text-gray-500"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.project[0].email) +
+                            "\n          "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      {
+                        staticClass:
+                          "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.project[0].phone) +
+                            "\n          "
+                        )
+                      ]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -41722,7 +41764,7 @@ var render = function() {
                                   ]
                                 ),
                                 _vm._v(" "),
-                                _vm._m(2)
+                                _vm._m(1)
                               ]
                             ),
                             _vm._v(" "),
@@ -41775,7 +41817,7 @@ var render = function() {
                                   ]
                                 ),
                                 _vm._v(" "),
-                                _vm._m(3)
+                                _vm._m(2)
                               ]
                             )
                           ]
@@ -41815,34 +41857,6 @@ var staticRenderFns = [
               "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
           },
           [_vm._v("\n            Test email\n          ")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
-      },
-      [
-        _c(
-          "dt",
-          { staticClass: "text-sm leading-5 font-medium text-gray-500" },
-          [_vm._v("\n            Contact Number\n          ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "dd",
-          {
-            staticClass:
-              "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
-          },
-          [_vm._v("\n            test number\n          ")]
         )
       ]
     )
