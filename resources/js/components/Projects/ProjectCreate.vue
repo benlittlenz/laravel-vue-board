@@ -153,5 +153,47 @@
 </template>
 
 <script>
+import axios from 'axios';
 
+export default {
+    name: 'ProjectCreate',
+
+    data() {
+        return {
+            form: {
+                company: '',
+                address: '',
+                suburb: '',
+                city: '',
+                description: '',
+                email: '',
+                phone: '',
+                contact: '',
+                company_id: 1
+            },
+            errors: null,
+        }
+    },
+    methods: {
+        async submit () {
+           //console.log(this.form)
+
+           axios.post('/api/projects', this.form)
+                .then(response => {
+                    this.$router.push(`/jobs/${response.data.id}`)
+                }).catch(error => {
+                    if (error.response.status == 422){
+                        this.errors = error.response.data.errors
+                    }
+                })
+
+        },
+
+        errorMessage (field) {
+            if(this.errors && this.errors[field] && this.errors[field].length > 0) {
+                return this.errors[field][0]
+            } 
+        }
+    }
+}
 </script>
