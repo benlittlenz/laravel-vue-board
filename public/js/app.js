@@ -3482,13 +3482,117 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'StaffIndex',
+  data: function data() {
+    return {
+      loading: true,
+      staff: []
+    };
+  },
   mounted: function mounted() {
+    var _this = this;
+
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/staff').then(function (response) {
+      _this.staff = response.data.data;
       console.log('success', response);
+      _this.loading = false;
     })["catch"](function (err) {
+      _this.loading = false;
       console.log(err, 'Unable to fetch clients');
     });
   }
@@ -44303,9 +44407,272 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    fgdfgdf\n")])
+  return _c("div", [
+    _vm.loading
+      ? _c("div", [_vm._v("\n    Loading..\n  ")])
+      : _c("div", { staticClass: "flex flex-col " }, [
+          _vm.staff.length === 0
+            ? _c("div", [
+                _c(
+                  "p",
+                  [
+                    _vm._v("\n        You have no clients yet.. "),
+                    _c("router-link", { attrs: { to: "/staff/create" } }, [
+                      _vm._v("\n          Create Client\n        ")
+                    ])
+                  ],
+                  1
+                )
+              ])
+            : _c(
+                "div",
+                {
+                  staticClass:
+                    "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+                },
+                [
+                  _c("router-link", { attrs: { to: "/clients/create" } }, [
+                    _vm._v("\n        Create Client\n      ")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+                    },
+                    [
+                      _c(
+                        "table",
+                        { staticClass: "min-w-full table-fixed" },
+                        [
+                          _vm._m(0),
+                          _vm._v(" "),
+                          _vm._l(_vm.staff, function(user) {
+                            return _c(
+                              "tbody",
+                              { key: user.id, staticClass: "bg-white" },
+                              [
+                                _c("tr", [
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-6 py-4 border-b border-gray-200 w-2/6"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "flex items-center" },
+                                        [
+                                          _c("div", { staticClass: "ml-4" }, [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "text-sm leading-5 font-medium text-gray-900 break-all"
+                                              },
+                                              [
+                                                _c(
+                                                  "router-link",
+                                                  {
+                                                    staticClass:
+                                                      "text-blue-400 font-bold",
+                                                    attrs: {
+                                                      to: "/staff/" + user.id
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "p",
+                                                      {
+                                                        staticClass:
+                                                          "break-words"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "\n                          " +
+                                                            _vm._s(user.name) +
+                                                            "\n                        "
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ])
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-6 py-4 border-b border-gray-200 w-2/6"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "w-full text-sm leading-5 text-gray-900 break-words"
+                                        },
+                                        [
+                                          _c(
+                                            "p",
+                                            { staticClass: "break-words" },
+                                            [
+                                              _vm._v(
+                                                "\n                    " +
+                                                  _vm._s(user.email) +
+                                                  "\n                  "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _vm._m(1, true),
+                                  _vm._v(" "),
+                                  _vm._m(2, true),
+                                  _vm._v(" "),
+                                  _vm._m(3, true)
+                                ])
+                              ]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+        ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Staff Name\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Email\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Phone\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Status\n              ")]
+        ),
+        _vm._v(" "),
+        _c("th", {
+          staticClass: "px-6 py-3 border-b border-gray-200 bg-gray-50"
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      { staticClass: "px-6 py-4 border-b border-gray-200 w-2/6" },
+      [
+        _c(
+          "div",
+          { staticClass: "w-full text-sm leading-5 text-gray-900 break-words" },
+          [
+            _c("p", { staticClass: "break-words" }, [
+              _vm._v("\n                    Phone\n                  ")
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticClass:
+          "px-6 py-4 whitespace-no-wrap border-b border-gray-200 w-1/6"
+      },
+      [
+        _c(
+          "span",
+          {
+            staticClass:
+              "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
+          },
+          [_vm._v("\n                  Active\n                ")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticClass:
+          "px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
+      },
+      [
+        _c(
+          "a",
+          {
+            staticClass:
+              "text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline",
+            attrs: { href: "#" }
+          },
+          [_vm._v("Edit")]
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
