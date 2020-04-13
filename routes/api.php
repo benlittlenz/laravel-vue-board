@@ -35,6 +35,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/projects/{project}', 'Api\Project\ProjectController@destroy');
 });
 
+Route::get('/staff','UserController@index');
+
 
 
 

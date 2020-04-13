@@ -37,6 +37,11 @@ const app = new Vue({
     components: {
         App
     },
+    data() {
+        return {
+            company: ''
+        }
+    },
     store,
     router
 });

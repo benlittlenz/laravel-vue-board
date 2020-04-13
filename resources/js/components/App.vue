@@ -19,10 +19,16 @@
 
 export default {
     name: 'App',
+    props: ['company'],
+
     components: {
         ProjectSideNav,
         ProjectNav
     },
+
+    mounted() {
+      console.log(this.company)
+    }
 }
 </script>
 

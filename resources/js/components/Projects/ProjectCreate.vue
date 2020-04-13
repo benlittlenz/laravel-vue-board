@@ -139,6 +139,7 @@ export default {
 
               console.log(err, 'Unable to fetch clients')
           })
+
     },
     methods: {
         async submit () {

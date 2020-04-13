@@ -12,6 +12,8 @@ import ProjectDetails from './components/Projects/ProjectDetails'
 import ProjectCreate from './components/Projects/ProjectCreate'
 import ProjectEdit from './components/Projects/ProjectEdit'
 
+import StaffIndex from './components/Staff/StaffIndex.vue'
+
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -26,7 +28,10 @@ export default new VueRouter({
         { path: '/clients', component: ClientIndex },
         { path: '/clients/create', component: ClientCreate },
         { path: '/clients/:id', component: ClientDetails },
-        { path: '/clients/:id/edit', component: ClientEdit }
+        { path: '/clients/:id/edit', component: ClientEdit },
+
+        //Staff
+        { path: '/staff', component: StaffIndex },
     ],
     mode: 'history'
 })

@@ -158,6 +158,10 @@ import axios from 'axios';
 export default {
     name: 'ClientCreate',
 
+    props: [
+      'user'
+    ],
+
     data() {
         return {
             form: {
@@ -176,8 +180,6 @@ export default {
     },
     methods: {
         async submit () {
-           //console.log(this.form)
-
            axios.post('/api/clients', this.form)
                 .then(response => {
                     this.$router.push(`/clients/${response.data.id}`)
