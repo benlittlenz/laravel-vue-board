@@ -9,6 +9,7 @@ import ClientEdit from './components/Clients/ClientEdit'
 //Projects
 import ProjectIndex from './components/Projects/ProjectIndex.vue'
 import ProjectDetails from './components/Projects/ProjectDetails'
+import ProjectCreate from './components/Projects/ProjectCreate'
 import ProjectEdit from './components/Projects/ProjectEdit'
 
 Vue.use(VueRouter)
@@ -17,6 +18,7 @@ export default new VueRouter({
     routes: [
         //Projects
         { path: '/jobs', component: ProjectIndex },
+        { path: '/jobs/create', component: ProjectCreate },
         { path: '/jobs/:id', component: ProjectDetails },
         { path: '/jobs/:id/edit', component: ProjectEdit },
 

@@ -7,118 +7,53 @@
             Create New Client
           </h2>
         </div>
+
+        
         <form @submit.prevent="submit">
           <div class="md:flex mb-8">
             <div class="md:w-1/3 bg-gray-200">
               <legend class="uppercase tracking-wide text-sm">
-                CLIENT
+                job
               </legend>
             </div>
-            
+            <div class="md:flex-1 mt-2 mb:mt-0 md:px-3 bg-gray-200">
+              <div class="mb-4">
+                <label class="block uppercase tracking-wide text-xs font-bold">Job</label>
+                
+                <input
+                  v-model="form.title"
+                  class="w-full shadow-inner p-4 border-0"
+                  type="text"
+                  name="client"
+                  placeholder="Job Title"
+                >
+                <p
+                  class="text-xs font-light text-red-500"
+                  :errors="errors"
+                />
+              </div>
+            </div>
             <div class="md:flex-1 mt-2 mb:mt-0 md:px-3 bg-gray-200">
               <div class="mb-4">
                 <label class="block uppercase tracking-wide text-xs font-bold">Client</label>
                 
-                <input
-                  v-model="form.company"
-                  class="w-full shadow-inner p-4 border-0"
-                  type="text"
-                  name="client"
-                  placeholder="Client Name"
-                >
+                <vue-single-select
+                  v-model="clients.id"
+                  placeholder="Search for a client"
+                  :options="clients"
+                  option-label="company"
+                  :required="true"
+                  :max-results="20"
+                  @input="setSelected"
+                />
                 <p
                   class="text-xs font-light text-red-500"
                   :errors="errors"
                 />
               </div>
-              <div class="md:flex mb-4">
-                <div class="md:flex-1 md:pr-3">
-                  <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold">Street Address</label>
-                  <input
-                    v-model="form.address"
-                    class="w-full shadow-inner p-4 border-0"
-                    type="text"
-                    name="street"
-                    placeholder="123 Fake St."
-                  >
-                </div>
-                <div class="md:flex-1 md:pl-3">
-                  <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold">Suburb</label>
-                  <input
-                    v-model="form.suburb"
-                    class="w-full shadow-inner p-4 border-0"
-                    type="text"
-                    name="suburb"
-                    placeholder="Suburb"
-                  >
-                  <span class="text-xs mb-4 font-thin text-red-600" />
-                </div>
-              </div>
-              <div class="md:flex mb-4">
-                <div class="md:flex-1 md:pr-3">
-                  <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold">City</label>
-                  <input
-                    v-model="form.city"
-                    class="w-full shadow-inner p-4 border-0"
-                    type="text"
-                    name="city"
-                    placeholder="City"
-                  >
-                </div>
-              </div>
             </div>
           </div>
-          <div class="md:flex mb-8">
-            <div class="md:w-1/3 bg-gray-200">
-              <legend class="uppercase tracking-wide text-sm">
-                Contact
-              </legend>
-            </div>
-            <div class="md:flex-1 mt-2 mb:mt-0 md:px-3 bg-gray-200">
-              <div class="mb-4">
-                <label class="block uppercase tracking-wide text-xs font-bold">Contact Name</label>
-                
-                <input
-                  v-model="form.contact"
-                  class="w-full shadow-inner p-4 border-0"
-                  type="text"
-                  name="name"
-                  placeholder=""
-                >
-                <p
-                  class="text-xs font-light text-red-500"
-                  :errors="errors"
-                />
-              </div>
-              <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
-                <div class="mb-4">
-                  <label class="block uppercase tracking-wide text-xs font-bold">Phone</label>
-                  <input
-                    v-model="form.phone"
-                    class="w-full shadow-inner p-4 border-0"
-                    type="tel"
-                    name="phone"
-                    placeholder="(09) 945 3444"
-                  >
-                </div>
-                <div class="mb-4">
-                  <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold">Email</label>
-                  
-                  <input
-                    v-model="form.email"
-                    class="w-full shadow-inner p-4 border-0"
-                    type="email"
-                    name="email"
-                    placeholder="contact@email.co.nz"
-                  >
-                  <p
-                    class="text-xs font-light text-red-500"
-                    :errors="errors"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          
           <div class="md:flex mb-6">
             <div class="md:w-1/3 bg-gray-200">
               <legend class="uppercase tracking-wide text-sm">
@@ -142,11 +77,12 @@
               <input
                 class="button text-cream-lighter bg-blue-500 py-2 px-4 text-white rounded"
                 type="submit"
-                value="Create Client"
+                value="Create Job"
               >
             </div>
           </div>
         </form>
+        </v-select>
       </section>
     </main>
   </body>
@@ -154,38 +90,68 @@
 
 <script>
 import axios from 'axios';
+import VueSingleSelect from "vue-single-select";
+import 'vue-select/dist/vue-select.css';
 
 export default {
     name: 'ProjectCreate',
 
+    
+    components: {
+        VueSingleSelect
+    },
     data() {
         return {
+            clients: [],
+            searchQuery: null,
             form: {
-                company: '',
-                address: '',
-                suburb: '',
-                city: '',
+                title: '',
                 description: '',
-                email: '',
-                phone: '',
-                contact: '',
+                client_id: null,
                 company_id: 1
             },
             errors: null,
+            company: null
         }
+    },
+
+    computed: {
+        resultQuery() {
+            if(this.searchQuery) {
+                return this.clients.filter(client => {
+                    return this.searchQuery.toLowerCase().split(' ')
+                        .every(item => client.company.toLowerCase().includes(item))
+                })
+            } else {
+                return this.clients
+            }
+        }
+    },
+
+    mounted() {
+      axios.get('/api/clients')
+          .then(response => {
+              this.clients = response.data.data
+              console.log('success', this.clients)
+              this.loading = false
+          }).catch(err => {
+              this.loading = false
+
+              console.log(err, 'Unable to fetch clients')
+          })
     },
     methods: {
         async submit () {
            //console.log(this.form)
 
            axios.post('/api/projects', this.form)
-                .then(response => {
-                    this.$router.push(`/jobs/${response.data.id}`)
-                }).catch(error => {
-                    if (error.response.status == 422){
-                        this.errors = error.response.data.errors
-                    }
-                })
+            .then(response => {
+                this.$router.push(`/jobs/${response.data.id}`)
+            }).catch(error => {
+                if (error.response.status == 422){
+                    this.errors = error.response.data.errors
+                }
+            })
 
         },
 
@@ -193,7 +159,12 @@ export default {
             if(this.errors && this.errors[field] && this.errors[field].length > 0) {
                 return this.errors[field][0]
             } 
-        }
+        },
+
+    setSelected(value) {
+     this.form.client_id = value.id;
+      
+    }
     }
 }
 </script>

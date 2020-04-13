@@ -9,7 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'company_id',
+        'client_id',
+        'title',
+        'description'
+    ];
     
     public function users()
     {

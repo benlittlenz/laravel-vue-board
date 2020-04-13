@@ -23,6 +23,8 @@ class ProjectController extends Controller
 
     public function store() {
         $data = request()->validate([
+            'company_id' => 'required',
+            'client_id' => 'required',
             'title' => 'required',
             'description' => 'required'
         ]);

@@ -5,6 +5,7 @@
  */
 import Vue from 'vue';
 import Vuex from 'vuex'
+import vSelect from 'vue-select'
 require('./bootstrap');
 
 import App from './components/App'
@@ -12,6 +13,7 @@ import router from './router';
 import timeline from './store/project-timeline'
 
 Vue.use(Vuex);
+Vue.component('v-select', vSelect)
 
 /**
  * The following block of code may be used to automatically register your
