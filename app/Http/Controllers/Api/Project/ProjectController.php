@@ -22,13 +22,19 @@ class ProjectController extends Controller
     }
 
     public function store() {
+        //dd(request()->all());
         $data = request()->validate([
             'company_id' => 'required',
             'client_id' => 'required',
             'title' => 'required',
             'description' => 'required'
         ]);
-        return Project::create($data);
+
+        $project = Project::create($data);
+        $project->save();
+        $project->users()->attach(request('staff'));
+
+        return $project;
     }
 
     public function show(Project $project)

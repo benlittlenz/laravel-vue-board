@@ -8,7 +8,22 @@
           </h2>
         </div>
 
+        <p class="p-4">
+          Staff
+        </p>
+        <div class="border-b-2 m-0">
+          <p class="p-4">
+            Select Staff:
+          </p>
+          <v-select
+            multiple
+            :options="staffOptions"
+            label="name"
+            @input="setSelected"
+          />
+        </div>
         
+
         <form @submit.prevent="submit">
           <div class="md:flex mb-8">
             <div class="md:w-1/3 bg-gray-200">
@@ -44,7 +59,7 @@
                   option-label="company"
                   :required="true"
                   :max-results="20"
-                  @input="setSelected"
+                  @input="setSelectedClient"
                 />
                 <p
                   class="text-xs font-light text-red-500"
@@ -91,6 +106,7 @@
 <script>
 import axios from 'axios';
 import VueSingleSelect from "vue-single-select";
+import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css';
 
 export default {
@@ -98,23 +114,28 @@ export default {
 
     
     components: {
-        VueSingleSelect
+        VueSingleSelect,
+        vSelect
     },
     data() {
         return {
+            value: null,
+            staffOptions: [],
+            staff: [],
             clients: [],
             searchQuery: null,
             form: {
                 title: '',
                 description: '',
                 client_id: null,
-                company_id: 1
+                company_id: 1,
+                staff: []
             },
             errors: null,
             company: null
         }
+        
     },
-
     computed: {
         resultQuery() {
             if(this.searchQuery) {
@@ -140,13 +161,23 @@ export default {
               console.log(err, 'Unable to fetch clients')
           })
 
+      axios.get('/api/staff')
+        .then(response => {
+            this.staffOptions = response.data.data
+            console.log('success', this.staffOptions)
+            this.loading = false
+        }).catch(err => {
+            this.loading = false
+
+            console.log(err, 'Unable to fetch staff')
+        })
     },
     methods: {
         async submit () {
-           //console.log(this.form)
 
            axios.post('/api/projects', this.form)
             .then(response => {
+              console.log('res', response)
                 this.$router.push(`/jobs/${response.data.id}`)
             }).catch(error => {
                 if (error.response.status == 422){
@@ -163,9 +194,22 @@ export default {
         },
 
     setSelected(value) {
-     this.form.client_id = value.id;
-      
+     //this.form.client_id = value.id;
+      console.log('selected', value);
+      value.map(item => {
+        if(this.form.staff.indexOf(item.id) === -1) {
+          this.form.staff.push(item.id)
+        }
+      })
+
+    console.log('ff', this.form.staff);
+    
+    },
+
+    setSelectedClient(value) {
+      this.form.client_id = value.id;
     }
     }
+    
 }
 </script>

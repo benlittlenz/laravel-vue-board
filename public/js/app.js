@@ -2812,8 +2812,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vue_single_select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-single-select */ "./node_modules/vue-single-select/dist/index.js");
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_4__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2910,23 +2912,44 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ProjectCreate',
   components: {
-    VueSingleSelect: vue_single_select__WEBPACK_IMPORTED_MODULE_2__["default"]
+    VueSingleSelect: vue_single_select__WEBPACK_IMPORTED_MODULE_2__["default"],
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_3___default.a
   },
   data: function data() {
     return {
+      value: null,
+      staffOptions: [],
+      staff: [],
       clients: [],
       searchQuery: null,
       form: {
         title: '',
         description: '',
         client_id: null,
-        company_id: 1
+        company_id: 1,
+        staff: []
       },
       errors: null,
       company: null
@@ -2958,6 +2981,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _this2.loading = false;
       console.log(err, 'Unable to fetch clients');
     });
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/staff').then(function (response) {
+      _this2.staffOptions = response.data.data;
+      console.log('success', _this2.staffOptions);
+      _this2.loading = false;
+    })["catch"](function (err) {
+      _this2.loading = false;
+      console.log(err, 'Unable to fetch staff');
+    });
   },
   methods: {
     submit: function submit() {
@@ -2968,8 +2999,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                //console.log(this.form)
                 axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/projects', _this3.form).then(function (response) {
+                  console.log('res', response);
+
                   _this3.$router.push("/jobs/".concat(response.data.id));
                 })["catch"](function (error) {
                   if (error.response.status == 422) {
@@ -2991,6 +3023,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
     },
     setSelected: function setSelected(value) {
+      var _this4 = this;
+
+      //this.form.client_id = value.id;
+      console.log('selected', value);
+      value.map(function (item) {
+        if (_this4.form.staff.indexOf(item.id) === -1) {
+          _this4.form.staff.push(item.id);
+        }
+      });
+      console.log('ff', this.form.staff);
+    },
+    setSelectedClient: function setSelectedClient(value) {
       this.form.client_id = value.id;
     }
   }
@@ -3593,7 +3637,7 @@ __webpack_require__.r(__webpack_exports__);
       _this.loading = false;
     })["catch"](function (err) {
       _this.loading = false;
-      console.log(err, 'Unable to fetch clients');
+      console.log(err, 'Unable to fetch staff');
     });
   }
 });
@@ -42970,6 +43014,30 @@ var render = function() {
           _c("section", { staticClass: "bg-cream-lighter p-4 shadow" }, [
             _vm._m(0),
             _vm._v(" "),
+            _c("p", { staticClass: "p-4" }, [
+              _vm._v("\n        Staff\n      ")
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "border-b-2 m-0" },
+              [
+                _c("p", { staticClass: "p-4" }, [
+                  _vm._v("\n          Select Staff:\n        ")
+                ]),
+                _vm._v(" "),
+                _c("v-select", {
+                  attrs: {
+                    multiple: "",
+                    options: _vm.staffOptions,
+                    label: "name"
+                  },
+                  on: { input: _vm.setSelected }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
             _c(
               "form",
               {
@@ -43061,7 +43129,7 @@ var render = function() {
                               required: true,
                               "max-results": 20
                             },
-                            on: { input: _vm.setSelected },
+                            on: { input: _vm.setSelectedClient },
                             model: {
                               value: _vm.clients.id,
                               callback: function($$v) {
@@ -44341,7 +44409,7 @@ var render = function() {
         "router-link",
         {
           staticClass: "flex items-center py-2 hover:text-blue-600",
-          attrs: { to: "/" }
+          attrs: { to: "/staff" }
         },
         [
           _c("div", { staticClass: "tracking-wide pl-3 text-center" }, [
@@ -44538,11 +44606,39 @@ var render = function() {
                                     ]
                                   ),
                                   _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-6 py-4 border-b border-gray-200 w-2/6"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "w-full text-sm leading-5 text-gray-900 break-words"
+                                        },
+                                        [
+                                          _c(
+                                            "p",
+                                            { staticClass: "break-words" },
+                                            [
+                                              _vm._v(
+                                                "\n                    " +
+                                                  _vm._s(user.phone) +
+                                                  "\n                  "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
                                   _vm._m(1, true),
                                   _vm._v(" "),
-                                  _vm._m(2, true),
-                                  _vm._v(" "),
-                                  _vm._m(3, true)
+                                  _vm._m(2, true)
                                 ])
                               ]
                             )
@@ -44606,26 +44702,6 @@ var staticRenderFns = [
         })
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      { staticClass: "px-6 py-4 border-b border-gray-200 w-2/6" },
-      [
-        _c(
-          "div",
-          { staticClass: "w-full text-sm leading-5 text-gray-900 break-words" },
-          [
-            _c("p", { staticClass: "break-words" }, [
-              _vm._v("\n                    Phone\n                  ")
-            ])
-          ]
-        )
-      ]
-    )
   },
   function() {
     var _vm = this

@@ -56,7 +56,7 @@
                           class="text-blue-400 font-bold"
                         >
                           <p class="break-words">
-                            {{user.name}}
+                            {{ user.name }}
                           </p>
                         </router-link>
                       </div>
@@ -66,14 +66,14 @@
                 <td class="px-6 py-4 border-b border-gray-200 w-2/6">
                   <div class="w-full text-sm leading-5 text-gray-900 break-words">
                     <p class="break-words">
-                      {{user.email}}
+                      {{ user.email }}
                     </p>
                   </div>
                 </td>
                 <td class="px-6 py-4 border-b border-gray-200 w-2/6">
                   <div class="w-full text-sm leading-5 text-gray-900 break-words">
                     <p class="break-words">
-                      Phone
+                      {{ user.phone }}
                     </p>
                   </div>
                 </td>
@@ -117,7 +117,7 @@ export default {
             }).catch(err => {
                 this.loading =  false;
 
-                console.log(err, 'Unable to fetch clients')
+                console.log(err, 'Unable to fetch staff')
             })
     }
 }

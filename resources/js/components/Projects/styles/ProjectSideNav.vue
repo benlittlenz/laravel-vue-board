@@ -29,7 +29,7 @@
       </div>
     </router-link>
     <router-link
-      to="/"
+      to="/staff"
       class="flex items-center py-2 hover:text-blue-600"
     >
       <div class="tracking-wide pl-3 text-center">
