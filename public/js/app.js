@@ -3167,6 +3167,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
  //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43520,24 +43524,28 @@ var render = function() {
                         staticClass:
                           "text-sm leading-5 font-medium text-gray-500"
                       },
-                      [_vm._v("\n            Description\n          ")]
+                      [_vm._v("\n            Staff Assigned\n          ")]
                     ),
                     _vm._v(" "),
-                    _c(
-                      "dd",
-                      {
-                        staticClass:
-                          "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
-                      },
-                      [
-                        _vm._v(
-                          "\n            " +
-                            _vm._s(_vm.project.description) +
-                            "\n          "
-                        )
-                      ]
-                    )
-                  ]
+                    _vm._l(_vm.project.users, function(user) {
+                      return _c(
+                        "dd",
+                        {
+                          key: user.id,
+                          staticClass:
+                            "mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                        },
+                        [
+                          _vm._v(
+                            "\n            " +
+                              _vm._s(user.name) +
+                              "\n          "
+                          )
+                        ]
+                      )
+                    })
+                  ],
+                  2
                 ),
                 _vm._v(" "),
                 _vm._m(0),

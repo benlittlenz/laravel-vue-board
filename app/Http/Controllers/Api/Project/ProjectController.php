@@ -40,9 +40,9 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         $clients = Client::where('id', $project->company_id)->get();
-
+        $staff = $project->users;
         $collection = collect($project);
-        $merged     = $collection->merge($clients);
+        $merged     = $collection->merge($clients, $staff);
         //$result   = $merged->all();
 
         return $merged;
