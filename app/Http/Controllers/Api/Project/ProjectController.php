@@ -45,7 +45,7 @@ class ProjectController extends Controller
 
         $timesheets = Timer::where('project_id', $project->id)->get();
         $timesheetCollection = new TimesheetCollection($timesheets);
-
+        //dd($timesheetCollection);
         $staff = $project->users;
 
         $collection = collect($project);

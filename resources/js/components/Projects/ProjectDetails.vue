@@ -112,19 +112,27 @@
           </div>
         </dl>
       </div>
+      <div>
+        <ProjectTimesheets :timesheets="timesheets" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-
+import ProjectTimesheets from './ProjectTimesheets'
  //
 export default {
     name: 'ProjectDetails',
+
+        components: {
+         ProjectTimesheets
+        },
     data() {
         return {
             project: [],
+            timesheets: [],
             loading: true,
             modal: false,
             id: null
@@ -135,7 +143,8 @@ export default {
         axios.get(`/api/projects/${this.$route.params.id}`)
             .then(response => {
                 this.project = response.data
-                console.log('response', response);
+                this.timesheets = response.data.timesheets
+                console.log('response', this.timesheets);
                 this.id = this.$route.params.id
                 
                 this.loading = false
