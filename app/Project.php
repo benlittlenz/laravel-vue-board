@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use App\Timer;
 use App\Client;
 use App\Company;
 use Illuminate\Database\Eloquent\Model;
@@ -34,5 +35,10 @@ class Project extends Model
     public function client()
     {
         return $this->belongsTo(Client::class);
+    }
+
+    public function timers()
+    {
+        return $this->hasMany(Timer::class);
     }
 }

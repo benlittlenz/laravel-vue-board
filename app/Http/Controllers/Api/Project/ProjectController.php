@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Api\Project;
 
+use App\Timer;
 use App\Client;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProjectCollection;
+use App\Http\Resources\TimesheetCollection;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -40,9 +42,16 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         $clients = Client::where('id', $project->company_id)->get();
+
+        $timesheets = Timer::where('project_id', $project->id)->get();
+        $timesheetCollection = new TimesheetCollection($timesheets);
+
         $staff = $project->users;
+
         $collection = collect($project);
-        $merged     = $collection->merge($clients, $staff);
+        $merged     = $collection
+                        ->merge($clients,$staff)
+                        ->merge($timesheetCollection);
         //$result   = $merged->all();
 
         return $merged;
