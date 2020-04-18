@@ -2,13 +2,10 @@
   <div class="h-screen antialiased bg-white">
     <ProjectNav />
     <div
-      id="main"
       class="pt-16 h-screen"
     >
-      <div class="bg-gray-200 w-48 border-r-2 border-gray-400">
-        <ProjectSideNav />
-      </div>
-      <router-view class="p-6 overflow-x-hidden" />
+
+      <router-view class="p-10 overflow-x-hidden" />
     </div>
   </div>
 </template>
