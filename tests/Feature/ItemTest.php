@@ -43,6 +43,34 @@ class ItemTest extends TestCase
         $this->assertEquals('Test Item', $item->name);
      }
 
+     /** @test */
+     public function an_item_can_be_deleted()
+     {
+        $this->withoutExceptionHandling();
+
+        $item = factory(Item::class)->create();
+
+        $response = $this->delete('/api/invoice_items/' . $item->id);
+
+        $this->assertCount(0, Item::all());
+
+     }
+
+     /** @test */
+    public function fields_are_required()
+    {
+        collect(['name', 'description', 'unit', 'price'])
+            ->each(function($field) {
+                $response = $this->post('/api/invoice_items', 
+                array_merge($this->data(), [ $field => '' ]));
+
+                $response->assertSessionHasErrors($field);
+                $this->assertCount(0, Item::all());
+            }); 
+
+
+    }
+
     private function data() {
         return [
             'name' => 'Test Item',

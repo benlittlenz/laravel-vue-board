@@ -31,4 +31,9 @@ class ItemController extends Controller
             'price' => request('price'),
         ]);
     }
+
+    public function destroy(Item $item)
+    {
+        $item->delete();
+    }
 }
