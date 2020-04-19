@@ -20,8 +20,11 @@ class CreateItemsTable extends Migration
             $table->string('unit')->nullable();
             $table->unsignedBigInteger('price');
             $table->integer('client_id')->unsigned()->nullable();
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->integer('company_id')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
     }
 

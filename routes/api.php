@@ -36,7 +36,14 @@ Route::middleware('auth:sanctum')->group(function () {
 
     //Notes
     Route::delete('/notes/{note}', 'NotesController@destroy');
+
+
+
+
 });
+
+    //Invoice
+    Route::post('/invoice_items','ItemController@store');
 
 Route::get('/staff','UserController@index');
 

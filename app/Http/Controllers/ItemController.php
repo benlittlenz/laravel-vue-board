@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    protected $fillable = [
-        'name',
-        'unit',
-        'price',
-        'company_id',
-        'description'
-    ];
+    public function store()
+    {
+        $data = request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'unit' => 'required',
+            'price' => 'required',
+            'client_id' => '',
+            'company_id' => '',
+        ]);
 
-    protected $casts = [
-        'price' => 'integer'
-    ];
+        return Item::create($data);
+    }
 }
