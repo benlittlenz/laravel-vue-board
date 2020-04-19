@@ -5,13 +5,13 @@
       class="h-screen"
     >
 
-      <router-view class="p-10 overflow-x-hidden" />
+      <router-view class="py-10 px-20 overflow-x-hidden" />
     </div>
   </div>
 </template>
 
 <script>
-  import ProjectSideNav from './Projects/styles/ProjectSideNav.vue'
+ // import ProjectSideNav from './Projects/styles/ProjectSideNav.vue'
   import ProjectNav from './Projects/styles/ProjectNav.vue'
 
 export default {
@@ -19,7 +19,7 @@ export default {
     props: ['company'],
 
     components: {
-        ProjectSideNav,
+        //ProjectSideNav,
         ProjectNav
     },
 

@@ -26,9 +26,6 @@
             <thead>
               <tr>
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  Date Added
-                </th>
-                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                   Item
                 </th>
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
@@ -40,7 +37,9 @@
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                   Price
                 </th>
-           
+                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                  Added on
+                </th>
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50" />
               </tr>
             </thead>
@@ -50,13 +49,6 @@
               class="bg-white"
             >
               <tr>
-                <td class="px-6 py-4 border-b border-gray-200 w-1/6">
-                  <div class="w-full text-sm leading-5 text-gray-900 break-words">
-                    <p class="break-words">
-                      {{ item.created_at }}
-                    </p>
-                  </div>
-                </td>
                 <td class="px-6 py-4 border-b border-gray-200 w-2/6">
                   <div class="flex items-center">
                     <div class="ml-4">
@@ -94,6 +86,14 @@
                     </p>
                   </div>
                 </td>
+                <td class="px-6 py-4 border-b border-gray-200 w-1/6">
+                  <div class="w-full text-sm leading-5 text-gray-900 break-words">
+                    <p class="break-words">
+                      {{ item.created_at }}
+                    </p>
+                  </div>
+                </td>
+
                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                   <a
                     href="#"

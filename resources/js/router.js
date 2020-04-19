@@ -15,6 +15,9 @@ import ProjectEdit from './components/Projects/ProjectEdit'
 import StaffIndex from './components/Staff/StaffIndex.vue'
 
 import ItemIndex from './components/Items/ItemsIndex'
+import ItemDetails from './components/Items/ItemDetails'
+import ItemCreate from './components/Items/ItemCreate'
+import ItemEdit from './components/Items/ItemEdit'
 
 Vue.use(VueRouter)
 
@@ -37,7 +40,9 @@ export default new VueRouter({
 
         //Invoice Items
         { path: '/items', component: ItemIndex },
-
+        { path: '/items/create', component: ItemCreate },
+        { path: '/items/:id', component: ItemDetails },
+        { path: '/items/:id/edit', component: ItemEdit },
     ],
     mode: 'history'
 })

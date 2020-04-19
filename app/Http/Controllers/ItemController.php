@@ -41,6 +41,11 @@ class ItemController extends Controller
         ]);
     }
 
+    public function show(Item $item)
+    {
+        return $item;
+    }
+
     public function destroy(Item $item)
     {
         $item->delete();
