@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Notes;
 use App\Client;
 use Illuminate\Http\Request;
+use App\Http\Resources\NoteCollection;
 use App\Http\Resources\ClientCollection;
 
 
@@ -35,8 +37,13 @@ class ContactsController extends Controller
 
     public function show(Client $client)
     {
-        $clients = Client::where('id', $project->company_id)->get();
-        return $client;
+        $notes = Notes::where('client_id', $client->id)->get();
+        $noteCollection = new NoteCollection($notes);
+
+        $collection = collect($client);
+        $merged     = $collection->merge($noteCollection);
+        //dd($merged);
+        return $merged;
     }
 
     public function update(Client $client)

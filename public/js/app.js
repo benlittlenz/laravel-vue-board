@@ -2194,6 +2194,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reusecore_NoteComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusecore/NoteComponent */ "./resources/js/components/reusecore/NoteComponent.vue");
+//
+//
+//
 //
 //
 //
@@ -2370,13 +2374,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ClientDetails',
+  components: {
+    NoteComponent: _reusecore_NoteComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   data: function data() {
     return {
       loading: true,
       modal: false,
-      client: []
+      client: [],
+      notes: []
     };
   },
   mounted: function mounted() {
@@ -2384,6 +2393,7 @@ __webpack_require__.r(__webpack_exports__);
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/clients/".concat(this.$route.params.id)).then(function (response) {
       _this.client = response.data;
+      _this.notes = response.data.notes;
       console.log(response, 'success');
       _this.loading = false;
     })["catch"](function (error) {
@@ -59203,7 +59213,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "pt-16 h-screen" },
+        { staticClass: "h-screen" },
         [_c("router-view", { staticClass: "p-10 overflow-x-hidden" })],
         1
       )
@@ -60189,7 +60199,9 @@ var render = function() {
                   ]
                 )
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _c("div", [_c("NoteComponent", { attrs: { notes: _vm.notes } })], 1)
           ])
     ]
   )

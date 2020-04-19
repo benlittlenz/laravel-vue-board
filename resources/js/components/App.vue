@@ -2,7 +2,7 @@
   <div class="h-screen antialiased bg-white">
     <ProjectNav />
     <div
-      class="pt-16 h-screen"
+      class="h-screen"
     >
 
       <router-view class="p-10 overflow-x-hidden" />

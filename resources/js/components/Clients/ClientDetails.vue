@@ -169,20 +169,31 @@
           </div>
         </dl>
       </div>
+      <div>
+        <NoteComponent :notes="notes" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+
+import NoteComponent from '../reusecore/NoteComponent'
+
 export default {
     name: 'ClientDetails',
+
+    components: {
+      NoteComponent
+    },
 
     data() {
         return {
             loading: true,
             modal: false,
-            client: []
+            client: [],
+            notes: [],
         }
     },
 
@@ -190,6 +201,7 @@ export default {
         axios.get(`/api/clients/${this.$route.params.id}`)
             .then(response => {
                 this.client = response.data;
+                this.notes = response.data.notes
                 console.log(response, 'success')
 
                 this.loading = false;
