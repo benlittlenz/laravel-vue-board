@@ -2770,6 +2770,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ClientIndex',
@@ -3643,8 +3644,156 @@ __webpack_require__.r(__webpack_exports__);
         var minutes = parseInt(duration.asMinutes()) % 60;
         return "".concat(hours, "h ").concat(minutes, "m");
       } else {
-        return 0;
+        return '';
       }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Projects/styles/ProjectNav.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Projects/styles/ProjectNav.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      activeClass: 'active'
+    };
+  },
+  computed: {
+    currentPage: function currentPage() {
+      return this.$route.path;
     }
   }
 });
@@ -62073,9 +62222,11 @@ var render = function() {
                                         _vm._v(
                                           "\n                    " +
                                             _vm._s(
-                                              _vm.formatDate(
-                                                timesheet.stopped_at
-                                              )
+                                              timesheet.stopped_at
+                                                ? _vm.formatDate(
+                                                    timesheet.stopped_at
+                                                  )
+                                                : ""
                                             ) +
                                             "\n                  "
                                         )
@@ -62283,140 +62434,160 @@ var render = function() {
       [
         _c("div", { staticClass: "mx-auto px-4 bg-gray-100 w-full" }, [
           _c("div", { staticClass: "md:flex" }, [
-            _c("div", { staticClass: "flex -mb-px mr-8" }, [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "no-underline text-white md:text-blue-800 flex items-center py-4 border-b border-blue-800",
-                  attrs: { href: "#" }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "h-6 w-6 fill-current mr-2",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 24 24"
-                      }
-                    },
-                    [
-                      _c("path", {
+            _c(
+              "div",
+              { staticClass: "flex -mb-px mr-8" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass:
+                      "no-underline text-white md:text-blue-800 flex items-center py-4",
+                    attrs: { to: "/" }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-6 w-6 fill-current mr-2",
                         attrs: {
-                          "fill-rule": "evenodd",
-                          d:
-                            "M3.889 3h6.222a.9.9 0 0 1 .889.91v8.18a.9.9 0 0 1-.889.91H3.89A.9.9 0 0 1 3 12.09V3.91A.9.9 0 0 1 3.889 3zM3.889 15h6.222c.491 0 .889.384.889.857v4.286c0 .473-.398.857-.889.857H3.89C3.398 21 3 20.616 3 20.143v-4.286c0-.473.398-.857.889-.857zM13.889 11h6.222a.9.9 0 0 1 .889.91v8.18a.9.9 0 0 1-.889.91H13.89a.9.9 0 0 1-.889-.91v-8.18a.9.9 0 0 1 .889-.91zM13.889 3h6.222c.491 0 .889.384.889.857v4.286c0 .473-.398.857-.889.857H13.89C13.398 9 13 8.616 13 8.143V3.857c0-.473.398-.857.889-.857z"
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 24 24"
                         }
-                      })
-                    ]
-                  ),
-                  _vm._v("              Dashboard\n          ")
-                ]
-              )
-            ]),
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            "fill-rule": "evenodd",
+                            d:
+                              "M3.889 3h6.222a.9.9 0 0 1 .889.91v8.18a.9.9 0 0 1-.889.91H3.89A.9.9 0 0 1 3 12.09V3.91A.9.9 0 0 1 3.889 3zM3.889 15h6.222c.491 0 .889.384.889.857v4.286c0 .473-.398.857-.889.857H3.89C3.398 21 3 20.616 3 20.143v-4.286c0-.473.398-.857.889-.857zM13.889 11h6.222a.9.9 0 0 1 .889.91v8.18a.9.9 0 0 1-.889.91H13.89a.9.9 0 0 1-.889-.91v-8.18a.9.9 0 0 1 .889-.91zM13.889 3h6.222c.491 0 .889.384.889.857v4.286c0 .473-.398.857-.889.857H13.89C13.398 9 13 8.616 13 8.143V3.857c0-.473.398-.857.889-.857z"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v("              Dashboard\n          ")
+                  ]
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "flex -mb-px mr-8" }, [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "no-underline text-white opacity-50 md:text-gray-600 md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark",
-                  attrs: { href: "#" }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "h-6 w-6 fill-current mr-2",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 24 24"
-                      }
-                    },
-                    [
-                      _c("path", {
+            _c(
+              "div",
+              { staticClass: "flex -mb-px mr-8" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass:
+                      "no-underline text-white md:text-blue-800 flex items-center py-4 hover:opacity-100 md:hover:border-gray-800",
+                    attrs: { to: "/clients", "active-class": "active" }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-6 w-6 fill-current mr-2",
                         attrs: {
-                          d:
-                            "M8 7h10V5l4 3.5-4 3.5v-2H8V7zm-6 8.5L6 12v2h10v3H6v2l-4-3.5z",
-                          "fill-rule": "nonzero"
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 24 24"
                         }
-                      })
-                    ]
-                  ),
-                  _vm._v("\n            \n            Clients\n          ")
-                ]
-              )
-            ]),
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M8 7h10V5l4 3.5-4 3.5v-2H8V7zm-6 8.5L6 12v2h10v3H6v2l-4-3.5z",
+                            "fill-rule": "nonzero"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v("\n            \n            Clients\n          ")
+                  ]
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "flex -mb-px mr-8" }, [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "no-underline text-white opacity-50 md:text-gray-600 md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark",
-                  attrs: { href: "#" }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "h-6 w-6 fill-current mr-2",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 24 24"
-                      }
-                    },
-                    [
-                      _c("path", {
+            _c(
+              "div",
+              { staticClass: "flex -mb-px mr-8" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass:
+                      "no-underline text-white md:text-blue-800 flex items-center py-4 hover:opacity-100 md:hover:border-gray-800",
+                    attrs: { to: "/jobs", "active-class": "active" }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-6 w-6 fill-current mr-2",
                         attrs: {
-                          d:
-                            "M18 8H5.5v-.5l11-.88v.88H18V6c0-1.1-.891-1.872-1.979-1.717L5.98 5.717C4.891 5.873 4 6.9 4 8v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-1.5 7.006a1.5 1.5 0 1 1 .001-3.001 1.5 1.5 0 0 1-.001 3.001z",
-                          "fill-rule": "nonzero"
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 24 24"
                         }
-                      })
-                    ]
-                  ),
-                  _vm._v("              Jobs\n          ")
-                ]
-              )
-            ]),
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M18 8H5.5v-.5l11-.88v.88H18V6c0-1.1-.891-1.872-1.979-1.717L5.98 5.717C4.891 5.873 4 6.9 4 8v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-1.5 7.006a1.5 1.5 0 1 1 .001-3.001 1.5 1.5 0 0 1-.001 3.001z",
+                            "fill-rule": "nonzero"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v("              Jobs\n          ")
+                  ]
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "flex -mb-px mr-8" }, [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "no-underline text-white opacity-50 md:text-gray-600 md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark",
-                  attrs: { href: "#" }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "h-6 w-6 fill-current mr-2",
-                      attrs: {
-                        fill: "none",
-                        stroke: "currentColor",
-                        "stroke-linecap": "round",
-                        "stroke-linejoin": "round",
-                        "stroke-width": "2",
-                        viewBox: "0 0 24 24"
-                      }
-                    },
-                    [
-                      _c("path", {
+            _c(
+              "div",
+              { staticClass: "flex -mb-px mr-8" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass:
+                      "no-underline text-white md:text-blue-800 flex items-center py-4 hover:opacity-100 md:hover:border-gray-800",
+                    attrs: { to: "/staff", "active-class": "active" }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-6 w-6 fill-current mr-2",
                         attrs: {
-                          d:
-                            "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                          fill: "none",
+                          stroke: "currentColor",
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          viewBox: "0 0 24 24"
                         }
-                      })
-                    ]
-                  ),
-                  _vm._v("             Staff\n          ")
-                ]
-              )
-            ]),
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v("             \n            Staff\n          ")
+                  ]
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "flex -mb-px" }, [
               _c(
@@ -62424,7 +62595,7 @@ var render = function() {
                 {
                   staticClass:
                     "no-underline text-white opacity-50 md:text-gray-600 md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark",
-                  attrs: { href: "#" }
+                  attrs: { href: "#", "active-class": "active" }
                 },
                 [
                   _c(
@@ -80088,15 +80259,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProjectNav_vue_vue_type_template_id_736fce0d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProjectNav.vue?vue&type=template&id=736fce0d& */ "./resources/js/components/Projects/styles/ProjectNav.vue?vue&type=template&id=736fce0d&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _ProjectNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProjectNav.vue?vue&type=script&lang=js& */ "./resources/js/components/Projects/styles/ProjectNav.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ProjectNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _ProjectNav_vue_vue_type_template_id_736fce0d___WEBPACK_IMPORTED_MODULE_0__["render"],
   _ProjectNav_vue_vue_type_template_id_736fce0d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -80110,6 +80283,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/Projects/styles/ProjectNav.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Projects/styles/ProjectNav.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/Projects/styles/ProjectNav.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProjectNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ProjectNav.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Projects/styles/ProjectNav.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProjectNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

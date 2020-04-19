@@ -12,7 +12,7 @@
         v-else
         class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
       >
-      <h1>Timesheets</h1>
+        <h1>Timesheets</h1>
         <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
           <table class="min-w-full table-fixed">
             <thead>
@@ -26,7 +26,7 @@
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                   Finish Time
                 </th>
-                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                   Total Hours
                 </th>
            
@@ -60,7 +60,7 @@
                 <td class="px-6 py-4 border-b border-gray-200 w-2/6">
                   <div class="w-full text-sm leading-5 text-gray-900 break-words">
                     <p class="break-words">
-                      {{ formatDate(timesheet.stopped_at) }}
+                      {{ timesheet.stopped_at ? formatDate(timesheet.stopped_at) : '' }}
                     </p>
                   </div>
                 </td>
@@ -116,7 +116,7 @@ export default {
 
           return `${hours}h ${minutes}m`
         } else {
-          return 0;
+          return '';
         }
         
       }

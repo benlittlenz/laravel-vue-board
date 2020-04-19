@@ -58,3 +58,7 @@ a {
 .group:hover .group-hover\:block {
   display: block;
 }
+
+.active {
+  border-bottom: 2px solid #2c5282;
+}

@@ -20,4 +20,9 @@ class Company extends Model
     {
         return $this->hasMany(Client::class);
     }
+
+    public function notes()
+    {
+        return $this->hasMany(Project::class, 'project_id')->orderBy('updated_at', 'desc');
+    }
 }
