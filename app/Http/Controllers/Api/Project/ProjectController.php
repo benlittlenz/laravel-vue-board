@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Api\Project;
 
+use App\Notes;
 use App\Timer;
 use App\Client;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\NoteCollection;
 use App\Http\Resources\ProjectCollection;
 use App\Http\Resources\TimesheetCollection;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -45,15 +47,19 @@ class ProjectController extends Controller
 
         $timesheets = Timer::where('project_id', $project->id)->get();
         $timesheetCollection = new TimesheetCollection($timesheets);
-        //dd($timesheetCollection);
+
+        $notes = Notes::where('project_id', $project->id)->get();
+        $noteCollection = new NoteCollection($notes);
+        
         $staff = $project->users;
 
         $collection = collect($project);
         $merged     = $collection
                         ->merge($clients,$staff)
+                        ->merge($noteCollection)
                         ->merge($timesheetCollection);
         //$result   = $merged->all();
-
+        //dd($merged);
         return $merged;
     }
 

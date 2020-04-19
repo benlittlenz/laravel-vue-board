@@ -112,8 +112,12 @@
           </div>
         </dl>
       </div>
+      
       <div>
         <ProjectTimesheets :timesheets="timesheets" />
+      </div>
+      <div>
+        <NoteComponent :notes="notes" />
       </div>
     </div>
   </div>
@@ -122,17 +126,20 @@
 <script>
 import axios from 'axios';
 import ProjectTimesheets from './ProjectTimesheets'
- //
+import NoteComponent from '../reusecore/NoteComponent'
+
 export default {
     name: 'ProjectDetails',
 
         components: {
-         ProjectTimesheets
+         ProjectTimesheets,
+         NoteComponent
         },
     data() {
         return {
             project: [],
             timesheets: [],
+            notes: [],
             loading: true,
             modal: false,
             id: null
@@ -144,7 +151,8 @@ export default {
             .then(response => {
                 this.project = response.data
                 this.timesheets = response.data.timesheets
-                console.log('response', this.timesheets);
+                this.notes = response.data.notes
+                console.log('response', response);
                 this.id = this.$route.params.id
                 
                 this.loading = false
