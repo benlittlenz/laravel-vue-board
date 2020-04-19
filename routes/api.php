@@ -43,9 +43,10 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
     //Invoice
-    Route::post('/invoice_items','ItemController@store');
-    Route::patch('/invoice_items/{item}','ItemController@update');
-    Route::delete('/invoice_items/{item}','ItemController@destroy');
+    Route::get('/items','ItemController@index');
+    Route::post('/items','ItemController@store');
+    Route::patch('/items/{item}','ItemController@update');
+    Route::delete('/items/{item}','ItemController@destroy');
 
 Route::get('/staff','UserController@index');
 

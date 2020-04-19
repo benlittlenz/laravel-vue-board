@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use Illuminate\Http\Request;
+use App\Http\Resources\ItemCollection;
 
 class ItemController extends Controller
 {
+
+    public function index()
+    {
+        $items = request()->user()->company->items()->paginate(6);
+
+        return new ItemCollection($items);
+    }
+
     public function store()
     {
         $data = request()->validate([

@@ -14,6 +14,8 @@ import ProjectEdit from './components/Projects/ProjectEdit'
 
 import StaffIndex from './components/Staff/StaffIndex.vue'
 
+import ItemIndex from './components/Items/ItemsIndex'
+
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -32,6 +34,10 @@ export default new VueRouter({
 
         //Staff
         { path: '/staff', component: StaffIndex },
+
+        //Invoice Items
+        { path: '/items', component: ItemIndex },
+
     ],
     mode: 'history'
 })

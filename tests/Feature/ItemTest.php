@@ -20,7 +20,7 @@ class ItemTest extends TestCase
      {
         $this->withoutExceptionHandling();
         
-        $this->post('/api/invoice_items', $this->data());
+        $this->post('/api/items', $this->data());
         $client = Item::first();
 
         $this->assertEquals('Test Item', $client->name);
@@ -36,7 +36,7 @@ class ItemTest extends TestCase
 
         $item = factory(Item::class)->create();
         
-        $response = $this->patch('/api/invoice_items/' . $item->id, $this->data());
+        $response = $this->patch('/api/items/' . $item->id, $this->data());
 
         $item = $item->fresh();
 
@@ -50,7 +50,7 @@ class ItemTest extends TestCase
 
         $item = factory(Item::class)->create();
 
-        $response = $this->delete('/api/invoice_items/' . $item->id);
+        $response = $this->delete('/api/items/' . $item->id);
 
         $this->assertCount(0, Item::all());
 
@@ -61,7 +61,7 @@ class ItemTest extends TestCase
     {
         collect(['name', 'description', 'unit', 'price'])
             ->each(function($field) {
-                $response = $this->post('/api/invoice_items', 
+                $response = $this->post('/api/items', 
                 array_merge($this->data(), [ $field => '' ]));
 
                 $response->assertSessionHasErrors($field);
