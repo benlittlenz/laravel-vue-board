@@ -161,9 +161,7 @@ export default {
                 console.log('err', error);
     
                 if(error.response.status === 404) {
-                  console.log('argg');
-                  
-                  //this.$router.push('/projects')
+                  this.$router.push('/projects')
                 }
             })
 

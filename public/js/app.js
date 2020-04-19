@@ -3212,7 +3212,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log('err', error);
 
       if (error.response.status === 404) {
-        console.log('argg'); //this.$router.push('/projects')
+        _this.$router.push('/projects');
       }
     }); //console.log('project', this.project);
   },
@@ -3954,6 +3954,31 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4054,6 +4079,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'NoteComponent',
   props: {
@@ -4067,12 +4093,22 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      noteData: this.notes
+      noteData: this.notes,
+      modal: false,
+      modalId: null
     };
   },
   methods: {
     formatDate: function formatDate(date) {
       return moment__WEBPACK_IMPORTED_MODULE_0___default()(date).utc().format('DD/MM/YYYY HH:m');
+    },
+    destroy: function destroy() {
+      console.log(this.modalId);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("/api/notes/".concat(this.modalId)).then(function (res) {
+        console.log('success', res);
+      })["catch"](function (err) {
+        console.log(err);
+      });
     }
   }
 });
@@ -63224,6 +63260,60 @@ var render = function() {
               _vm._v("\n      " + _vm._s(_vm.notes[0].body) + "\n      "),
               _c("h1", [_vm._v("Notes")]),
               _vm._v(" "),
+              _vm.modal
+                ? _c(
+                    "div",
+                    {
+                      staticClass:
+                        "absolute bg-white text-white rounded-lg z-20 p-8 width-100 right-0 mt-2 mr-20 mt-8"
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-lg leading-6 font-medium text-gray-900"
+                        },
+                        [
+                          _vm._v(
+                            "\n          Are you sure you want to delete this job? All of your data will be permanantly removed. This action cannot be undone.\n        "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex items-center mt-6 justify-end" },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5",
+                              on: {
+                                click: function($event) {
+                                  _vm.modal = !_vm.modal
+                                }
+                              }
+                            },
+                            [_vm._v("\n            Cancel\n          ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5",
+                              on: { click: _vm.destroy }
+                            },
+                            [_vm._v("\n            Delete\n          ")]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
               _c(
                 "div",
                 {
@@ -63371,11 +63461,16 @@ var render = function() {
                                 },
                                 [
                                   _c(
-                                    "router-link",
+                                    "button",
                                     {
                                       staticClass:
-                                        "text-red-600 hover:text-red-800 focus:outline-none focus:underline",
-                                      attrs: { to: "/" }
+                                        "text-red-600 hover:text-red-800 focus:outline-none focus:underline overflow-visible",
+                                      on: {
+                                        click: function($event) {
+                                          ;(_vm.modal = !_vm.modal),
+                                            (_vm.modalId = note.id)
+                                        }
+                                      }
                                     },
                                     [
                                       _vm._v(
@@ -63383,8 +63478,7 @@ var render = function() {
                                       )
                                     ]
                                   )
-                                ],
-                                1
+                                ]
                               )
                             ])
                           ]

@@ -33,6 +33,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/projects', 'Api\Project\ProjectController@store');
     Route::patch('/projects/{project}', 'Api\Project\ProjectController@update');
     Route::delete('/projects/{project}', 'Api\Project\ProjectController@destroy');
+
+    //Notes
+    Route::delete('/notes/{note}', 'NotesController@destroy');
 });
 
 Route::get('/staff','UserController@index');

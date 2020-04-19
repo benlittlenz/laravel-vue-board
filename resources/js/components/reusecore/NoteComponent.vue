@@ -14,6 +14,29 @@
       >
         {{ notes[0].body }}
         <h1>Notes</h1>
+
+        <div 
+          v-if="modal"
+          class="absolute bg-white text-white rounded-lg z-20 p-8 width-100 right-0 mt-2 mr-20 mt-8"
+        >
+          <p class="text-lg leading-6 font-medium text-gray-900">
+            Are you sure you want to delete this job? All of your data will be permanantly removed. This action cannot be undone.
+          </p>
+          <div class="flex items-center mt-6 justify-end">
+            <button
+              class="mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+              @click="modal = !modal"
+            >
+              Cancel
+            </button>
+            <button 
+              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+              @click="destroy"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
         <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
           <table class="min-w-full table-fixed">
             <thead>
@@ -81,12 +104,12 @@
                   </router-link>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                  <router-link 
-                    :to="`/`"
-                    class="text-red-600 hover:text-red-800 focus:outline-none focus:underline"
+                  <button
+                    class="text-red-600 hover:text-red-800 focus:outline-none focus:underline overflow-visible"
+                    @click="modal = !modal, modalId = note.id"
                   >
                     Delete
-                  </router-link>
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -99,7 +122,7 @@
 
 <script>
 import moment from 'moment';
-
+import axios from 'axios'
 export default {
     name: 'NoteComponent',
     props: {
@@ -113,13 +136,25 @@ export default {
     },
     data() {
         return {
-            noteData: this.notes
+            noteData: this.notes,
+            modal: false,
+            modalId: null,
         }
     },
 
     methods: {
       formatDate(date) {
         return moment(date).utc().format('DD/MM/YYYY HH:m')
+      },
+
+    destroy() {
+        console.log(this.modalId)
+        axios.delete(`/api/notes/${this.modalId}`)
+          .then(res => {
+            console.log('success', res)
+          }).catch(err => {
+            console.log(err);
+          })
       }
     }
 }

@@ -35,7 +35,7 @@ class ContactsController extends Controller
 
     public function show(Client $client)
     {
-        //dd($client);
+        $clients = Client::where('id', $project->company_id)->get();
         return $client;
     }
 
