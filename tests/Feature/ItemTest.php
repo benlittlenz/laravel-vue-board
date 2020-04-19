@@ -29,6 +29,19 @@ class ItemTest extends TestCase
         $this->assertEquals('100', $client->price);
      }
 
+     /** @test */
+     public function an_item_can_be_edited()
+     {
+        $this->withoutExceptionHandling();
+
+        $item = factory(Item::class)->create();
+        
+        $response = $this->patch('/api/invoice_items/' . $item->id, $this->data());
+
+        $item = $item->fresh();
+
+        $this->assertEquals('Test Item', $item->name);
+     }
 
     private function data() {
         return [

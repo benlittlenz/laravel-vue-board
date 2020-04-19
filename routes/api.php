@@ -44,6 +44,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     //Invoice
     Route::post('/invoice_items','ItemController@store');
+    Route::patch('/invoice_items/{item}','ItemController@update');
 
 Route::get('/staff','UserController@index');
 
