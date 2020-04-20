@@ -13956,6 +13956,19 @@ video {
   /* Or #main { grid-template-columns: config('width.48') auto; } */
 }
 
+.button {
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: #3182ce;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.125rem;
+  border-radius: 0.375rem;
+  margin-bottom: 2rem;
+}
+
 a {
   text-decoration: none;
   /* Or @apply .no-underline; */
