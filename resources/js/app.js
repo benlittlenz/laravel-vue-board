@@ -10,7 +10,7 @@ require('./bootstrap');
 
 import App from './components/App'
 import router from './router';
-import timeline from './store/project-timeline'
+import store from './store'
 
 Vue.use(Vuex);
 Vue.component('v-select', vSelect)
@@ -26,11 +26,6 @@ Vue.component('v-select', vSelect)
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-const store = new Vuex.Store({
-    modules: {
-        timeline
-    }
-})
 
 const app = new Vue({
     el: '#app',
