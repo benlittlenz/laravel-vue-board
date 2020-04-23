@@ -99,27 +99,31 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
     name: 'ClientIndex',
     data() {
         return {
-            loading: true,
-            clients: []
+            loading: true
         }
     },
 
-    mounted() {
-        axios.get('/api/clients')
-            .then(response => {
-                this.clients = response.data.data
-                console.log('success', response)
-                this.loading = false
-            }).catch(err => {
-                this.loading = false
+    computed: {
+      ...mapGetters({
+        clients: 'clients'
+      })
+    },
 
-                console.log(err, 'Unable to fetch clients')
-            })
+    mounted() {
+      this.getClients();
+      this.loading = false;
+    },
+
+    methods: {
+      ...mapActions({
+        getClients: 'getClients'
+      })
     }
 
     

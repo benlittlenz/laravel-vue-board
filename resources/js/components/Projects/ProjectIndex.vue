@@ -107,7 +107,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -125,16 +124,6 @@ export default {
     },
 
     mounted() {
-      // axios.get('/api/projects')
-      //     .then(response => {
-      //         this.projects = response.data.data
-      //         console.log('success', response)
-      //         this.loading = false
-      //     }).catch(err => {
-      //         this.loading = false
-
-      //         console.log(err, 'Unable to fetch projects')
-      //     })
       this.getProjects()
       this.loading = false
     },
@@ -143,11 +132,6 @@ export default {
       ...mapActions({
         getProjects: 'getProjects'
       }),
-
-
     }
-
-
-
 };
 </script>

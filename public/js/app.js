@@ -2678,8 +2678,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2785,22 +2790,19 @@ __webpack_require__.r(__webpack_exports__);
   name: 'ClientIndex',
   data: function data() {
     return {
-      loading: true,
-      clients: []
+      loading: true
     };
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    clients: 'clients'
+  })),
   mounted: function mounted() {
-    var _this = this;
-
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/clients').then(function (response) {
-      _this.clients = response.data.data;
-      console.log('success', response);
-      _this.loading = false;
-    })["catch"](function (err) {
-      _this.loading = false;
-      console.log(err, 'Unable to fetch clients');
-    });
-  }
+    this.getClients();
+    this.loading = false;
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    getClients: 'getClients'
+  }))
 });
 
 /***/ }),
@@ -3877,9 +3879,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3995,7 +3995,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ProjectIndex',
   data: function data() {
@@ -4003,23 +4002,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       loading: true
     };
   },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
     projects: 'projects'
   })),
   mounted: function mounted() {
-    // axios.get('/api/projects')
-    //     .then(response => {
-    //         this.projects = response.data.data
-    //         console.log('success', response)
-    //         this.loading = false
-    //     }).catch(err => {
-    //         this.loading = false
-    //         console.log(err, 'Unable to fetch projects')
-    //     })
     this.getProjects();
     this.loading = false;
   },
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
     getProjects: 'getProjects'
   }))
 });
@@ -82686,12 +82676,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /*!***************************************!*\
   !*** ./resources/js/store/actions.js ***!
   \***************************************/
-/*! exports provided: getProjects */
+/*! exports provided: getProjects, getClients */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getProjects", function() { return getProjects; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClients", function() { return getClients; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -82716,11 +82707,10 @@ var getProjects = /*#__PURE__*/function () {
 
           case 3:
             res = _context.sent;
-            console.log("RESS", res);
             commit('PUSH_PROJECTS', res.data.data);
             return _context.abrupt("return", res);
 
-          case 7:
+          case 6:
           case "end":
             return _context.stop();
         }
@@ -82732,6 +82722,34 @@ var getProjects = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+var getClients = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(_ref3) {
+    var commit, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            commit = _ref3.commit;
+            _context2.next = 3;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/clients');
+
+          case 3:
+            res = _context2.sent;
+            commit('PUSH_CLIENTS', res.data.data);
+            return _context2.abrupt("return", res);
+
+          case 6:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+
+  return function getClients(_x2) {
+    return _ref4.apply(this, arguments);
+  };
+}();
 
 /***/ }),
 
@@ -82739,14 +82757,18 @@ var getProjects = /*#__PURE__*/function () {
 /*!***************************************!*\
   !*** ./resources/js/store/getters.js ***!
   \***************************************/
-/*! exports provided: projects */
+/*! exports provided: projects, clients */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "projects", function() { return projects; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clients", function() { return clients; });
 var projects = function projects(state) {
   return state.projects;
+};
+var clients = function clients(state) {
+  return state.clients;
 };
 
 /***/ }),
@@ -82787,14 +82809,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!*****************************************!*\
   !*** ./resources/js/store/mutations.js ***!
   \*****************************************/
-/*! exports provided: PUSH_PROJECTS */
+/*! exports provided: PUSH_PROJECTS, PUSH_CLIENTS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PUSH_PROJECTS", function() { return PUSH_PROJECTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PUSH_CLIENTS", function() { return PUSH_CLIENTS; });
 var PUSH_PROJECTS = function PUSH_PROJECTS(state, projects) {
   state.projects = projects;
+};
+var PUSH_CLIENTS = function PUSH_CLIENTS(state, clients) {
+  state.clients = clients;
 };
 
 /***/ }),
@@ -82809,7 +82835,8 @@ var PUSH_PROJECTS = function PUSH_PROJECTS(state, projects) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  projects: []
+  projects: [],
+  clients: []
 });
 
 /***/ }),
