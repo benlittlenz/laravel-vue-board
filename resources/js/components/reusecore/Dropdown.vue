@@ -64,6 +64,14 @@
         Delete
       </router-link>
     </VDropdownItem>
+    <VDropdownItem>
+      <router-link
+        :to="`${url}/edit`"
+        class="no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200"
+      >
+        Mark as Inactive
+      </router-link>
+    </VDropdownItem>
   </VDropdown>
 </template>
 

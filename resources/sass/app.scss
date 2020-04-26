@@ -184,6 +184,8 @@ $dropdown-bg:                           $ls-color-black;
 
         .dropdown-container {
             display: block;
+             overflow-y: auto;
+            overflow-x: hidden;
             margin: 0;
             left: 100%;
             top: 0;

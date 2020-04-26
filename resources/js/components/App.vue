@@ -2,10 +2,9 @@
   <div class="h-screen antialiased bg-white">
     <ProjectNav />
     <div
-      class="h-screen"
+      class="h-screen z-0"
     >
-
-      <router-view class="py-10 px-20 overflow-x-hidden" />
+      <router-view class="py-10 px-20 z-0" />
     </div>
   </div>
 </template>
@@ -16,12 +15,12 @@
 
 export default {
     name: 'App',
-    props: ['company'],
 
     components: {
         //ProjectSideNav,
         ProjectNav
     },
+    props: ['company'],
 
     mounted() {
       console.log(this.company)
