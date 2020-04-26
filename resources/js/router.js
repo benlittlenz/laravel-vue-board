@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+//Dashboaard
+import Dashboard from './components/Dashboard/index'
+
 //Clients
 import ClientCreate from './components/Clients/ClientCreate'
 import ClientIndex from './components/Clients/ClientIndex'
@@ -23,6 +26,8 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
     routes: [
+        { path: '/home', component: Dashboard },
+
         //Projects
         { path: '/jobs', component: ProjectIndex },
         { path: '/jobs/create', component: ProjectCreate },

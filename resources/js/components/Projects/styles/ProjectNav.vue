@@ -35,7 +35,7 @@
         <div class="md:flex">
           <div class="flex -mb-px mr-8">
             <router-link
-              to="/"
+              to="/home"
               class="no-underline text-white md:text-blue-800 flex items-center py-4"
             >
               <svg

@@ -5,3 +5,11 @@ export const projects = state => {
 export const clients = state => {
     return state.clients;
 }
+
+export const staff = state => {
+    return state.staff;
+}
+
+export const items = state => {
+    return state.items
+}

@@ -1,4 +1,6 @@
 export default {
     projects: [],
-    clients: []
+    clients: [],
+    staff: [],
+    items: []
 }

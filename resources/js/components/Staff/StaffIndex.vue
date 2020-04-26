@@ -98,27 +98,31 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
     name: 'StaffIndex',
     data() {
         return {
-            loading: true,
-            staff: []
+            loading: true
         }
     },
 
-    mounted() {
-        axios.get('/api/staff')
-            .then(response => {
-                this.staff = response.data.data
-                console.log('success', response)
-                this.loading =  false;
-            }).catch(err => {
-                this.loading =  false;
+    computed: {
+      ...mapGetters({
+        staff: 'staff'
+      })
+    },
 
-                console.log(err, 'Unable to fetch staff')
-            })
+    mounted() {
+      this.getStaff();
+      this.loading = false;
+    },
+
+    methods: {
+      ...mapActions({
+        getStaff: 'getStaff'
+      })
     }
 }
 </script>

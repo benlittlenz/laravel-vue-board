@@ -109,6 +109,8 @@ import VueSingleSelect from "vue-single-select";
 import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css';
 
+import { mapActions } from 'vuex'
+
 export default {
     name: 'ProjectCreate',
 
@@ -173,19 +175,23 @@ export default {
         })
     },
     methods: {
-        async submit () {
+      ...mapActions({
+        createProject: 'createProject'
+      }), 
 
-           axios.post('/api/projects', this.form)
-            .then(response => {
-              console.log('res', response)
-                this.$router.push(`/jobs/${response.data.id}`)
-            }).catch(error => {
-                if (error.response.status == 422){
-                    this.errors = error.response.data.errors
-                }
-            })
+      submit() {
+        this.createProject({
+          data: this.form
+        }).then(res => {
+          this.$router.push(`/jobs/${res.data.id}`)
+        }).catch(err => {
+          if (err.response.status == 422){
+            this.errors = err.response.data.errors
+          }
+        })
+        
+      },
 
-        },
 
         errorMessage (field) {
             if(this.errors && this.errors[field] && this.errors[field].length > 0) {

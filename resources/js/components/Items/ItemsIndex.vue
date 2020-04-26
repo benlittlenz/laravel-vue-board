@@ -114,26 +114,31 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'ItemsIndex',
     data() {
         return {
-            loading: true,
-            items: []
+            loading: true
         }
     },
 
+    computed: {
+      ...mapGetters({
+        items: 'items'
+      })
+    },
+
     mounted() {
-        axios.get('/api/items')
-            .then(response => {
-                console.log('res', response);
-                this.items = response.data.data
-                this.loading = false
-            }).catch(err => {
-                console.log(err)
-            })
+      this.getItems();
+      this.loading = false;
+    },
+
+    methods: {
+      ...mapActions({
+        getItems: 'getItems'
+      })
     }
 }
 </script>
