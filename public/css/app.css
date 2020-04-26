@@ -14021,6 +14021,192 @@ a {
   border-bottom: 2px solid #2c5282;
 }
 
+.action-dropdown .dropdown-container {
+  margin: 10px 5px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
+  border: none;
+}
+
+.action-dropdown .dropdown-item {
+  justify-content: space-between;
+  color: #040405;
+  padding: 10px 20px;
+}
+
+.dropdown-group {
+  position: relative;
+}
+
+.dropdown-group.active .dropdown-container {
+  display: block;
+}
+
+.dropdown-group .dropdown-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem;
+  margin: 0.125rem 0 0 0.125rem;
+  font-size: 1rem;
+  color: #fff;
+  text-align: left;
+  list-style: none;
+  background-color: white !important;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+  border: none;
+}
+
+.dropdown-group .dropdown-container.align-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-group .dropdown-container .dropdown-group {
+  display: block;
+  margin: 0;
+}
+
+.dropdown-group .dropdown-container .dropdown-group-item .dropdown-item {
+  display: block;
+  font-size: 15px;
+  padding: 8px 12px;
+  font-weight: 300;
+  color: #040405;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.dropdown-group .dropdown-container .dropdown-group-item .dropdown-item:hover {
+  background-color: #EBF1FA;
+}
+
+.dropdown-group .dropdown-container .dropdown-group-item .dropdown-item.active {
+  color: #5851D8;
+}
+
+.dropdown-group .dropdown-container .dropdown-group-item .dropdown-item i {
+  color: #A5ACC1;
+  margin-right: 5px;
+}
+
+.dropdown-group .dropdown-container .dropdown-activator {
+  position: relative;
+}
+
+.dropdown-group .dropdown-container .dropdown-activator::after {
+  content: none !important;
+}
+
+.dropdown-group .dropdown-container .dropdown-activator::before {
+  border-color: #fff transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0;
+  content: "";
+  display: block;
+  height: 0;
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  transition: all 0.2s ease-in-out;
+  width: 0;
+  transform: rotate(90deg);
+}
+
+.dropdown-group .dropdown-container .dropdown-group.active .dropdown-activator a {
+  color: #5851D8;
+}
+
+.dropdown-group .dropdown-container .dropdown-group.active .dropdown-activator::before {
+  transform: rotate(-90deg);
+  border-color: #5851D8 transparent transparent;
+}
+
+.dropdown-group .dropdown-container .dropdown-container {
+  display: block;
+  margin: 0;
+  left: 100%;
+  top: 0;
+  position: absolute;
+  margin: 0.125rem 0.125rem 0;
+}
+
+.dropdown-group .dropdown-container .dropdown-container.align-right {
+  right: 100%;
+  left: auto;
+}
+
+.dropdown-group .dropdown-container .dropdon-group-item {
+  position: relative;
+}
+
+.dropdown-group .dropdown-item-divider {
+  border-top: 1px solid #fff;
+  height: 1px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.dropdown-group.dropdown-light .dropdown-container {
+  color: #040405;
+  background-color: #fff;
+  border: 1px solid #c3c8d6;
+}
+
+.dropdown-group.dropdown-light .dropdown-container .dropdown-group-item a {
+  color: #040405;
+}
+
+.dropdown-group.dropdown-light .dropdown-container .dropdown-group-item a.active {
+  color: #040405;
+  background-color: #cfd4df;
+}
+
+.dropdown-group.dropdown-light .dropdown-container .dropdown-group-item a:hover {
+  background-color: #cfd4df;
+}
+
+.dropdown-group.dropdown-light .dropdown-container .dropdown-activator::before {
+  border-color: #A5ACC1 transparent transparent;
+}
+
+.dropdown-group.dropdown-light .dropdown-container .dropdown-group.active .dropdown-activator a {
+  color: #040405;
+  background-color: #cfd4df;
+}
+
+.dropdown-group.dropdown-light .dropdown-container .dropdown-group.active .dropdown-activator::before {
+  border-color: #A5ACC1 transparent transparent;
+}
+
+.dropdown-group.dropdown-light .dropdown-item-divider {
+  border-top: 1px solid #040405;
+}
+
+.dropdown-item .dropdown-item-icon {
+  width: 20px;
+  height: 14px;
+  margin-right: 6px;
+  color: #55547A;
+}
+
+.action {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.action .action-btn {
+  color: #5851D8;
+  background: transparent;
+  border: none;
+}
+
 @media (min-width: 640px) {
   .md\:sr-only {
     position: absolute;

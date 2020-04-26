@@ -8,10 +8,10 @@
     </a>
     <VDropdownItem>
       <router-link
-        :to="`/clients`"
+        :to="`/jobs/${project}`"
         class="dropdown-item"
       >
-        hfghg
+        Details
       </router-link>
       <router-link
         :to="`/clients`"
@@ -45,35 +45,20 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import VDropdownItem from '../Dropdown/VdropdownItem.vue'
 import VDropdown from '../Dropdown/VDropdown.vue'
 import DotIcon from '../Dropdown/DotIcon.vue'
 
 export default {
-
     components: {
         VDropdownItem,
         VDropdown,
         DotIcon
     },
-    data() {
-        return {
-
-        }
-    },
-
-    computed: {
-        ...mapGetters({
-            projects: 'projects',
-            clients: 'clients',
-            staff: 'staff'
-        })
-    },
+    props: ['project'],
 
     mounted() {
-        
+        console.log('hey', this.project)
     }
 }
 </script>

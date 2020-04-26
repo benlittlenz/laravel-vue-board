@@ -154,7 +154,6 @@
 
 <script>
 
-import axios from 'axios';
 import { mapActions } from 'vuex';
 
 export default {
@@ -197,8 +196,6 @@ export default {
         })
         
       },
-      
-
         errorMessage (field) {
             if(this.errors && this.errors[field] && this.errors[field].length > 0) {
                 return this.errors[field][0]

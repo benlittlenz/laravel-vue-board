@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions } from 'vuex'
 
 export default {
     name: 'ItemCreate',
@@ -100,24 +100,21 @@ export default {
         }
     },
     methods: {
-        async submit () {
-           axios.post('/api/items', this.form)
-                .then(response => {
-                    this.$router.push(`/items/${response.data.id}`)
-                }).catch(error => {
-                    if (error.response.status == 422){
-                        this.errors = error.response.data.errors
-                    }
-                })
-        //    try {
-        //         await axios.post('/api/clients', this.form)
-        //    } catch(err) {
-        //        console.log(err.data.errors)
-        //        //this.errors = err.response.data.data.errors
-        //    }
-           
-        },
+      ...mapActions({
+        createItem: 'createItem'
+      }), 
 
+      submit() {
+        this.createItem({
+          data: this.form
+        }).then(res => {
+          this.$router.push(`/items/${res.data.id}`)
+        }).catch(err => {
+          if (err.response.status == 422){
+            this.errors = err.response.data.errors
+          }
+        })
+    },
         errorMessage (field) {
             if(this.errors && this.errors[field] && this.errors[field].length > 0) {
                 return this.errors[field][0]

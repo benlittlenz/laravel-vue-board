@@ -109,7 +109,7 @@ import VueSingleSelect from "vue-single-select";
 import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css';
 
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
     name: 'ProjectCreate',
@@ -124,7 +124,7 @@ export default {
             value: null,
             staffOptions: [],
             staff: [],
-            clients: [],
+            //clients: [],
             searchQuery: null,
             form: {
                 title: '',
@@ -139,6 +139,10 @@ export default {
         
     },
     computed: {
+      ...mapGetters({
+        clients: 'clients',
+        //staff: 'staff'
+      }),
         resultQuery() {
             if(this.searchQuery) {
                 return this.clients.filter(client => {
@@ -152,16 +156,8 @@ export default {
     },
 
     mounted() {
-      axios.get('/api/clients')
-          .then(response => {
-              this.clients = response.data.data
-              console.log('success', this.clients)
-              this.loading = false
-          }).catch(err => {
-              this.loading = false
-
-              console.log(err, 'Unable to fetch clients')
-          })
+      this.getClients();
+      //this.getStaff();
 
       axios.get('/api/staff')
         .then(response => {
@@ -176,7 +172,8 @@ export default {
     },
     methods: {
       ...mapActions({
-        createProject: 'createProject'
+        createProject: 'createProject',
+        getClients: 'getClients',
       }), 
 
       submit() {

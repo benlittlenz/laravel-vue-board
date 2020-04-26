@@ -22,7 +22,7 @@
           Create Job
         </router-link>
         <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-          <table class="min-w-full table-fixed">
+          <table class="min-w-full table-fixed action-dropdown">
             <thead>
               <tr>
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
@@ -46,8 +46,12 @@
               :key="project.id"
               class="bg-white"
             >
-              <tr>
-                <td class="px-6 py-4 border-b border-gray-200 w-2/6">
+              <tr
+                :key="project.id"
+              >
+                <td 
+                  class="px-6 py-4 border-b border-gray-200 w-2/6"
+                >
                   <div class="flex items-center">
                     <div class="ml-4">
                       <div class="text-sm leading-5 font-medium text-gray-900 break-all">
@@ -90,12 +94,9 @@
                   </span>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                  <router-link 
-                    :to="`/jobs/${project.id}/edit`"
-                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline"
-                  >
-                    Edit
-                  </router-link>
+                  <Dropdown 
+                    :project="project.id"
+                  />
                 </td>
               </tr>
             </tbody>
@@ -108,9 +109,14 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import Dropdown from '../reusecore/Dropdown.vue'
 
 export default {
-        name: 'ProjectIndex',
+    name: 'ProjectIndex',
+
+    components: {
+      Dropdown
+    },
     data() {
         return {
             loading: true

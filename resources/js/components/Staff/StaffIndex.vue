@@ -117,6 +117,7 @@ export default {
     mounted() {
       this.getStaff();
       this.loading = false;
+
     },
 
     methods: {
