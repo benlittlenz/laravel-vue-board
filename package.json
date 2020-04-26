@@ -29,6 +29,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@fortawesome/free-solid-svg-icons": "^5.13.0",
         "moment": "^2.24.0",
         "tailwindcss": "^1.2.0",
         "v-click-outside": "^3.0.1",

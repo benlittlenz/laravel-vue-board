@@ -4211,11 +4211,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4734,6 +4729,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4743,9 +4761,9 @@ __webpack_require__.r(__webpack_exports__);
     VDropdown: _Dropdown_VDropdown_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     DotIcon: _Dropdown_DotIcon_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
-  props: ['project'],
+  props: ['url'],
   mounted: function mounted() {
-    console.log('hey', this.project);
+    console.log('hey', this.url);
   }
 });
 
@@ -64051,35 +64069,19 @@ var render = function() {
                                               },
                                               [
                                                 _c(
-                                                  "router-link",
+                                                  "p",
                                                   {
-                                                    staticClass:
-                                                      "text-blue-400 font-bold",
-                                                    attrs: {
-                                                      to: "/jobs/" + project.id
-                                                    }
+                                                    staticClass: "break-words"
                                                   },
                                                   [
-                                                    _c(
-                                                      "p",
-                                                      {
-                                                        staticClass:
-                                                          "break-words"
-                                                      },
-                                                      [
-                                                        _vm._v(
-                                                          "\n                          " +
-                                                            _vm._s(
-                                                              project.title
-                                                            ) +
-                                                            "\n                        "
-                                                        )
-                                                      ]
+                                                    _vm._v(
+                                                      "\n                        " +
+                                                        _vm._s(project.title) +
+                                                        "\n                      "
                                                     )
                                                   ]
                                                 )
-                                              ],
-                                              1
+                                              ]
                                             )
                                           ])
                                         ]
@@ -64187,7 +64189,7 @@ var render = function() {
                                     },
                                     [
                                       _c("Dropdown", {
-                                        attrs: { project: project.id }
+                                        attrs: { url: "/jobs/" + project.id }
                                       })
                                     ],
                                     1
@@ -65205,33 +65207,119 @@ var render = function() {
           _c(
             "router-link",
             {
-              staticClass: "dropdown-item",
-              attrs: { to: "/jobs/" + _vm.project }
+              staticClass:
+                "no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200",
+              attrs: { to: "" + _vm.url }
             },
-            [_vm._v("\n      Details\n    ")]
-          ),
-          _vm._v(" "),
-          _c("router-link", {
-            staticClass: "dropdown-item",
-            attrs: { to: "/clients" }
-          })
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "h-4 w-4 fill-current mr-2 text-gray-800",
+                  attrs: {
+                    fill: "none",
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    stroke: "currentColor",
+                    viewBox: "0 0 24 24"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                    }
+                  })
+                ]
+              ),
+              _vm._v("  \n      \n      Details\n    ")
+            ]
+          )
         ],
         1
       ),
       _vm._v(" "),
-      _c("VDropdownItem", [
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#/" } }, [
-          _vm._v("\n\n      hfhfg\n    ")
-        ])
-      ]),
+      _c(
+        "VDropdownItem",
+        [
+          _c(
+            "router-link",
+            {
+              staticClass:
+                "no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200",
+              attrs: { to: _vm.url + "/edit" }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "h-4 w-4 fill-current mr-2 text-gray-800",
+                  attrs: {
+                    fill: "none",
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    stroke: "currentColor",
+                    viewBox: "0 0 24 24"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                    }
+                  })
+                ]
+              ),
+              _vm._v("  \n      Edit\n    ")
+            ]
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("VDropdownItem", [
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#/" } }, [
-          _vm._v("\n\n      heyy\n    ")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("VDropdownItem", [_c("div", { staticClass: "dropdown-item" })])
+      _c(
+        "VDropdownItem",
+        [
+          _c(
+            "router-link",
+            {
+              staticClass:
+                "no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200",
+              attrs: { to: _vm.url + "/edit" }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "h-4 w-4 fill-current mr-2 text-gray-800",
+                  attrs: {
+                    fill: "none",
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    stroke: "currentColor",
+                    viewBox: "0 0 24 24"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                    }
+                  })
+                ]
+              ),
+              _vm._v("  \n      Delete\n    ")
+            ]
+          )
+        ],
+        1
+      )
     ],
     1
   )

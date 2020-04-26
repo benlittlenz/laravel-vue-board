@@ -55,14 +55,9 @@
                   <div class="flex items-center">
                     <div class="ml-4">
                       <div class="text-sm leading-5 font-medium text-gray-900 break-all">
-                        <router-link
-                          :to="`/jobs/${project.id}`"
-                          class="text-blue-400 font-bold"
-                        >
-                          <p class="break-words">
-                            {{ project.title }}
-                          </p>
-                        </router-link>
+                        <p class="break-words">
+                          {{ project.title }}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -95,7 +90,7 @@
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                   <Dropdown 
-                    :project="project.id"
+                    :url="`/jobs/${project.id}`"
                   />
                 </td>
               </tr>
