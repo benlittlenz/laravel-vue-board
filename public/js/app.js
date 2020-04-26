@@ -3373,6 +3373,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _reusecore_Dropdown_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusecore/Dropdown.vue */ "./resources/js/components/reusecore/Dropdown.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3493,10 +3494,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ItemsIndex',
+  components: {
+    Dropdown: _reusecore_Dropdown_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   data: function data() {
     return {
       loading: true
@@ -4213,6 +4217,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4546,6 +4554,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _reusecore_Dropdown_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusecore/Dropdown.vue */ "./resources/js/components/reusecore/Dropdown.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4650,10 +4659,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'StaffIndex',
+  components: {
+    Dropdown: _reusecore_Dropdown_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   data: function data() {
     return {
       loading: true
@@ -62792,10 +62804,7 @@ var render = function() {
               ])
             : _c(
                 "div",
-                {
-                  staticClass:
-                    "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
-                },
+                { staticClass: "-my-2 py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8" },
                 [
                   _c(
                     "router-link",
@@ -62807,7 +62816,7 @@ var render = function() {
                     "div",
                     {
                       staticClass:
-                        "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+                        "align-middle inline-block min-w-full shadow sm:rounded-lg border-b border-gray-200 z-0 overflow-visible"
                     },
                     [
                       _c(
@@ -62996,7 +63005,19 @@ var render = function() {
                                     ]
                                   ),
                                   _vm._v(" "),
-                                  _vm._m(1, true)
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
+                                    },
+                                    [
+                                      _c("Dropdown", {
+                                        attrs: { url: "/items/" + item.id }
+                                      })
+                                    ],
+                                    1
+                                  )
                                 ])
                               ]
                             )
@@ -63069,29 +63090,6 @@ var staticRenderFns = [
         })
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticClass:
-          "px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass:
-              "text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline",
-            attrs: { href: "#" }
-          },
-          [_vm._v("Edit")]
-        )
-      ]
-    )
   }
 ]
 render._withStripped = true
@@ -64019,9 +64017,18 @@ var render = function() {
                 "div",
                 { staticClass: "-my-2 py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8" },
                 [
-                  _c("router-link", { attrs: { to: "/jobs/create" } }, [
-                    _vm._v("\n        Create Job\n      ")
-                  ]),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "flex items-center block",
+                      attrs: { to: "/jobs/create" }
+                    },
+                    [
+                      _c("button", { staticClass: "button float-left block" }, [
+                        _vm._v("\n          Create Job\n        ")
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -64910,10 +64917,7 @@ var render = function() {
               ])
             : _c(
                 "div",
-                {
-                  staticClass:
-                    "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
-                },
+                { staticClass: "-my-2 py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8" },
                 [
                   _c("router-link", { attrs: { to: "/clients/create" } }, [
                     _vm._v("\n        Create Client\n      ")
@@ -64923,7 +64927,7 @@ var render = function() {
                     "div",
                     {
                       staticClass:
-                        "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+                        "align-middle inline-block min-w-full shadow sm:rounded-lg border-b border-gray-200 z-0 overflow-visible"
                     },
                     [
                       _c(
@@ -65054,7 +65058,19 @@ var render = function() {
                                   _vm._v(" "),
                                   _vm._m(1, true),
                                   _vm._v(" "),
-                                  _vm._m(2, true)
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
+                                    },
+                                    [
+                                      _c("Dropdown", {
+                                        attrs: { url: "/staff/" + user.id }
+                                      })
+                                    ],
+                                    1
+                                  )
                                 ])
                               ]
                             )
@@ -65137,29 +65153,6 @@ var staticRenderFns = [
               "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
           },
           [_vm._v("\n                  Active\n                ")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticClass:
-          "px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass:
-              "text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline",
-            attrs: { href: "#" }
-          },
-          [_vm._v("Edit")]
         )
       ]
     )

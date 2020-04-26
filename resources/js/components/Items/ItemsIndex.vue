@@ -16,7 +16,7 @@
       </div>
       <div
         v-else
-        class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+        class="-my-2 py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
       >
         <router-link 
           class="button"
@@ -25,7 +25,7 @@
           Create Client
         </router-link>
         
-        <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+        <div class="align-middle inline-block min-w-full shadow sm:rounded-lg border-b border-gray-200 z-0 overflow-visible">
           <table class="min-w-full table-fixed">
             <thead>
               <tr>
@@ -99,10 +99,9 @@
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                  <a
-                    href="#"
-                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline"
-                  >Edit</a>
+                  <Dropdown 
+                    :url="`/items/${item.id}`"
+                  />
                 </td>
               </tr>
             </tbody>
@@ -115,9 +114,14 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import Dropdown from '../reusecore/Dropdown.vue'
 
 export default {
     name: 'ItemsIndex',
+
+    components: {
+      Dropdown
+    },
     data() {
         return {
             loading: true
