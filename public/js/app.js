@@ -2802,9 +2802,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _Dropdown_VdropdownItem_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Dropdown/VdropdownItem.vue */ "./resources/js/components/Dropdown/VdropdownItem.vue");
-/* harmony import */ var _Dropdown_VDropdown_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Dropdown/VDropdown.vue */ "./resources/js/components/Dropdown/VDropdown.vue");
-/* harmony import */ var _Dropdown_DotIcon_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Dropdown/DotIcon.vue */ "./resources/js/components/Dropdown/DotIcon.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2857,25 +2854,113 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    VDropdownItem: _Dropdown_VdropdownItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    VDropdown: _Dropdown_VDropdown_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    DotIcon: _Dropdown_DotIcon_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
-  },
   data: function data() {
-    return {};
+    return {
+      loading: true
+    };
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
     projects: 'projects',
     clients: 'clients',
     staff: 'staff'
   })),
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    this.getProjects();
+    this.loading = false;
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    getProjects: 'getProjects'
+  }))
 });
 
 /***/ }),
@@ -62016,51 +62101,323 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "VDropdown",
-    [
-      _c(
-        "a",
-        { attrs: { slot: "activator", href: "#/" }, slot: "activator" },
-        [_c("DotIcon")],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "VDropdownItem",
-        [
-          _c(
-            "router-link",
-            { staticClass: "dropdown-item", attrs: { to: "/clients" } },
-            [_vm._v("\n      hfghg\n    ")]
-          ),
-          _vm._v(" "),
-          _c("router-link", {
-            staticClass: "dropdown-item",
-            attrs: { to: "/clients" }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("VDropdownItem", [
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#/" } }, [
-          _vm._v("\n\n      hfhfg\n    ")
+  return _c("div", [
+    _vm.loading
+      ? _c("div", [_vm._v("\n    Loading..\n  ")])
+      : _c("div", { staticClass: "relative" }, [
+          _c("div", { staticClass: "px-4 md:px-10 mx-auto w-full" }, [
+            _c("div", [
+              _c("div", { staticClass: "flex flex-wrap" }, [
+                _c("div", { staticClass: "w-full lg:w-6/12 xl:w-3/12 px-4" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                    },
+                    [
+                      _c("div", { staticClass: "flex-auto p-4" }, [
+                        _c("div", { staticClass: "flex flex-wrap" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "relative w-full pr-4 max-w-full flex-grow flex-1"
+                            },
+                            [
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "text-gray-500 uppercase font-bold text-xs"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                      Total Jobs\n                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-semibold text-xl text-gray-800"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(_vm.projects.length) +
+                                      "\n                    "
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(0)
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(1)
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _vm._m(3),
+                _vm._v(" "),
+                _vm._m(4)
+              ])
+            ])
+          ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("VDropdownItem", [
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#/" } }, [
-          _vm._v("\n\n      heyy\n    ")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("VDropdownItem", [_c("div", { staticClass: "dropdown-item" })])
-    ],
-    1
-  )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "relative w-auto pl-4 flex-initial" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500"
+        },
+        [_c("i", { staticClass: "far fa-chart-bar" })]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-sm text-gray-500 mt-4" }, [
+      _c("span", { staticClass: "text-green-500 mr-2" }, [
+        _c("i", { staticClass: "fas fa-arrow-up" })
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "whitespace-no-wrap" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-full lg:w-6/12 xl:w-3/12 px-4" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+        },
+        [
+          _c("div", { staticClass: "flex-auto p-4" }, [
+            _c("div", { staticClass: "flex flex-wrap" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "relative w-full pr-4 max-w-full flex-grow flex-1"
+                },
+                [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "text-gray-500 uppercase font-bold text-xs"
+                    },
+                    [
+                      _vm._v(
+                        "\n                      Jobs Completed (Current Month)\n                    "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "font-semibold text-xl text-gray-800" },
+                    [_vm._v("\n                      12\n                    ")]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative w-auto pl-4 flex-initial" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500"
+                  },
+                  [_c("i", { staticClass: "fas fa-chart-pie" })]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-sm text-gray-500 mt-4" }, [
+              _c("span", { staticClass: "text-green-500 mr-2" }, [
+                _c("i", { staticClass: "fas fa-arrow-down" }),
+                _vm._v(" 3.48%\n                  ")
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "whitespace-no-wrap" }, [
+                _vm._v("\n                    Last Month\n                  ")
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-full lg:w-6/12 xl:w-3/12 px-4" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+        },
+        [
+          _c("div", { staticClass: "flex-auto p-4" }, [
+            _c("div", { staticClass: "flex flex-wrap" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "relative w-full pr-4 max-w-full flex-grow flex-1"
+                },
+                [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "text-gray-500 uppercase font-bold text-xs"
+                    },
+                    [
+                      _vm._v(
+                        "\n                      Sales (Current Month)\n                    "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "font-semibold text-xl text-gray-800" },
+                    [
+                      _vm._v(
+                        "\n                      $10, 000\n                    "
+                      )
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative w-auto pl-4 flex-initial" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500"
+                  },
+                  [_c("i", { staticClass: "fas fa-users" })]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-sm text-gray-500 mt-4" }, [
+              _c("span", { staticClass: "text-orange-500 mr-2" }, [
+                _c("i", { staticClass: "fas fa-arrow-down" }),
+                _vm._v(" 1.10%\n                  ")
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "whitespace-no-wrap" }, [
+                _vm._v("\n                    Last Month\n                  ")
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-full lg:w-6/12 xl:w-3/12 px-4" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+        },
+        [
+          _c("div", { staticClass: "flex-auto p-4" }, [
+            _c("div", { staticClass: "flex flex-wrap" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "relative w-full pr-4 max-w-full flex-grow flex-1"
+                },
+                [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "text-gray-500 uppercase font-bold text-xs"
+                    },
+                    [
+                      _vm._v(
+                        "\n                      Performance\n                    "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "font-semibold text-xl text-gray-800" },
+                    [
+                      _vm._v(
+                        "\n                      49,65%\n                    "
+                      )
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative w-auto pl-4 flex-initial" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500"
+                  },
+                  [_c("i", { staticClass: "fas fa-percent" })]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-sm text-gray-500 mt-4" }, [
+              _c("span", { staticClass: "text-green-500 mr-2" }, [
+                _c("i", { staticClass: "fas fa-arrow-up" }),
+                _vm._v(" 12%\n                  ")
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "whitespace-no-wrap" }, [
+                _vm._v(
+                  "\n                    Since last month\n                  "
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 

@@ -273,3 +273,54 @@ $dropdown-bg:                           $ls-color-black;
         border: none;
     }
 }
+
+
+.dashboard {
+
+    .dashboard-table
+    .table-component {
+
+        .dashboard-recent-invoice-options {
+
+            .dropdown-container {
+                margin: 10px 5px 0 -75px;
+            }
+
+        }
+
+    }
+
+}
+
+.dash-item {
+    flex: 3;
+    padding: 0 15px 0 15px;
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .dashbox {
+        padding: 15px;
+
+        i {
+            left: 30px;
+            top: 25px;
+        }
+
+        &.dashbox-line-progress i {
+            right: 15px;
+            left: auto;
+            top: 15px;
+        }
+    }
+
+    .dashbox-circle-progress {
+        padding: 30px;
+    }
+}
+
+.title {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    padding-right: 25px
+}
