@@ -13940,6 +13940,10 @@ video {
   width: 32rem;
 }
 
+.h-72 {
+  height: 22rem;
+}
+
 #main {
   display: grid;
   grid-template-columns: 6rem auto;

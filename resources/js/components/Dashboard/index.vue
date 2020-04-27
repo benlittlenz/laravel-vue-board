@@ -25,7 +25,15 @@
                     </div>
                     <div class="relative w-auto pl-4 flex-initial">
                       <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500">
-                        <i class="far fa-chart-bar" />
+                        <svg
+                          class=" h-8 w-8"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        ><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
                       </div>
                     </div>
                   </div>
@@ -52,7 +60,15 @@
                     </div>
                     <div class="relative w-auto pl-4 flex-initial">
                       <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500">
-                        <i class="fas fa-chart-pie" />
+                        <svg
+                          class=" h-8 w-8"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        ><path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                       </div>
                     </div>
                   </div>
@@ -81,7 +97,15 @@
                     </div>
                     <div class="relative w-auto pl-4 flex-initial">
                       <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500">
-                        <i class="fas fa-users" />
+                        <svg
+                          class=" h-8 w-8"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        ><path d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
                       </div>
                     </div>
                   </div>
@@ -110,7 +134,15 @@
                     </div>
                     <div class="relative w-auto pl-4 flex-initial">
                       <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
-                        <i class="fas fa-percent" />
+                        <svg
+                          class=" h-8 w-8"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        ><path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg>
                       </div>
                     </div>
                   </div>
@@ -129,13 +161,19 @@
         </div>
       </div>
     </div>
+
+    <div><Searchbox /></div>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import Searchbox from '../reusecore/Searchbox.vue'
 
 export default {
+    components: {
+      Searchbox
+    },
 
     data() {
         return {

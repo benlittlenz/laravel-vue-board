@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Company;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserResource extends JsonResource
@@ -19,6 +20,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'company_id' => $this->company_id,
+            'company_name' => Company::select('name')->where('id', $this->company_id)->get()
             'phone' => $this->phone,
             'address' => $this->address,
             'suburb' => $this->suburb,

@@ -136,7 +136,6 @@ export default {
             errors: null,
             company: null
         }
-        
     },
     computed: {
       ...mapGetters({

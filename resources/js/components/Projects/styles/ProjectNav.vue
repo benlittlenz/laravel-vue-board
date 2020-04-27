@@ -17,7 +17,8 @@
             <div />
             
             <div class="hidden md:block md:flex md:items-center ml-2">
-              <span class="text-white text-sm mr-1">Account</span>
+              <span class="text-white text-sm mr-6">{{ user.company }}</span>
+              <span class="text-white text-sm mr-1">{{ user.name }}</span>
               <div>
                 <svg
                   class="fill-current text-white h-4 w-4 block opacity-50"
@@ -142,6 +143,8 @@
 
 <script>
 export default {
+  props: ['user'],
+
   data() {
     return {
       activeClass: 'active'

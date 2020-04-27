@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen antialiased bg-white">
-    <ProjectNav />
+    <ProjectNav :user="currentUser" />
     <div
       class="h-screen z-0"
     >
@@ -22,8 +22,15 @@ export default {
     },
     props: ['company'],
 
+    data() {
+      return {
+        currentUser: []
+      }
+    },
+
     mounted() {
-      console.log(this.company)
+      this.currentUser = JSON.parse(this.company)
+      console.log(this.currentUser)
     }
 }
 </script>
