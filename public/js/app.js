@@ -2893,11 +2893,156 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RegularModal",
   data: function data() {
     return {
-      showModal: false
+      showModal: false,
+      currentTab: 'client'
     };
   },
   methods: {
@@ -62220,18 +62365,20 @@ var render = function() {
           "div",
           {
             staticClass:
-              "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+              "min-h-3/4 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
           },
           [
             _c(
               "div",
-              { staticClass: "relative w-auto my-4 mx-auto max-w-3xl" },
+              {
+                staticClass: "relative w-auto my-4 mx-auto max-w-3xl min-w-1/2"
+              },
               [
                 _c(
                   "div",
                   {
                     staticClass:
-                      "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+                      "min-h-1/2 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
                   },
                   [
                     _c(
@@ -62270,9 +62417,86 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _vm._m(0),
+                    _c("div", { staticClass: "-mt-2" }, [
+                      _c("ul", { staticClass: "flex border-b" }, [
+                        _c("li", { staticClass: "-mb-px mr-1" }, [
+                          _c(
+                            "a",
+                            {
+                              class: [
+                                _vm.currentTab === "client"
+                                  ? "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
+                                  : "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+                              ],
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  _vm.currentTab = "client"
+                                }
+                              }
+                            },
+                            [_vm._v("Client")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "-mb-px mr-1" }, [
+                          _c(
+                            "a",
+                            {
+                              class: [
+                                _vm.currentTab === "address"
+                                  ? "bg-white inline-block border-l border-t border-l border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
+                                  : "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+                              ],
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  _vm.currentTab = "address"
+                                }
+                              }
+                            },
+                            [_vm._v("Address")]
+                          )
+                        ])
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "relative p-6 flex-auto" }),
+                    _vm.currentTab === "client"
+                      ? _c("div", { staticClass: "relative p-6 flex-auto" }, [
+                          _c("p", {
+                            staticClass:
+                              "my-4 text-gray-600 text-lg leading-relaxed"
+                          }),
+                          _vm._v(" "),
+                          _vm._m(0),
+                          _vm._v(" "),
+                          _vm._m(1),
+                          _vm._v(" "),
+                          _vm._m(2),
+                          _vm._v(" "),
+                          _vm._m(3)
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.currentTab === "address"
+                      ? _c(
+                          "div",
+                          {
+                            staticClass:
+                              "relative p-6 flex-auto min-h-1/2 min-h-3/4 "
+                          },
+                          [
+                            _c("p", {
+                              staticClass:
+                                "my-4 text-gray-600 text-lg leading-relaxed"
+                            }),
+                            _vm._v(" "),
+                            _vm._m(4),
+                            _vm._v(" "),
+                            _vm._m(5)
+                          ]
+                        )
+                      : _vm._e(),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -62285,7 +62509,7 @@ var render = function() {
                           "button",
                           {
                             staticClass:
-                              "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1",
+                              "text-red-500 hover:text-red-700 bg-transparent border border-solid border-red-500 hover:border-red-700 active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-2 mb-1",
                             staticStyle: { transition: "all .15s ease" },
                             attrs: { type: "button" },
                             on: {
@@ -62301,7 +62525,7 @@ var render = function() {
                           "button",
                           {
                             staticClass:
-                              "text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1",
+                              "bg-green-400 hover:bg-green-500 rounded-lg text-white font-bold uppercase px-3 py-3 text-sm outline-none focus:outline-none mr-1 mb-1",
                             staticStyle: { transition: "all .15s ease" },
                             attrs: { type: "button" },
                             on: {
@@ -62310,7 +62534,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v("\n            Save Changes\n          ")]
+                          [_vm._v("\n            Create Client\n          ")]
                         )
                       ]
                     )
@@ -62332,44 +62556,194 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "-mt-2" }, [
-      _c("ul", { staticClass: "flex border-b" }, [
-        _c("li", { staticClass: "-mb-px mr-1" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold",
-              attrs: { href: "#" }
-            },
-            [_vm._v("Client")]
-          )
-        ]),
+    return _c("div", { staticClass: "md:flex mb-6" }, [
+      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
+        _c(
+          "label",
+          {
+            staticClass:
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            attrs: { for: "grid-first-name" }
+          },
+          [_vm._v("\n                Client Name\n              ")]
+        ),
         _vm._v(" "),
-        _c("li", { staticClass: "mr-1" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold",
-              attrs: { href: "#" }
-            },
-            [_vm._v("Address")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "mr-1" }, [
-          _c(
-            "a",
-            {
-              staticClass:
-                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold",
-              attrs: { href: "#" }
-            },
-            [_vm._v("Contact")]
-          )
-        ])
+        _c("input", {
+          staticClass:
+            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+          attrs: { id: "grid-first-name", type: "text", placeholder: "" }
+        })
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " md:flex mb-6" }, [
+      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
+        _c(
+          "label",
+          {
+            staticClass:
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            attrs: { for: "grid-first-name" }
+          },
+          [_vm._v("\n                First Name\n              ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass:
+            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+          attrs: { id: "grid-first-name", type: "text", placeholder: "Jane" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "md:w-1/2 px-3" }, [
+        _c(
+          "label",
+          {
+            staticClass:
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            attrs: { for: "grid-last-name" }
+          },
+          [_vm._v("\n                Last Name\n              ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass:
+            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+          attrs: { id: "grid-last-name", type: "text", placeholder: "Doe" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " md:flex mb-6" }, [
+      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
+        _c(
+          "label",
+          {
+            staticClass:
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            attrs: { for: "grid-first-name" }
+          },
+          [_vm._v("\n                Contact Number\n              ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass:
+            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+          attrs: { id: "grid-first-name", type: "number", placeholder: "" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "md:w-1/2 px-3" }, [
+        _c(
+          "label",
+          {
+            staticClass:
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            attrs: { for: "grid-last-name" }
+          },
+          [_vm._v("\n                Contact Email\n              ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass:
+            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+          attrs: { id: "grid-last-name", type: "email", placeholder: "" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "px-3" }, [
+      _c(
+        "label",
+        {
+          staticClass:
+            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+          attrs: { for: "grid-last-name" }
+        },
+        [_vm._v("\n              Client Description\n            ")]
+      ),
+      _vm._v(" "),
+      _c("textarea", {
+        staticClass:
+          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+        attrs: { id: "grid-last-name", placeholder: "", row: "4" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " md:flex mb-6 min-h-1/2" }, [
+      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
+        _c(
+          "label",
+          {
+            staticClass:
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            attrs: { for: "grid-first-name" }
+          },
+          [_vm._v("\n                Street Address\n              ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass:
+            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+          attrs: { id: "grid-first-name", type: "text", placeholder: "" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "md:w-1/2 px-3" }, [
+        _c(
+          "label",
+          {
+            staticClass:
+              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+            attrs: { for: "grid-last-name" }
+          },
+          [_vm._v("\n                Suburb\n              ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass:
+            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+          attrs: { id: "grid-last-name", type: "text", placeholder: "" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "md:w-1/2 px-3" }, [
+      _c(
+        "label",
+        {
+          staticClass:
+            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+          attrs: { for: "grid-last-name" }
+        },
+        [_vm._v("\n              City\n            ")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass:
+          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+        attrs: { id: "grid-last-name", type: "text", placeholder: "" }
+      })
     ])
   }
 ]
