@@ -1,7 +1,12 @@
 <template>
-  <body class="bg-cream text-charcoal min-h-screen font-sans leading-normal overflow-x-hidden lg:overflow-auto">
-    <main class="flex-1 md:p-0 lg:pt-8 lg:px-8 md:ml-24 flex flex-col">
-      <section class="bg-cream-lighter p-4 shadow">
+  <div 
+    class="bg-cream text-charcoal min-h-screen font-sans leading-normal overflow-x-hidden lg:overflow-auto"
+  >
+    <main class="z-0 flex-1 md:p-0 lg:pt-8 lg:px-8 md:ml-24 flex flex-col">
+      <section 
+      
+        class="bg-cream-lighter p-4 shadow"
+      >
         <div class="md:flex">
           <h2 class="md:w-1/3 uppercase tracking-wide text-sm sm:text-lg mb-6 ">
             Create New Client
@@ -25,7 +30,9 @@
         
 
         <form @submit.prevent="submit">
-          <div class="md:flex mb-8">
+          <div 
+            class="md:flex mb-8"
+          >
             <div class="md:w-1/3 bg-gray-200">
               <legend class="uppercase tracking-wide text-sm">
                 job
@@ -51,16 +58,16 @@
             <div class="md:flex-1 mt-2 mb:mt-0 md:px-3 bg-gray-200">
               <div class="mb-4">
                 <label class="block uppercase tracking-wide text-xs font-bold">Client</label>
+                <div 
+                  class="relative" 
+                  @click="clientModal = ! clientModal"
+                >
+                  <Searchbox 
+                    :clients="clients"
+                  />
+                </div
                 
-                <vue-single-select
-                  v-model="clients.id"
-                  placeholder="Search for a client"
-                  :options="clients"
-                  option-label="company"
-                  :required="true"
-                  :max-results="20"
-                  @input="setSelectedClient"
-                />
+
                 <p
                   class="text-xs font-light text-red-500"
                   :errors="errors"
@@ -97,10 +104,14 @@
             </div>
           </div>
         </form>
-        </v-select>
       </section>
-    </main>
-  </body>
+    </main></section></form>
+  </div>
+  </form>
+  </v-select>
+  </section>
+  </main>
+  </div>
 </template>
 
 <script>
@@ -110,6 +121,7 @@ import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css';
 
 import { mapActions, mapGetters } from 'vuex'
+import Searchbox from '../reusecore/Searchbox.vue'
 
 export default {
     name: 'ProjectCreate',
@@ -117,7 +129,8 @@ export default {
     
     components: {
         VueSingleSelect,
-        vSelect
+        vSelect,
+        Searchbox
     },
     data() {
         return {
@@ -134,7 +147,8 @@ export default {
                 staff: []
             },
             errors: null,
-            company: null
+            company: null,
+            clientModal: false
         }
     },
     computed: {
@@ -203,8 +217,6 @@ export default {
           this.form.staff.push(item.id)
         }
       })
-
-    console.log('ff', this.form.staff);
     
     },
 

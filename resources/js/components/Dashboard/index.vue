@@ -162,17 +162,18 @@
       </div>
     </div>
 
-    <div><Searchbox /></div>
+    <ClientModal />
+    
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import Searchbox from '../reusecore/Searchbox.vue'
+import ClientModal from '../reusecore/ClientModal.vue'
 
 export default {
     components: {
-      Searchbox
+      ClientModal
     },
 
     data() {

@@ -13940,6 +13940,10 @@ video {
   width: 32rem;
 }
 
+.w-72 {
+  width: 22rem;
+}
+
 .h-72 {
   height: 22rem;
 }

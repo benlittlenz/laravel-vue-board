@@ -14,7 +14,7 @@ class ContactsController extends Controller
 
     public function index()
     {
-        $clients = request()->user()->company->clients()->paginate(6);
+        $clients = request()->user()->company->clients()->paginate(10);
         //dd($clients);
         return new ClientCollection($clients);
     }
