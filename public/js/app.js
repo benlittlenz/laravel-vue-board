@@ -2807,6 +2807,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3037,19 +3044,62 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RegularModal",
   data: function data() {
     return {
       showModal: false,
-      currentTab: 'client'
+      currentTab: 'client',
+      alertOpen: false,
+      form: {
+        company: '',
+        address: '',
+        suburb: '',
+        city: '',
+        description: '',
+        email: '',
+        phone: '',
+        contact: '',
+        company_id: 1
+      },
+      errors: null
     };
   },
-  methods: {
+  methods: _objectSpread({
     toggleModal: function toggleModal() {
       this.showModal = !this.showModal;
     }
-  }
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    createClient: 'createClient'
+  }), {
+    submit: function submit() {
+      var _this = this;
+
+      this.createClient({
+        data: this.form
+      }).then(function (res) {
+        console.log("RES", res); //this.showModal = false;
+
+        _this.alertOpen = true;
+      })["catch"](function (err) {
+        if (err.response.status == 422) {
+          _this.errors = err.response.data.errors;
+        }
+      });
+    },
+    errorMessage: function errorMessage(field) {
+      if (this.errors && this.errors[field] && this.errors[field].length > 0) {
+        return this.errors[field][0];
+      }
+    },
+    closeAlert: function closeAlert() {
+      this.alertOpen = false;
+    }
+  })
 });
 
 /***/ }),
@@ -4875,6 +4925,314 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reusecore/ClientModal.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/reusecore/ClientModal.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "RegularModal",
+  data: function data() {
+    return {
+      showModal: true,
+      currentTab: 'client',
+      alertOpen: false,
+      form: {
+        company: '',
+        address: '',
+        suburb: '',
+        city: '',
+        description: '',
+        email: '',
+        phone: '',
+        contact: '',
+        company_id: 1
+      },
+      errors: null
+    };
+  },
+  methods: _objectSpread({
+    toggleModal: function toggleModal() {
+      this.showModal = !this.showModal;
+    }
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    createClient: 'createClient'
+  }), {
+    submit: function submit() {
+      var _this = this;
+
+      this.createClient({
+        data: this.form
+      }).then(function (res) {
+        console.log("RES", res); //this.showModal = false;
+
+        _this.alertOpen = true;
+      })["catch"](function (err) {
+        if (err.response.status == 422) {
+          _this.errors = err.response.data.errors;
+        }
+      });
+    },
+    errorMessage: function errorMessage(field) {
+      if (this.errors && this.errors[field] && this.errors[field].length > 0) {
+        return this.errors[field][0];
+      }
+    },
+    closeAlert: function closeAlert() {
+      this.alertOpen = false;
+    }
+  })
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reusecore/Dropdown.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/reusecore/Dropdown.vue?vue&type=script&lang=js& ***!
@@ -5162,6 +5520,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ClientModal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ClientModal.vue */ "./resources/js/components/reusecore/ClientModal.vue");
 //
 //
 //
@@ -5258,14 +5617,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    ClientModal: _ClientModal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   props: ['clients'],
   data: function data() {
     return {
       options: ['Lebrr James', 'Tim Duncan', 'Michael Jordan', 'Jim Ham', 'Susan Boyal', 'Joe Doe', 'Mike Doe', 'Tim Doe'],
       selected: '',
       open: false,
-      searchQuery: ''
+      searchQuery: '',
+      clientModalOpen: false
     };
   },
   computed: {
@@ -62365,7 +62734,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "min-h-3/4 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+              "min-h-3/4 fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
           },
           [
             _c(
@@ -62417,124 +62786,554 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "-mt-2" }, [
-                      _c("ul", { staticClass: "flex border-b" }, [
-                        _c("li", { staticClass: "-mb-px mr-1" }, [
-                          _c(
-                            "a",
-                            {
-                              class: [
-                                _vm.currentTab === "client"
-                                  ? "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-                                  : "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
-                              ],
-                              attrs: { href: "#" },
-                              on: {
-                                click: function($event) {
-                                  _vm.currentTab = "client"
-                                }
-                              }
-                            },
-                            [_vm._v("Client")]
-                          )
-                        ]),
+                    _c(
+                      "form",
+                      {
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return _vm.submit($event)
+                          }
+                        }
+                      },
+                      [
+                        _vm.alertOpen
+                          ? _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "text-white px-6 py-4 border-0 rounded relative mb-4 bg-blue-500"
+                              },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "text-xl inline-block mr-5 align-middle"
+                                  },
+                                  [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: " h-6 w-6",
+                                        attrs: {
+                                          fill: "none",
+                                          "stroke-linecap": "round",
+                                          "stroke-linejoin": "round",
+                                          "stroke-width": "2",
+                                          stroke: "currentColor",
+                                          viewBox: "0 0 24 24"
+                                        }
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            d:
+                                              "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(0),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.closeAlert()
+                                      }
+                                    }
+                                  },
+                                  [_c("span", [_vm._v("×")])]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
                         _vm._v(" "),
-                        _c("li", { staticClass: "-mb-px mr-1" }, [
-                          _c(
-                            "a",
-                            {
-                              class: [
-                                _vm.currentTab === "address"
-                                  ? "bg-white inline-block border-l border-t border-l border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-                                  : "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
-                              ],
-                              attrs: { href: "#" },
-                              on: {
-                                click: function($event) {
-                                  _vm.currentTab = "address"
-                                }
-                              }
-                            },
-                            [_vm._v("Address")]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _vm.currentTab === "client"
-                      ? _c("div", { staticClass: "relative p-6 flex-auto" }, [
-                          _c("p", {
-                            staticClass:
-                              "my-4 text-gray-600 text-lg leading-relaxed"
-                          }),
-                          _vm._v(" "),
-                          _vm._m(0),
-                          _vm._v(" "),
-                          _vm._m(1),
-                          _vm._v(" "),
-                          _vm._m(2),
-                          _vm._v(" "),
-                          _vm._m(3)
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.currentTab === "address"
-                      ? _c(
+                        _vm.currentTab === "client"
+                          ? _c(
+                              "div",
+                              { staticClass: "relative px-6 flex-auto" },
+                              [
+                                _c("p", {
+                                  staticClass:
+                                    "my-4 text-gray-600 text-lg leading-relaxed"
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "md:flex mb-6" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "md:w-1/2 px-3 mb-6 md:mb-0"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                          attrs: { for: "grid-first-name" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                  Client Name\n                "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.company,
+                                            expression: "form.company"
+                                          }
+                                        ],
+                                        staticClass:
+                                          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+                                        attrs: {
+                                          id: "grid-first-name",
+                                          type: "text",
+                                          placeholder: "",
+                                          name: "client"
+                                        },
+                                        domProps: { value: _vm.form.company },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "company",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: " md:flex mb-6" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "md:w-1/2 px-3 mb-6 md:mb-0"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                          attrs: { for: "grid-first-name" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                  Contact Name\n                "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.contact,
+                                            expression: "form.contact"
+                                          }
+                                        ],
+                                        staticClass:
+                                          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+                                        attrs: {
+                                          id: "grid-first-name",
+                                          type: "text",
+                                          name: "name",
+                                          placeholder: "Jane"
+                                        },
+                                        domProps: { value: _vm.form.contact },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "contact",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "md:w-1/2 px-3 mb-6 md:mb-0"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                          attrs: { for: "grid-first-name" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                  Contact Number\n                "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.phone,
+                                            expression: "form.phone"
+                                          }
+                                        ],
+                                        staticClass:
+                                          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+                                        attrs: {
+                                          id: "grid-first-name",
+                                          type: "tel",
+                                          placeholder: "",
+                                          name: "phone"
+                                        },
+                                        domProps: { value: _vm.form.phone },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "phone",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: " md:flex mb-6" }, [
+                                  _c("div", { staticClass: "md:w-1/2 px-3" }, [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                        attrs: { for: "grid-last-name" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                  Contact Email\n                "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.email,
+                                          expression: "form.email"
+                                        }
+                                      ],
+                                      staticClass:
+                                        "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+                                      attrs: {
+                                        id: "grid-last-name",
+                                        type: "email",
+                                        name: "email",
+                                        placeholder: ""
+                                      },
+                                      domProps: { value: _vm.form.email },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "email",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    })
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: " md:flex mb-6 min-h-1/2 mt-4"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "md:w-1/2 px-3 mb-6 md:mb-0"
+                                      },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass:
+                                              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                            attrs: { for: "grid-first-name" }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                  Street Address\n                "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.address,
+                                              expression: "form.address"
+                                            }
+                                          ],
+                                          staticClass:
+                                            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+                                          attrs: {
+                                            id: "grid-first-name",
+                                            type: "text",
+                                            name: "street",
+                                            placeholder: ""
+                                          },
+                                          domProps: { value: _vm.form.address },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "address",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "md:w-1/2 px-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass:
+                                              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                            attrs: { for: "grid-last-name" }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                  Suburb\n                "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.suburb,
+                                              expression: "form.suburb"
+                                            }
+                                          ],
+                                          staticClass:
+                                            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+                                          attrs: {
+                                            id: "grid-last-name",
+                                            type: "text",
+                                            placeholder: "",
+                                            name: "suburb"
+                                          },
+                                          domProps: { value: _vm.form.suburb },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "suburb",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "md:w-1/2 px-3" }, [
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass:
+                                        "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                      attrs: { for: "grid-last-name" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                City\n              "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.city,
+                                        expression: "form.city"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 mb-3 px-4",
+                                    attrs: {
+                                      id: "grid-last-name",
+                                      type: "text",
+                                      name: "city",
+                                      placeholder: ""
+                                    },
+                                    domProps: { value: _vm.form.city },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "city",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "px-3" }, [
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass:
+                                        "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                      attrs: { for: "grid-last-name" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                Client Description\n              "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("textarea", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.description,
+                                        expression: "form.description"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+                                    attrs: {
+                                      id: "grid-last-name",
+                                      placeholder: "",
+                                      row: "4"
+                                    },
+                                    domProps: { value: _vm.form.description },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "description",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ])
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
                           "div",
                           {
                             staticClass:
-                              "relative p-6 flex-auto min-h-1/2 min-h-3/4 "
+                              "flex items-center justify-end p-4 rounded-b"
                           },
                           [
-                            _c("p", {
-                              staticClass:
-                                "my-4 text-gray-600 text-lg leading-relaxed"
-                            }),
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "text-red-500 hover:text-red-700 bg-transparent border border-solid border-red-500 hover:border-red-700 active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-2 mb-1",
+                                staticStyle: { transition: "all .15s ease" },
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.toggleModal()
+                                  }
+                                }
+                              },
+                              [_vm._v("\n              Close\n            ")]
+                            ),
                             _vm._v(" "),
-                            _vm._m(4),
-                            _vm._v(" "),
-                            _vm._m(5)
+                            _vm.alertOpen === false
+                              ? _c("div", [
+                                  _c("input", {
+                                    staticClass:
+                                      "bg-green-600 hover:bg-green-700 rounded-lg text-white font-bold uppercase px-3 py-3 text-sm outline-none focus:outline-none mr-1 mb-1",
+                                    staticStyle: {
+                                      transition: "all .15s ease"
+                                    },
+                                    attrs: {
+                                      value: "Create Client",
+                                      type: "submit"
+                                    }
+                                  })
+                                ])
+                              : _vm._e()
                           ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b"
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "text-red-500 hover:text-red-700 bg-transparent border border-solid border-red-500 hover:border-red-700 active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-2 mb-1",
-                            staticStyle: { transition: "all .15s ease" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                return _vm.toggleModal()
-                              }
-                            }
-                          },
-                          [_vm._v("\n            Close\n          ")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "bg-green-400 hover:bg-green-500 rounded-lg text-white font-bold uppercase px-3 py-3 text-sm outline-none focus:outline-none mr-1 mb-1",
-                            staticStyle: { transition: "all .15s ease" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                return _vm.toggleModal()
-                              }
-                            }
-                          },
-                          [_vm._v("\n            Create Client\n          ")]
                         )
                       ]
                     )
@@ -62556,194 +63355,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "md:flex mb-6" }, [
-      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-            attrs: { for: "grid-first-name" }
-          },
-          [_vm._v("\n                Client Name\n              ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
-          attrs: { id: "grid-first-name", type: "text", placeholder: "" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: " md:flex mb-6" }, [
-      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-            attrs: { for: "grid-first-name" }
-          },
-          [_vm._v("\n                First Name\n              ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
-          attrs: { id: "grid-first-name", type: "text", placeholder: "Jane" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "md:w-1/2 px-3" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-            attrs: { for: "grid-last-name" }
-          },
-          [_vm._v("\n                Last Name\n              ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
-          attrs: { id: "grid-last-name", type: "text", placeholder: "Doe" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: " md:flex mb-6" }, [
-      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-            attrs: { for: "grid-first-name" }
-          },
-          [_vm._v("\n                Contact Number\n              ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
-          attrs: { id: "grid-first-name", type: "number", placeholder: "" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "md:w-1/2 px-3" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-            attrs: { for: "grid-last-name" }
-          },
-          [_vm._v("\n                Contact Email\n              ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
-          attrs: { id: "grid-last-name", type: "email", placeholder: "" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "px-3" }, [
-      _c(
-        "label",
-        {
-          staticClass:
-            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-          attrs: { for: "grid-last-name" }
-        },
-        [_vm._v("\n              Client Description\n            ")]
-      ),
-      _vm._v(" "),
-      _c("textarea", {
-        staticClass:
-          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
-        attrs: { id: "grid-last-name", placeholder: "", row: "4" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: " md:flex mb-6 min-h-1/2" }, [
-      _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-            attrs: { for: "grid-first-name" }
-          },
-          [_vm._v("\n                Street Address\n              ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
-          attrs: { id: "grid-first-name", type: "text", placeholder: "" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "md:w-1/2 px-3" }, [
-        _c(
-          "label",
-          {
-            staticClass:
-              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-            attrs: { for: "grid-last-name" }
-          },
-          [_vm._v("\n                Suburb\n              ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass:
-            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
-          attrs: { id: "grid-last-name", type: "text", placeholder: "" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "md:w-1/2 px-3" }, [
-      _c(
-        "label",
-        {
-          staticClass:
-            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
-          attrs: { for: "grid-last-name" }
-        },
-        [_vm._v("\n              City\n            ")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        staticClass:
-          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
-        attrs: { id: "grid-last-name", type: "text", placeholder: "" }
-      })
+    return _c("span", { staticClass: "inline-block align-middle mr-8" }, [
+      _c("b", { staticClass: "capitalize" }, [_vm._v("Success!")]),
+      _vm._v(" Client Successfully created.\n            ")
     ])
   }
 ]
@@ -65845,6 +66459,660 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reusecore/ClientModal.vue?vue&type=template&id=d96e356a&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/reusecore/ClientModal.vue?vue&type=template&id=d96e356a& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm.showModal
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "min-h-3/4 fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "relative w-auto my-4 mx-auto max-w-3xl min-w-1/2"
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "min-h-1/2 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "flex items-start justify-between p-5 rounded-t"
+                      },
+                      [
+                        _c("h3", { staticClass: "text-3xl font-semibold" }, [
+                          _vm._v("\n            Create Client\n          ")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none",
+                            on: {
+                              click: function($event) {
+                                return _vm.toggleModal()
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+                              },
+                              [_vm._v("\n              ×\n            ")]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      {
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return _vm.submit($event)
+                          }
+                        }
+                      },
+                      [
+                        _vm.alertOpen
+                          ? _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "text-white px-6 py-4 border-0 rounded relative mb-4 bg-blue-500"
+                              },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "text-xl inline-block mr-5 align-middle"
+                                  },
+                                  [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: " h-6 w-6",
+                                        attrs: {
+                                          fill: "none",
+                                          "stroke-linecap": "round",
+                                          "stroke-linejoin": "round",
+                                          "stroke-width": "2",
+                                          stroke: "currentColor",
+                                          viewBox: "0 0 24 24"
+                                        }
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            d:
+                                              "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(0),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.closeAlert()
+                                      }
+                                    }
+                                  },
+                                  [_c("span", [_vm._v("×")])]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.currentTab === "client"
+                          ? _c(
+                              "div",
+                              { staticClass: "relative px-6 flex-auto" },
+                              [
+                                _c("p", {
+                                  staticClass:
+                                    "my-4 text-gray-600 text-lg leading-relaxed"
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "md:flex mb-6" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "md:w-1/2 px-3 mb-6 md:mb-0"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                          attrs: { for: "grid-first-name" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                  Client Name\n                "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.company,
+                                            expression: "form.company"
+                                          }
+                                        ],
+                                        staticClass:
+                                          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+                                        attrs: {
+                                          id: "grid-first-name",
+                                          type: "text",
+                                          placeholder: "",
+                                          name: "client"
+                                        },
+                                        domProps: { value: _vm.form.company },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "company",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: " md:flex mb-6" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "md:w-1/2 px-3 mb-6 md:mb-0"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                          attrs: { for: "grid-first-name" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                  Contact Name\n                "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.contact,
+                                            expression: "form.contact"
+                                          }
+                                        ],
+                                        staticClass:
+                                          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+                                        attrs: {
+                                          id: "grid-first-name",
+                                          type: "text",
+                                          name: "name",
+                                          placeholder: "Jane"
+                                        },
+                                        domProps: { value: _vm.form.contact },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "contact",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "md:w-1/2 px-3 mb-6 md:mb-0"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                          attrs: { for: "grid-first-name" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                  Contact Number\n                "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.phone,
+                                            expression: "form.phone"
+                                          }
+                                        ],
+                                        staticClass:
+                                          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+                                        attrs: {
+                                          id: "grid-first-name",
+                                          type: "tel",
+                                          placeholder: "",
+                                          name: "phone"
+                                        },
+                                        domProps: { value: _vm.form.phone },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "phone",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: " md:flex mb-6" }, [
+                                  _c("div", { staticClass: "md:w-1/2 px-3" }, [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                        attrs: { for: "grid-last-name" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                  Contact Email\n                "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.email,
+                                          expression: "form.email"
+                                        }
+                                      ],
+                                      staticClass:
+                                        "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+                                      attrs: {
+                                        id: "grid-last-name",
+                                        type: "email",
+                                        name: "email",
+                                        placeholder: ""
+                                      },
+                                      domProps: { value: _vm.form.email },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "email",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    })
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: " md:flex mb-6 min-h-1/2 mt-4"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "md:w-1/2 px-3 mb-6 md:mb-0"
+                                      },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass:
+                                              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                            attrs: { for: "grid-first-name" }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                  Street Address\n                "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.address,
+                                              expression: "form.address"
+                                            }
+                                          ],
+                                          staticClass:
+                                            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+                                          attrs: {
+                                            id: "grid-first-name",
+                                            type: "text",
+                                            name: "street",
+                                            placeholder: ""
+                                          },
+                                          domProps: { value: _vm.form.address },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "address",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "md:w-1/2 px-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass:
+                                              "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                            attrs: { for: "grid-last-name" }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                  Suburb\n                "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.suburb,
+                                              expression: "form.suburb"
+                                            }
+                                          ],
+                                          staticClass:
+                                            "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+                                          attrs: {
+                                            id: "grid-last-name",
+                                            type: "text",
+                                            placeholder: "",
+                                            name: "suburb"
+                                          },
+                                          domProps: { value: _vm.form.suburb },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "suburb",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "md:w-1/2 px-3" }, [
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass:
+                                        "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                      attrs: { for: "grid-last-name" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                City\n              "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.city,
+                                        expression: "form.city"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 mb-3 px-4",
+                                    attrs: {
+                                      id: "grid-last-name",
+                                      type: "text",
+                                      name: "city",
+                                      placeholder: ""
+                                    },
+                                    domProps: { value: _vm.form.city },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "city",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "px-3" }, [
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass:
+                                        "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+                                      attrs: { for: "grid-last-name" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                Client Description\n              "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("textarea", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.form.description,
+                                        expression: "form.description"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+                                    attrs: {
+                                      id: "grid-last-name",
+                                      placeholder: "",
+                                      row: "4"
+                                    },
+                                    domProps: { value: _vm.form.description },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.form,
+                                          "description",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ])
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex items-center justify-end p-4 rounded-b"
+                          },
+                          [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "text-red-500 hover:text-red-700 bg-transparent border border-solid border-red-500 hover:border-red-700 active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-2 mb-1",
+                                staticStyle: { transition: "all .15s ease" },
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.toggleModal()
+                                  }
+                                }
+                              },
+                              [_vm._v("\n              Close\n            ")]
+                            ),
+                            _vm._v(" "),
+                            _vm.alertOpen === false
+                              ? _c("div", [
+                                  _c("input", {
+                                    staticClass:
+                                      "bg-green-600 hover:bg-green-700 rounded-lg text-white font-bold uppercase px-3 py-3 text-sm outline-none focus:outline-none mr-1 mb-1",
+                                    staticStyle: {
+                                      transition: "all .15s ease"
+                                    },
+                                    attrs: {
+                                      value: "Create Client",
+                                      type: "submit"
+                                    }
+                                  })
+                                ])
+                              : _vm._e()
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.showModal
+      ? _c("div", { staticClass: "opacity-25 fixed inset-0 z-40 bg-black" })
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "inline-block align-middle mr-8" }, [
+      _c("b", { staticClass: "capitalize" }, [_vm._v("Success!")]),
+      _vm._v(" Client Successfully created.\n            ")
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reusecore/Dropdown.vue?vue&type=template&id=6fdc91b8&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/reusecore/Dropdown.vue?vue&type=template&id=6fdc91b8& ***!
@@ -66377,6 +67645,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "absolute w-full z-10 bg-gray-200" }, [
+    _vm.clientModalOpen === true ? _c("div", [_c("ClientModal")], 1) : _vm._e(),
+    _vm._v(" "),
     _c("div", [
       _c("div", [
         _c("div", {}, [
@@ -66520,7 +67790,12 @@ var render = function() {
                               "button",
                               {
                                 staticClass:
-                                  "no-underline text-purple-700 hover:text-purple-900 flex items-center justify-center py-4"
+                                  "no-underline text-purple-700 focus:outline-none hover:text-purple-900 flex items-center justify-center py-4",
+                                on: {
+                                  click: function($event) {
+                                    _vm.clientModalOpen = !_vm.clientModalOpen
+                                  }
+                                }
                               },
                               [
                                 _c(
@@ -84474,6 +85749,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StaffIndex_vue_vue_type_template_id_b2bbeb28___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StaffIndex_vue_vue_type_template_id_b2bbeb28___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/reusecore/ClientModal.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/reusecore/ClientModal.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ClientModal_vue_vue_type_template_id_d96e356a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ClientModal.vue?vue&type=template&id=d96e356a& */ "./resources/js/components/reusecore/ClientModal.vue?vue&type=template&id=d96e356a&");
+/* harmony import */ var _ClientModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClientModal.vue?vue&type=script&lang=js& */ "./resources/js/components/reusecore/ClientModal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ClientModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ClientModal_vue_vue_type_template_id_d96e356a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ClientModal_vue_vue_type_template_id_d96e356a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/reusecore/ClientModal.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/reusecore/ClientModal.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/reusecore/ClientModal.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ClientModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ClientModal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reusecore/ClientModal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ClientModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/reusecore/ClientModal.vue?vue&type=template&id=d96e356a&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/reusecore/ClientModal.vue?vue&type=template&id=d96e356a& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClientModal_vue_vue_type_template_id_d96e356a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ClientModal.vue?vue&type=template&id=d96e356a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reusecore/ClientModal.vue?vue&type=template&id=d96e356a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClientModal_vue_vue_type_template_id_d96e356a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClientModal_vue_vue_type_template_id_d96e356a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

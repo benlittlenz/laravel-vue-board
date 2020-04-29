@@ -1,5 +1,9 @@
 <template>
   <div class="absolute w-full z-10 bg-gray-200">
+    <div v-if="clientModalOpen === true">
+      <ClientModal />
+    </div>
+  
     <div>
       <div>
         <div class="">
@@ -69,7 +73,8 @@
               <div class="flex ml-6 items-center bg-blue-100">
                 <div class="flex-grow text-right -mb-px">
                   <button
-                    class="no-underline text-purple-700 hover:text-purple-900 flex items-center justify-center py-4"
+                    class="no-underline text-purple-700 focus:outline-none hover:text-purple-900 flex items-center justify-center py-4"
+                    @click="clientModalOpen = ! clientModalOpen"
                   >
                     <svg
                       class="h-6 w-6 mr-2"
@@ -95,8 +100,14 @@
 </template>
 
 <script>
+import ClientModal from './ClientModal.vue'
+
 export default {
+    components: {
+      ClientModal
+    },
     props: ['clients'],
+
     data() {
         return {
             options: [
@@ -107,6 +118,7 @@ export default {
             selected: '',
             open: false,
             searchQuery: '',
+            clientModalOpen: false,
         }
     },
 
