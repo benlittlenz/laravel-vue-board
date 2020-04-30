@@ -50,3 +50,10 @@ export const createItem = async ({ commit }, { data }) => {
 
     return await axios.post('/api/items', data)
 }
+
+
+
+
+export const closeModal = async({commit}) => {
+    commit('RESET_DATA')
+}

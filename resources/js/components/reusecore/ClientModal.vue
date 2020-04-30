@@ -234,7 +234,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: "RegularModal",
@@ -257,6 +257,7 @@ export default {
       errors: null,
     }
   },
+
   methods: {
     toggleModal: function(){
       this.showModal = !this.showModal;
@@ -265,11 +266,22 @@ export default {
         createClient: 'createClient'
       }), 
 
+      ...mapActions({
+        closeModal: 'closeModal'
+      }),
+
+      ...mapActions({
+        getClients: 'getClients'
+      }),
+
       submit() {
         this.createClient({
           data: this.form
         }).then(res => {
           console.log("RES", res)
+
+          this.closeModal()
+          this.getClients()
           //this.showModal = false;
           this.alertOpen = true;
         }).catch(err => {

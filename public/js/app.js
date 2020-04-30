@@ -5204,6 +5204,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
     createClient: 'createClient'
+  }), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    closeModal: 'closeModal'
+  }), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    getClients: 'getClients'
   }), {
     submit: function submit() {
       var _this = this;
@@ -5211,7 +5215,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.createClient({
         data: this.form
       }).then(function (res) {
-        console.log("RES", res); //this.showModal = false;
+        console.log("RES", res);
+
+        _this.closeModal();
+
+        _this.getClients(); //this.showModal = false;
+
 
         _this.alertOpen = true;
       })["catch"](function (err) {
@@ -5653,7 +5662,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    console.log('hey', this.client);
+    console.log('hey', this.clients);
   }
 });
 
@@ -67727,7 +67736,7 @@ var render = function() {
                                   "my-1 cursor-pointer hover:bg-gray-300 rounded",
                                 on: {
                                   click: function($event) {
-                                    _vm.searchQuery = _vm.option
+                                    _vm.searchQuery = client.company
                                     _vm.open = false
                                   }
                                 }
@@ -67752,7 +67761,7 @@ var render = function() {
                               staticClass: "overflow-auto max-h-full",
                               on: {
                                 click: function($event) {
-                                  _vm.searchQuery = _vm.option
+                                  _vm.searchQuery = item
                                   _vm.open = false
                                 }
                               }
@@ -86133,7 +86142,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /*!***************************************!*\
   !*** ./resources/js/store/actions.js ***!
   \***************************************/
-/*! exports provided: getProjects, getClients, getStaff, getItems, createProject, createClient, createItem */
+/*! exports provided: getProjects, getClients, getStaff, getItems, createProject, createClient, createItem, closeModal */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -86145,6 +86154,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createProject", function() { return createProject; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createClient", function() { return createClient; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createItem", function() { return createItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -86365,6 +86375,28 @@ var createItem = /*#__PURE__*/function () {
     return _ref17.apply(this, arguments);
   };
 }();
+var closeModal = /*#__PURE__*/function () {
+  var _ref19 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(_ref18) {
+    var commit;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
+      while (1) {
+        switch (_context8.prev = _context8.next) {
+          case 0:
+            commit = _ref18.commit;
+            commit('RESET_DATA');
+
+          case 2:
+          case "end":
+            return _context8.stop();
+        }
+      }
+    }, _callee8);
+  }));
+
+  return function closeModal(_x11) {
+    return _ref19.apply(this, arguments);
+  };
+}();
 
 /***/ }),
 
@@ -86432,7 +86464,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!*****************************************!*\
   !*** ./resources/js/store/mutations.js ***!
   \*****************************************/
-/*! exports provided: PUSH_PROJECTS, PUSH_CLIENTS, PUSH_STAFF, PUSH_ITEMS, CREATE_PROJECT, CREATE_CLIENT, CREATE_ITEM */
+/*! exports provided: PUSH_PROJECTS, PUSH_CLIENTS, PUSH_STAFF, PUSH_ITEMS, CREATE_PROJECT, CREATE_CLIENT, CREATE_ITEM, RESET_DATA */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -86444,6 +86476,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_PROJECT", function() { return CREATE_PROJECT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_CLIENT", function() { return CREATE_CLIENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_ITEM", function() { return CREATE_ITEM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_DATA", function() { return RESET_DATA; });
 //GETTING
 var PUSH_PROJECTS = function PUSH_PROJECTS(state, projects) {
   state.projects = projects;
@@ -86472,6 +86505,9 @@ var CREATE_ITEM = function CREATE_ITEM(state, item) {
   state.items.push({
     item: item
   });
+};
+var RESET_DATA = function RESET_DATA(state) {
+  state.clients = [];
 };
 
 /***/ }),

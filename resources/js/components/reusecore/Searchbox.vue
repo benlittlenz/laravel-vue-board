@@ -49,7 +49,7 @@
                   v-for="client in clients"
 
                   class="my-1 cursor-pointer hover:bg-gray-300 rounded"
-                  @click="searchQuery = option; open = false;"
+                  @click="searchQuery = client.company; open = false;"
                 >
                   <p class="py-3 ml-4">
                     {{ client.company }}
@@ -60,7 +60,7 @@
                 v-for="item in resultQuery"
                 v-else
                 class="overflow-auto max-h-full"
-                @click="searchQuery = option; open = false;"
+                @click="searchQuery = item; open = false;"
               >
                 <div
                   class="my-1 cursor-pointer hover:bg-gray-300 rounded"
@@ -100,6 +100,7 @@
 </template>
 
 <script>
+
 import ClientModal from './ClientModal.vue'
 
 export default {
@@ -136,7 +137,7 @@ export default {
     },
 
     mounted() {
-        console.log('hey', this.client)
+        console.log('hey', this.clients)
     }
 }
 </script>

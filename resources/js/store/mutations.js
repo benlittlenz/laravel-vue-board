@@ -29,3 +29,10 @@ export const CREATE_CLIENT = (state, client) => {
 export const CREATE_ITEM = (state, item) => {
     state.items.push({ item })
 }
+
+
+
+
+export const RESET_DATA = (state) => {
+    state.clients = []
+}
