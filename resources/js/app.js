@@ -7,14 +7,17 @@ import Vue from 'vue';
 import Vuex from 'vuex'
 import vSelect from 'vue-select'
 import vClickOutside from 'v-click-outside'
+import Vuelidate from 'vuelidate'
 require('./bootstrap');
 
 import App from './components/App'
 import router from './router';
 import store from './store'
 
+
 Vue.use(vClickOutside)
 Vue.use(Vuex);
+Vue.use(Vuelidate)
 Vue.component('v-select', vSelect)
 
 const app = new Vue({

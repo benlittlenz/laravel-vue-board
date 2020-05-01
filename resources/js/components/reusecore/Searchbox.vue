@@ -18,8 +18,8 @@
             >
 
             <button
+              type="button"
               @click="open = !open"
-              @submit.prevent="submit"
             >
               <svg
                 class="h-4 w-4 absolute right-0 top-0 mt-3 mr-2"
@@ -47,7 +47,7 @@
                 <div
                     
                   v-for="client in clients"
-
+                  :key="client.id"
                   class="my-1 cursor-pointer hover:bg-gray-300 rounded"
                   @click="searchQuery = client.company; open = false;"
                 >
@@ -59,6 +59,7 @@
               <div 
                 v-for="item in resultQuery"
                 v-else
+                :key="item.id"
                 class="overflow-auto max-h-full"
                 @click="searchQuery = item; open = false;"
               >
@@ -74,6 +75,7 @@
                 <div class="flex-grow text-right -mb-px">
                   <button
                     class="no-underline text-purple-700 focus:outline-none hover:text-purple-900 flex items-center justify-center py-4"
+                    type="button"
                     @click="clientModalOpen = ! clientModalOpen"
                   >
                     <svg

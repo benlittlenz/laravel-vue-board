@@ -74,12 +74,20 @@
                   </label>
                   <input
                     id="grid-first-name"
+                    v-model.trim="form.company"
                     v-model="form.company"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
                     type="text"
                     placeholder=""
                     name="client"
                   >
+                  gdgfgf
+                  <div
+                    v-if="$v.form.company.$error"
+                    class="error"
+                  >
+                    <span v-if="$v.form.company.minLength === false" class="text-danger">arrr </span>
+                  </div>
                 </div>
               </div>
 
@@ -234,8 +242,9 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 
+const { required, minLength, email, numeric, url, maxLength } = require('vuelidate/lib/validators')
 export default {
   name: "RegularModal",
   data() {
@@ -255,6 +264,23 @@ export default {
           company_id: 1
       },
       errors: null,
+      submitStatus: null
+    }
+  },
+
+  validations: {
+    form: {
+      company: {
+        required,
+        minLength: minLength(2),
+        maxLength: maxLength(100)
+      },
+      email: {
+        email
+      },
+      phone: {
+        numeric
+      }
     }
   },
 
