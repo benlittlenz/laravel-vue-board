@@ -3140,6 +3140,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3158,7 +3160,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         name: '',
         phone: '',
         email: '',
-        password: ''
+        password: '',
+        company: ''
       }
     };
   },
@@ -3188,20 +3191,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 console.log('blah');
-                axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/staff', _this.staff).then(function (response) {
+                axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/companies', _this.company).then(function (response) {
                   console.log('res', response);
+                  _this.staff.company = response.data.id;
+
+                  if (_this.staff.company) {
+                    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/staff', _this.staff).then(function (res) {
+                      console.log('res', res);
+                    })["catch"](function (err) {
+                      if (err.res.status == 422) {
+                        console.log(err); //this.errors = err.res.data.errors
+                      }
+                    });
+                  }
                 })["catch"](function (error) {
                   if (error.response.status == 422) {
-                    _this.errors = error.response.data.errors;
+                    console.log(error); //this.errors = error.response.data.errors
                   }
-                }); // axios.post('/api/companies', this.company)
-                // .then(response => {
-                //   console.log('res', response)
-                // }).catch(error => {
-                //     if (error.response.status == 422){
-                //         this.errors = error.response.data.errors
-                //     }
-                // })
+                });
 
               case 2:
               case "end":
@@ -63508,7 +63515,7 @@ var render = function() {
                               "button",
                               {
                                 staticClass:
-                                  "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
+                                  "w-32 focus:outline-none border border-transparent py-2 px-5 \n                rounded-lg shadow-sm text-center text-white bg-orange-600 hover:bg-orange-700 font-medium",
                                 attrs: { type: "button" },
                                 on: {
                                   click: function($event) {
@@ -63523,7 +63530,7 @@ var render = function() {
                         _vm.step === 3
                           ? _c("input", {
                               staticClass:
-                                "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
+                                "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm \n                text-center text-white bg-orange-600 hover:bg-orange-700 font-medium",
                               attrs: { type: "submit", value: "Create Job" }
                             })
                           : _vm._e()

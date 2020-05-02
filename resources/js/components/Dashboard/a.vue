@@ -291,7 +291,8 @@
               <div class="w-1/2 text-right">
                 <button
                   v-if="step < 3"
-                  class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium"
+                  class="w-32 focus:outline-none border border-transparent py-2 px-5 
+                  rounded-lg shadow-sm text-center text-white bg-orange-600 hover:bg-orange-700 font-medium"
                   type="button"
                   @click="step++"
                 >
@@ -300,7 +301,8 @@
 
                 <input
                   v-if="step === 3"
-                  class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium"
+                  class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm 
+                  text-center text-white bg-orange-600 hover:bg-orange-700 font-medium"
                   type="submit"
                   value="Create Job"
                 >
@@ -334,7 +336,8 @@ export default {
         name: '',
         phone: '',
         email: '',
-        password: ''
+        password: '',
+        company: ''
       }
     }
   },
@@ -362,23 +365,32 @@ export default {
 
     async submit () {
       console.log('blah')
-      axios.post('/api/staff', this.staff)
-        .then(response => {
-          console.log('res', response);
+      axios.post('/api/companies', this.company)
+      .then(response => {
+        console.log('res', response)
+        this.staff.company = response.data.id
+
+      if(this.staff.company) {
+       axios.post('/api/staff', this.staff)
+        .then(res => {
+          console.log('res', res);
           
-        }).catch(error => {
-          if (error.response.status == 422){
-              this.errors = error.response.data.errors
+        }).catch(err => {
+          if (err.res.status == 422){
+            console.log(err)
+              //this.errors = err.res.data.errors
           }
         })
-      // axios.post('/api/companies', this.company)
-      // .then(response => {
-      //   console.log('res', response)
-      // }).catch(error => {
-      //     if (error.response.status == 422){
-      //         this.errors = error.response.data.errors
-      //     }
-      // })
+      }
+
+      }).catch(error => {
+          if (error.response.status == 422){
+            console.log(error)
+              //this.errors = error.response.data.errors
+          }
+      })
+
+
     },
   
   }
