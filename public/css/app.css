@@ -14324,6 +14324,15 @@ a {
   padding-right: 25px;
 }
 
+.icon {
+  left: 20px;
+  top: 0;
+}
+
+.second-icon {
+  margin-left: -120px;
+}
+
 @media (min-width: 640px) {
   .md\:sr-only {
     position: absolute;

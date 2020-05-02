@@ -2815,8 +2815,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
-/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2872,29 +2870,279 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      name: '',
-      age: 0
+      step: 1,
+      passwordStrengthText: '',
+      togglePassword: false,
+      password: '',
+      form: {
+        companyName: '',
+        companyEmail: '',
+        employees: ''
+      }
     };
   },
-  validations: {
-    name: {
-      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
-      minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(4)
-    },
-    age: {
-      between: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["between"])(20, 30)
-    }
-  },
   methods: {
-    notify: function notify() {
-      this.$notify({
-        group: 'create_client_modal',
-        title: 'Client successfully created!'
-      });
+    checkPasswordStrength: function checkPasswordStrength() {
+      var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+      var mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+      var value = this.password;
+
+      if (strongRegex.test(value)) {
+        this.passwordStrengthText = "Strong password";
+      } else if (mediumRegex.test(value)) {
+        this.passwordStrengthText = "Could be stronger";
+      } else {
+        this.passwordStrengthText = "Too weak";
+      }
+
+      console.log(this.passwordStrengthText);
     }
   }
 });
@@ -62552,127 +62800,733 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    {
+      staticClass: "max-w-3xl mx-auto px-4 py-10 bg-indigo-600 rounded-lg mt-6"
+    },
     [
-      _c("button", { on: { click: _vm.notify } }, [
-        _vm._v("\n    What's this?\n  ")
+      _c("div", { staticClass: "py-4" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "uppercase tracking-wide text-xs font-bold text-white mb-1 leading-tight"
+          },
+          [_vm._v("\n      Step " + _vm._s(_vm.step) + " of 3\n    ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex flex-col md:flex-row md:items-center md:justify-between"
+          },
+          [
+            _c("div", { staticClass: "flex-1" }, [
+              _vm.step === 1
+                ? _c("div", [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "text-xl text-center font-bold text-white leading-tight"
+                      },
+                      [_vm._v("\n            Company Details\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.step === 2
+                ? _c("div", [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "text-xl text-center font-bold text-white leading-tight"
+                      },
+                      [_vm._v("\n            Company Logo\n          ")]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.step === 3
+                ? _c("div", [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "text-xl text-center font-bold text-white leading-tight"
+                      },
+                      [_vm._v("\n            Your Details\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(1)
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.step === 4
+                ? _c("div", [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "text-lg font-bold text-gray-700 leading-tight"
+                      },
+                      [_vm._v("\n            Create account\n          ")]
+                    )
+                  ])
+                : _vm._e()
+            ])
+          ]
+        )
       ]),
-      _vm._v("\n  jghjhghjjh\n  "),
-      _c(
-        "div",
-        {
-          staticClass: "form-group",
-          class: { "form-group--error": _vm.$v.name.$error }
-        },
-        [
-          _c("label", { staticClass: "form__label" }, [_vm._v("Name")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.trim",
-                value: _vm.$v.name.$model,
-                expression: "$v.name.$model",
-                modifiers: { trim: true }
-              }
-            ],
-            staticClass: "form__input",
-            domProps: { value: _vm.$v.name.$model },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$v.name, "$model", $event.target.value.trim())
-              },
-              blur: function($event) {
-                return _vm.$forceUpdate()
-              }
-            }
-          })
-        ]
-      ),
       _vm._v(" "),
-      !_vm.$v.name.required
-        ? _c("div", { staticClass: "error" }, [
-            _vm._v("\n    Field is required\n  ")
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.$v.name.minLength
-        ? _c("div", { staticClass: "error" }, [
-            _vm._v(
-              "\n    Name must have at least " +
-                _vm._s(_vm.$v.name.$params.minLength.min) +
-                " letters.\n  "
-            )
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("tree-view", {
-        attrs: {
-          data: _vm.$v.name,
-          options: { rootObjectKey: "$v.name", maxDepth: 2 }
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "form-group",
-          class: { "form-group--error": _vm.$v.age.$error }
-        },
-        [
-          _c("label", { staticClass: "form__label" }, [_vm._v("Age")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.trim.lazy",
-                value: _vm.$v.age.$model,
-                expression: "$v.age.$model",
-                modifiers: { trim: true, lazy: true }
-              }
-            ],
-            staticClass: "form__input",
-            domProps: { value: _vm.$v.age.$model },
-            on: {
-              change: function($event) {
-                _vm.$set(_vm.$v.age, "$model", $event.target.value.trim())
-              },
-              blur: function($event) {
-                return _vm.$forceUpdate()
-              }
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      !_vm.$v.age.between
-        ? _c("div", { staticClass: "error" }, [
-            _vm._v(
-              "\n    Must be between " +
-                _vm._s(_vm.$v.age.$params.between.min) +
-                " and " +
-                _vm._s(_vm.$v.age.$params.between.max) +
-                "\n  "
-            )
-          ])
-        : _vm._e(),
-      _c("span", { attrs: { tabindex: "0" } }, [_vm._v("Blur to see changes")]),
-      _vm._v(" "),
-      _c("tree-view", {
-        attrs: {
-          data: _vm.$v.age,
-          options: { rootObjectKey: "$v.age", maxDepth: 2 }
-        }
-      })
-    ],
-    1
+      _c("div", { staticClass: "py-10" }, [
+        _vm.step === 1
+          ? _c("div", [
+              _c("div", { staticClass: "mb-5" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "font-bold mb-1 text-white block",
+                    attrs: { for: "firstname" }
+                  },
+                  [_vm._v("Company Name")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.companyName,
+                      expression: "form.companyName"
+                    }
+                  ],
+                  staticClass:
+                    "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                  attrs: { type: "text", placeholder: "Enter Company Name" },
+                  domProps: { value: _vm.form.companyName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "companyName", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-5" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "font-bold mb-1 text-white block",
+                    attrs: { for: "email" }
+                  },
+                  [_vm._v("Company Email")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.companyEmail,
+                      expression: "form.companyEmail"
+                    }
+                  ],
+                  staticClass:
+                    "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                  attrs: { type: "email", placeholder: "Enter Company Email" },
+                  domProps: { value: _vm.form.companyEmail },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "companyEmail", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-5 w-1/2" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "font-bold mb-1 text-white block",
+                    attrs: { for: "email" }
+                  },
+                  [_vm._v("Number of Employees")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.employees,
+                      expression: "form.employees"
+                    }
+                  ],
+                  staticClass:
+                    "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                  attrs: { type: "number", placeholder: "0" },
+                  domProps: { value: _vm.form.employees },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "employees", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.step === 2
+          ? _c("div", [
+              _c("div", { staticClass: "mb-5 text-center" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "mx-auto w-32 h-32 mb-2 border rounded-full relative bg-gray-100 mb-4 shadow-inset"
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "object-cover w-full h-32 rounded-full",
+                      attrs: { id: "image", src: _vm.image }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "cursor-pointer inine-flex justify-between items-center focus:outline-none rounded-lg \n          py-2 px-4 rounded-lg shadow-sm text-left text-gray-800 bg-gray-300 hover:bg-gray-100 font-medium",
+                    attrs: { for: "fileInput", type: "button" }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass:
+                          "inline-flex flex-shrink-0 w-6 h-6 -mt-1 mr-1",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 24 24",
+                          "stroke-width": "2",
+                          stroke: "currentColor",
+                          fill: "none",
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round"
+                        }
+                      },
+                      [
+                        _c("rect", {
+                          attrs: {
+                            x: "0",
+                            y: "0",
+                            width: "24",
+                            height: "24",
+                            stroke: "none"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("circle", { attrs: { cx: "12", cy: "13", r: "3" } })
+                      ]
+                    ),
+                    _vm._v("\n          Company Logo\n        ")
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "mx-auto w-48 text-gray-300 text-xs text-center mt-1"
+                  },
+                  [_vm._v("\n          Click to add a company logo\n        ")]
+                )
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.step === 3
+          ? _c("div", [
+              _c("div", { staticClass: " md:flex mb-6" }, [
+                _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "font-bold mb-1 text-white block",
+                      attrs: { for: "firstname" }
+                    },
+                    [_vm._v("Name")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.companyName,
+                        expression: "form.companyName"
+                      }
+                    ],
+                    staticClass:
+                      "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                    attrs: { type: "text", placeholder: "Full Name" },
+                    domProps: { value: _vm.form.companyName },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "companyName", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "md:w-1/2 px-3 mb-6 md:mb-0" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "font-bold mb-1 text-white block",
+                      attrs: { for: "firstname" }
+                    },
+                    [_vm._v("Email")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.companyName,
+                        expression: "form.companyName"
+                      }
+                    ],
+                    staticClass:
+                      "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                    attrs: { type: "text", placeholder: "Email Address" },
+                    domProps: { value: _vm.form.companyName },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "companyName", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-5 md:w-1/2 px-3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "font-bold mb-1 text-white block ",
+                    attrs: { for: "firstname" }
+                  },
+                  [_vm._v("Contact Number")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.companyName,
+                      expression: "form.companyName"
+                    }
+                  ],
+                  staticClass:
+                    "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                  attrs: { type: "phone", placeholder: "Enter Contact #" },
+                  domProps: { value: _vm.form.companyName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "companyName", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-5" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "font-bold mb-1 text-white block text-center text-xl",
+                    attrs: { for: "password" }
+                  },
+                  [_vm._v("Set up password")]
+                ),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _c("div", { staticClass: "relative" }, [
+                  (_vm.togglePassword ? "text" : "password") === "checkbox"
+                    ? _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.password,
+                            expression: "password"
+                          }
+                        ],
+                        staticClass:
+                          "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                        attrs: { placeholder: "Password", type: "checkbox" },
+                        domProps: {
+                          checked: Array.isArray(_vm.password)
+                            ? _vm._i(_vm.password, null) > -1
+                            : _vm.password
+                        },
+                        on: {
+                          keydown: function($event) {
+                            return _vm.checkPasswordStrength()
+                          },
+                          change: function($event) {
+                            var $$a = _vm.password,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 && (_vm.password = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.password = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.password = $$c
+                            }
+                          }
+                        }
+                      })
+                    : (_vm.togglePassword ? "text" : "password") === "radio"
+                    ? _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.password,
+                            expression: "password"
+                          }
+                        ],
+                        staticClass:
+                          "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                        attrs: { placeholder: "Password", type: "radio" },
+                        domProps: { checked: _vm._q(_vm.password, null) },
+                        on: {
+                          keydown: function($event) {
+                            return _vm.checkPasswordStrength()
+                          },
+                          change: function($event) {
+                            _vm.password = null
+                          }
+                        }
+                      })
+                    : _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.password,
+                            expression: "password"
+                          }
+                        ],
+                        staticClass:
+                          "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                        attrs: {
+                          placeholder: "Password",
+                          type: _vm.togglePassword ? "text" : "password"
+                        },
+                        domProps: { value: _vm.password },
+                        on: {
+                          keydown: function($event) {
+                            return _vm.checkPasswordStrength()
+                          },
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.password = $event.target.value
+                          }
+                        }
+                      }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "absolute right-0 bottom-0 top-0 px-3 py-3 cursor-pointer",
+                      on: {
+                        click: function($event) {
+                          _vm.togglePassword = !_vm.togglePassword
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "w-6 h-6 fill-current text-gray-500",
+                          class: {
+                            hidden: !_vm.togglePassword,
+                            block: _vm.togglePassword
+                          },
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 24 24"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              d:
+                                "M12 19c.946 0 1.81-.103 2.598-.281l-1.757-1.757C12.568 16.983 12.291 17 12 17c-5.351 0-7.424-3.846-7.926-5 .204-.47.674-1.381 1.508-2.297L4.184 8.305c-1.538 1.667-2.121 3.346-2.132 3.379-.069.205-.069.428 0 .633C2.073 12.383 4.367 19 12 19zM12 5c-1.837 0-3.346.396-4.604.981L3.707 2.293 2.293 3.707l18 18 1.414-1.414-3.319-3.319c2.614-1.951 3.547-4.615 3.561-4.657.069-.205.069-.428 0-.633C21.927 11.617 19.633 5 12 5zM16.972 15.558l-2.28-2.28C14.882 12.888 15 12.459 15 12c0-1.641-1.359-3-3-3-.459 0-.888.118-1.277.309L8.915 7.501C9.796 7.193 10.814 7 12 7c5.351 0 7.424 3.846 7.926 5C19.624 12.692 18.76 14.342 16.972 15.558z"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "w-6 h-6 fill-current text-gray-500",
+                          class: {
+                            hidden: _vm.togglePassword,
+                            block: !_vm.togglePassword
+                          },
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 24 24"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              d:
+                                "M12,9c-1.642,0-3,1.359-3,3c0,1.642,1.358,3,3,3c1.641,0,3-1.358,3-3C15,10.359,13.641,9,12,9z"
+                            }
+                          }),
+                          _c("path", {
+                            attrs: {
+                              d:
+                                "M12,5c-7.633,0-9.927,6.617-9.948,6.684L1.946,12l0.105,0.316C2.073,12.383,4.367,19,12,19s9.927-6.617,9.948-6.684 L22.054,12l-0.105-0.316C21.927,11.617,19.633,5,12,5z M12,17c-5.351,0-7.424-3.846-7.926-5C4.578,10.842,6.652,7,12,7 c5.351,0,7.424,3.846,7.926,5C19.422,13.158,17.348,17,12,17z"
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex items-center mt-4 h-3" }, [
+                  _c("div", { staticClass: "w-2/3 flex justify-between h-2" }, [
+                    _c("div", {
+                      staticClass: "h-2 rounded-full mr-1 w-1/3 bg-gray-300",
+                      class: {
+                        "bg-red-400":
+                          _vm.passwordStrengthText == "Too weak" ||
+                          _vm.passwordStrengthText == "Could be stronger" ||
+                          _vm.passwordStrengthText == "Strong password"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "h-2 rounded-full mr-1 w-1/3 bg-gray-300",
+                      class: {
+                        "bg-orange-400":
+                          _vm.passwordStrengthText == "Could be stronger" ||
+                          _vm.passwordStrengthText == "Strong password"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "h-2 rounded-full w-1/3 bg-gray-300",
+                      class: {
+                        "bg-green-400":
+                          _vm.passwordStrengthText == "Strong password"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass:
+                      "text-gray-500 font-medium text-sm ml-3 leading-none",
+                    attrs: { "x-text": "passwordStrengthText" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-5" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "font-bold mb-1 text-white block text-center text-xl",
+                      attrs: { for: "password" }
+                    },
+                    [_vm._v("Verify Password")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass:
+                      "w-full px-4 py-3 border-solid border-2 border-green-500 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
+                    attrs: { type: _vm.password, placeholder: "Password" },
+                    on: {
+                      keydown: function($event) {
+                        return _vm.checkPasswordStrength()
+                      }
+                    }
+                  })
+                ])
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.step != "complete"
+          ? _c("div", { staticClass: "-mr-10" }, [
+              _c("div", { staticClass: "max-w-3xl mx-auto px-4" }, [
+                _c("div", { staticClass: "flex justify-between" }, [
+                  _c("div", { staticClass: "w-1/2" }, [
+                    _vm.step > 1
+                      ? _c(
+                          "button",
+                          {
+                            staticClass:
+                              "w-32 focus:outline-none py-2 px-5 rounded-lg shadow-sm text-center text-gray-600 bg-white hover:bg-gray-100 font-medium border",
+                            on: {
+                              click: function($event) {
+                                _vm.step--
+                              }
+                            }
+                          },
+                          [_vm._v("\n              Previous\n            ")]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-1/2 text-right" }, [
+                    _vm.step < 3
+                      ? _c(
+                          "button",
+                          {
+                            staticClass:
+                              "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
+                            on: {
+                              click: function($event) {
+                                _vm.step++
+                              }
+                            }
+                          },
+                          [_vm._v("\n              Next\n            ")]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.step === 3
+                      ? _c(
+                          "button",
+                          {
+                            staticClass:
+                              "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
+                            on: {
+                              click: function($event) {
+                                _vm.step = "complete"
+                              }
+                            }
+                          },
+                          [_vm._v("\n              Complete\n            ")]
+                        )
+                      : _vm._e()
+                  ])
+                ])
+              ])
+            ])
+          : _vm._e()
+      ])
+    ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "-mb-12 flex items-center justify-center" },
+      [
+        _c("img", {
+          staticClass: "mt-6 h-20 w-20 icon float-left z-0",
+          attrs: { src: "https://s3.amazonaws.com/jebbles-codepen/icon.png" }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "-mb-12 flex items-center justify-center" },
+      [
+        _c("img", {
+          staticClass: " h-40 w-40 icon float-left z-0",
+          attrs: {
+            src: "https://s3.amazonaws.com/jebbles-codepen/file_icon_1.png"
+          }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-white mt-2 mb-4" }, [
+      _vm._v(
+        "\n          Create a secure password including the following criteria below.\n\n          "
+      ),
+      _c("ul", { staticClass: "list-disc text-sm ml-4 mt-2" }, [
+        _c("li", [_vm._v("lowercase letters")]),
+        _vm._v(" "),
+        _c("li", [_vm._v("numbers")]),
+        _vm._v(" "),
+        _c("li", [_vm._v("capital letters")]),
+        _vm._v(" "),
+        _c("li", [_vm._v("special characters")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

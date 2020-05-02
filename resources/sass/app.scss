@@ -6,6 +6,7 @@
 
 @import 'variables';
 
+
 .width-100 {
   width: 32rem;
 }
@@ -374,4 +375,22 @@ $dropdown-bg:                           $ls-color-black;
 }
 
 
+// =================================================================================================
+// Walkthrough
+// =================================================================================================
 
+
+
+.icon {
+    //position: absolute;
+    // transform: translate(40px, 20px);
+    // transform: translateY(-30px);
+    left: 20px;
+    top: 0;
+}
+
+
+
+.second-icon {
+    margin-left: -120px;
+}
