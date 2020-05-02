@@ -36,21 +36,19 @@ Route::middleware('auth:sanctum')->group(function () {
 
     //Notes
     Route::delete('/notes/{note}', 'NotesController@destroy');
-
-
-
-
 });
 
-    //Invoice
-    Route::get('/items','ItemController@index');
-    Route::get('/items/{item}','ItemController@show');
-    Route::post('/items','ItemController@store');
-    Route::patch('/items/{item}','ItemController@update');
-    Route::delete('/items/{item}','ItemController@destroy');
+Route::post('/companies','CompanyController@store');
+
+//Invoice
+Route::get('/items','ItemController@index');
+Route::get('/items/{item}','ItemController@show');
+Route::post('/items','ItemController@store');
+Route::patch('/items/{item}','ItemController@update');
+Route::delete('/items/{item}','ItemController@destroy');
 
 Route::get('/staff','UserController@index');
-
+Route::post('/staff','UserController@store');
 
 
 

@@ -55,7 +55,7 @@
               class="font-bold mb-1 text-white block"
             >Company Name</label>
             <input
-              v-model="company.companyName"
+              v-model="company.name"
               type="text"
               class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
               placeholder="Enter Company Name"
@@ -89,6 +89,7 @@
         </div>
 
         <div v-if="step === 2">
+        <!---
           <div class="mb-5 text-center">
             <div class="mx-auto w-32 h-32 mb-2 border rounded-full relative bg-gray-100 mb-4 shadow-inset">
               <img
@@ -140,10 +141,11 @@
               name="photo"
               accept="image/*"
               class="hidden"
-              type="file"
+              type="button"
               :change="handleFileUpload()"
             >
           </div>
+          -->
         </div>
 
         <div v-if="step === 3">
@@ -179,7 +181,7 @@
               class="font-bold mb-1 text-white block "
             >Contact Number</label>
             <input
-              v-model="staff.number"
+              v-model="staff.phone"
               type="phone"
               class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
               placeholder="Enter Contact #"
@@ -296,14 +298,12 @@
                   Next
                 </button>
 
-                <button
+                <input
                   v-if="step === 3"
                   class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium"
                   type="submit"
-                  @click="step = 'complete'"
+                  value="Create Job"
                 >
-                  Complete
-                </button>
               </div>
             </div>
           </div>
@@ -326,15 +326,15 @@ export default {
       verifyPassword: '',
       file: '',
       company: {
-        companyName: '',
-        companyEmail: '',
-        employees: '',
+        name: '',
+        // companyEmail: '',
+        // employees: '',
       },
       staff: {
-        password: '',
         name: '',
+        phone: '',
         email: '',
-        number: ''
+        password: ''
       }
     }
   },
@@ -360,20 +360,27 @@ export default {
       //this.file = this.$refs.file.files[0];
     },
 
-    submit() {
-      submit() {
-        this.createProject({
-          data: this.form
-        }).then(res => {
-          this.$router.push(`/jobs/${res.data.id}`)
-        }).catch(err => {
-          if (err.response.status == 422){
-            this.errors = err.response.data.errors
+    async submit () {
+      console.log('blah')
+      axios.post('/api/staff', this.staff)
+        .then(response => {
+          console.log('res', response);
+          
+        }).catch(error => {
+          if (error.response.status == 422){
+              this.errors = error.response.data.errors
           }
         })
-        
-      },
-    }
+      // axios.post('/api/companies', this.company)
+      // .then(response => {
+      //   console.log('res', response)
+      // }).catch(error => {
+      //     if (error.response.status == 422){
+      //         this.errors = error.response.data.errors
+      //     }
+      // })
+    },
+  
   }
 }
 </script>

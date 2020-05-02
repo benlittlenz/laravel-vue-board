@@ -16,4 +16,21 @@ class UserController extends Controller
 
         return new UserCollection($users);
     }
+
+    public function store(Request $request)
+    {
+        // $data = request()->validate([
+        //     'name' => 'required',
+        //     'phone' => 'required',
+        //     'email' => 'required',
+        //     'password' => 'required|min:3'
+        // ]);
+
+        return User::create([
+            'name' => request()->name,
+            'email' => request()->email,
+            'password' => bcrypt(request()->password)
+            
+        ]);
+    }
 }

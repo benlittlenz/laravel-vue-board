@@ -2811,9 +2811,408 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard/a.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/benlittle/Documents/laravel-vue-projects/resources/js/components/Dashboard/a.vue: Unexpected token, expected \";\" (364:15)\n\n\u001b[0m \u001b[90m 362 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 363 | \u001b[39m    submit() {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 364 | \u001b[39m      submit() {\u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 365 | \u001b[39m        \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcreateProject({\u001b[0m\n\u001b[0m \u001b[90m 366 | \u001b[39m          data\u001b[33m:\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mform\u001b[0m\n\u001b[0m \u001b[90m 367 | \u001b[39m        })\u001b[33m.\u001b[39mthen(res \u001b[33m=>\u001b[39m {\u001b[0m\n    at Parser._raise (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:742:17)\n    at Parser.raiseWithData (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:735:17)\n    at Parser.raise (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:729:17)\n    at Parser.unexpected (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:8757:16)\n    at Parser.semicolon (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:8739:40)\n    at Parser.parseExpressionStatement (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:11614:10)\n    at Parser.parseStatementContent (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:11215:19)\n    at Parser.parseStatement (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:11081:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:11656:25)\n    at Parser.parseBlockBody (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:11642:10)\n    at Parser.parseBlock (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:11626:10)\n    at Parser.parseFunctionBody (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10634:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10617:10)\n    at Parser.parseMethod (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10579:10)\n    at Parser.parseObjectMethod (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10495:19)\n    at Parser.parseObjPropValue (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10537:23)\n    at Parser.parseObjectMember (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10461:10)\n    at Parser.parseObj (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10374:25)\n    at Parser.parseExprAtom (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9995:28)\n    at Parser.parseExprSubscripts (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Parser.parseMaybeUnary (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9582:21)\n    at Parser.parseExprOps (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9452:23)\n    at Parser.parseMaybeConditional (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9425:23)\n    at Parser.parseMaybeAssign (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9380:21)\n    at Parser.parseObjectProperty (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10512:101)\n    at Parser.parseObjPropValue (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10537:101)\n    at Parser.parseObjectMember (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10461:10)\n    at Parser.parseObj (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:10374:25)\n    at Parser.parseExprAtom (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9995:28)\n    at Parser.parseExprSubscripts (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Parser.parseMaybeUnary (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9582:21)\n    at Parser.parseExprOps (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9452:23)\n    at Parser.parseMaybeConditional (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9425:23)\n    at Parser.parseMaybeAssign (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:9380:21)\n    at Parser.parseExportDefaultExpression (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:12283:24)\n    at Parser.parseExport (/Users/benlittle/Documents/laravel-vue-projects/node_modules/@babel/parser/lib/index.js:12185:31)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      step: 1,
+      passwordStrengthText: '',
+      togglePassword: false,
+      verifyPassword: '',
+      file: '',
+      company: {
+        name: '' // companyEmail: '',
+        // employees: '',
+
+      },
+      staff: {
+        name: '',
+        phone: '',
+        email: '',
+        password: ''
+      }
+    };
+  },
+  methods: {
+    checkPasswordStrength: function checkPasswordStrength() {
+      var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+      var mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+      var value = this.staff.password;
+
+      if (strongRegex.test(value)) {
+        this.passwordStrengthText = "Strong password";
+      } else if (mediumRegex.test(value)) {
+        this.passwordStrengthText = "Could be stronger";
+      } else {
+        this.passwordStrengthText = "Too weak";
+      }
+    },
+    handleFileUpload: function handleFileUpload() {
+      console.log(this.$refs); //this.file = this.$refs.file.files[0];
+    },
+    submit: function submit() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                console.log('blah');
+                axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/staff', _this.staff).then(function (response) {
+                  console.log('res', response);
+                })["catch"](function (error) {
+                  if (error.response.status == 422) {
+                    _this.errors = error.response.data.errors;
+                  }
+                }); // axios.post('/api/companies', this.company)
+                // .then(response => {
+                //   console.log('res', response)
+                // }).catch(error => {
+                //     if (error.response.status == 422){
+                //         this.errors = error.response.data.errors
+                //     }
+                // })
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }
+});
 
 /***/ }),
 
@@ -62575,8 +62974,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.company.companyName,
-                          expression: "company.companyName"
+                          value: _vm.company.name,
+                          expression: "company.name"
                         }
                       ],
                       staticClass:
@@ -62585,17 +62984,13 @@ var render = function() {
                         type: "text",
                         placeholder: "Enter Company Name"
                       },
-                      domProps: { value: _vm.company.companyName },
+                      domProps: { value: _vm.company.name },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(
-                            _vm.company,
-                            "companyName",
-                            $event.target.value
-                          )
+                          _vm.$set(_vm.company, "name", $event.target.value)
                         }
                       }
                     })
@@ -62682,100 +63077,7 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm.step === 2
-              ? _c("div", [
-                  _c("div", { staticClass: "mb-5 text-center" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "mx-auto w-32 h-32 mb-2 border rounded-full relative bg-gray-100 mb-4 shadow-inset"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "object-cover w-full h-32 rounded-full",
-                          attrs: { id: "image", src: _vm.image }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      {
-                        staticClass:
-                          "cursor-pointer inine-flex justify-between items-center focus:outline-none rounded-lg \n          py-2 px-4 rounded-lg shadow-sm text-left text-gray-800 bg-gray-300 hover:bg-gray-100 font-medium",
-                        attrs: { for: "fileInput", type: "button" }
-                      },
-                      [
-                        _c(
-                          "svg",
-                          {
-                            staticClass:
-                              "inline-flex flex-shrink-0 w-6 h-6 -mt-1 mr-1",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 24 24",
-                              "stroke-width": "2",
-                              stroke: "currentColor",
-                              fill: "none",
-                              "stroke-linecap": "round",
-                              "stroke-linejoin": "round"
-                            }
-                          },
-                          [
-                            _c("rect", {
-                              attrs: {
-                                x: "0",
-                                y: "0",
-                                width: "24",
-                                height: "24",
-                                stroke: "none"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("path", {
-                              attrs: {
-                                d:
-                                  "M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("circle", {
-                              attrs: { cx: "12", cy: "13", r: "3" }
-                            })
-                          ]
-                        ),
-                        _vm._v("\n            Company Logo\n          ")
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "mx-auto w-48 text-gray-300 text-xs text-center mt-1"
-                      },
-                      [
-                        _vm._v(
-                          "\n            Click to add a company logo\n          "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      ref: "file",
-                      staticClass: "hidden",
-                      attrs: {
-                        id: "fileInput",
-                        name: "photo",
-                        accept: "image/*",
-                        type: "file",
-                        change: _vm.handleFileUpload()
-                      }
-                    })
-                  ])
-                ])
-              : _vm._e(),
+            _vm.step === 2 ? _c("div") : _vm._e(),
             _vm._v(" "),
             _vm.step === 3
               ? _c("div", [
@@ -62864,20 +63166,20 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.staff.number,
-                          expression: "staff.number"
+                          value: _vm.staff.phone,
+                          expression: "staff.phone"
                         }
                       ],
                       staticClass:
                         "w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium",
                       attrs: { type: "phone", placeholder: "Enter Contact #" },
-                      domProps: { value: _vm.staff.number },
+                      domProps: { value: _vm.staff.phone },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.staff, "number", $event.target.value)
+                          _vm.$set(_vm.staff, "phone", $event.target.value)
                         }
                       }
                     })
@@ -63219,24 +63521,11 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         _vm.step === 3
-                          ? _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
-                                attrs: { type: "submit" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.step = "complete"
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                Complete\n              "
-                                )
-                              ]
-                            )
+                          ? _c("input", {
+                              staticClass:
+                                "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
+                              attrs: { type: "submit", value: "Create Job" }
+                            })
                           : _vm._e()
                       ])
                     ])
