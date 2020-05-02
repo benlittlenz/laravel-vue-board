@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 //Dashboaard
-import a from './components/Dashboard/a'
+import Kanban from './components/Dashboard/Kanban'
 
 //Clients
 import ClientCreate from './components/Clients/ClientCreate'
@@ -26,7 +26,7 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
     routes: [
-        { path: '/home', component: a },
+        { path: '/home', component: Kanban },
 
         //Projects
         { path: '/jobs', component: ProjectIndex },
