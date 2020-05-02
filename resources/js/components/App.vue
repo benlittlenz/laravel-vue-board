@@ -1,5 +1,13 @@
 <template>
   <div class="h-screen antialiased bg-white">
+    <notifications
+      classes="notification success"
+      group="create_client_modal"
+    />
+    <notifications
+      classes="notification error"
+      group="error_client_modal"
+    />
     <ProjectNav :user="currentUser" />
     <div
       class="h-screen z-0"

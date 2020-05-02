@@ -10,9 +10,10 @@
     </button>
 
     -->
+
     <div
       v-if="showModal"
-      class="min-h-3/4 fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+      class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
     >
       <div class="relative w-auto my-4 mx-auto max-w-3xl min-w-1/2">
         <!--content-->
@@ -34,31 +35,6 @@
 
           <!--body-->
           <form @submit.prevent="submit">
-            <div
-              v-if="alertOpen"
-              class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-blue-500"
-            >
-              <span class="text-xl inline-block mr-5 align-middle">
-                <svg
-                  class=" h-6 w-6"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                ><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              </span>
-              <span class="inline-block align-middle mr-8">
-                <b class="capitalize">Success!</b> Client Successfully created.
-              </span>
-              <button
-                class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
-                @click="closeAlert()"
-              >
-                <span>×</span>
-              </button>
-            </div>
             <div 
               v-if="currentTab === 'client'"
               class="relative px-6 flex-auto"
@@ -81,12 +57,14 @@
                     placeholder=""
                     name="client"
                   >
-                  gdgfgf
                   <div
                     v-if="$v.form.company.$error"
                     class="error"
                   >
-                    <span v-if="$v.form.company.minLength === false" class="text-danger">arrr </span>
+                    <span
+                      v-if="$v.form.company.minLength === false"
+                      class="text-danger"
+                    >arrr </span>
                   </div>
                 </div>
               </div>
@@ -245,6 +223,8 @@
 import { mapActions } from 'vuex';
 
 const { required, minLength, email, numeric, url, maxLength } = require('vuelidate/lib/validators')
+
+
 export default {
   name: "RegularModal",
   data() {
@@ -310,8 +290,18 @@ export default {
           this.getClients()
           //this.showModal = false;
           this.alertOpen = true;
+
+          this.$notify({
+            group: 'create_client_modal',
+            title: 'Client successfully created!'
+          });
         }).catch(err => {
           if (err.response.status == 422){
+            this.$notify({
+              group: 'error_client_modal',
+              title: 'Error creating client..',
+              text: 'Please try again'
+            });
             this.errors = err.response.data.errors
           }
         })

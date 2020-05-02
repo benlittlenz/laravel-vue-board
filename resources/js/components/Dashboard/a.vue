@@ -1,5 +1,9 @@
 <template>
   <div>
+    <button @click="notify">
+      What's this?
+    </button>
+    jghjhghjjh
     <div
       class="form-group"
       :class="{ 'form-group--error': $v.name.$error }"
@@ -52,6 +56,7 @@
 <script>
 import { required, minLength, between } from 'vuelidate/lib/validators'
 
+
 export default {
   data() {
     return {
@@ -67,6 +72,15 @@ export default {
     age: {
       between: between(20, 30)
     }
+  },
+
+  methods: {
+    notify () {
+          this.$notify({
+            group: 'create_client_modal',
+            title: 'Client successfully created!'
+          });
+    },
   }
 }
 </script>

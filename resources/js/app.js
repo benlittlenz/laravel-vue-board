@@ -8,6 +8,8 @@ import Vuex from 'vuex'
 import vSelect from 'vue-select'
 import vClickOutside from 'v-click-outside'
 import Vuelidate from 'vuelidate'
+import Notifications from 'vue-notification'
+
 require('./bootstrap');
 
 import App from './components/App'
@@ -18,6 +20,7 @@ import store from './store'
 Vue.use(vClickOutside)
 Vue.use(Vuex);
 Vue.use(Vuelidate)
+Vue.use(Notifications)
 Vue.component('v-select', vSelect)
 
 const app = new Vue({
