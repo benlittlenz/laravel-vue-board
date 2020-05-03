@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen flex">
-    <div class="w-64 px-8 py-3 bg-gray-100 border-r border-gray-200">
+    <div class="w-64 px-8 py-3 bg-gray-100 border-r border-gray-200 overflow-auto">
       <nav class="mt-8">
         <h2 class="text-xs font-semibold text-gray-600 uppercase tracking-wide">
           Issues
@@ -51,8 +51,8 @@
         </button>
       </nav>
     </div>
-    <div class="flex-1 min-w-0 bg-white">
-      <div class="border-b-2 border-gray-200"> 
+    <div class="flex-1 min-w-0 flex flex-col bg-white">
+      <div class="flex-shrink-0 border-b-2 border-gray-200"> 
         <header class="px-6">
           <div class="flex justify-between items-center py-3 border-b border-gray-200 ">
             <div class="flex-1">
@@ -102,316 +102,62 @@
           </div>
         </header>
       </div>
-      <div class="">
-        <main class="p-3 flex">
-          <div class="flex-shrink-0 p-3 w-80 bg-gray-100 rounded-md">
-            <h2 class="text-sm font-medium text-gray-900">
-              Backlog
+      <div class="flex-1 overflow-auto">
+        <main class="p-3 h-full inline-flex overflow-hidden">
+          <div 
+            v-for="column in columns"
+            :key="column.title"
+            class="ml-3 flex-shrink-0 flex flex-col py-3 w-72 bg-gray-100 rounded-md"
+          >
+            <h2 class="px-3 pb-1 text-sm font-medium text-gray-700">
+              {{ column.title }}
             </h2>
-            <ul class="mt-2">
-              <li>
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
+            <div class="flex-1 min-h-0 overflow-y-auto">
+              <ul class="mt-2 ">
+                <draggable
+                  :list="column.tasks"
+                  :animation="200"
+                  ghost-class="ghost-card"
+                  group="tasks"
                 >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="mt-2">
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
-                >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="mt-2">
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
-                >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-shrink-0 p-3 w-80 bg-gray-100 rounded-md">
-            <h2 class="text-sm font-medium text-gray-900">
-              Backlog
-            </h2>
-            <ul class="mt-2">
-              <li>
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
-                >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="mt-2">
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
-                >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="mt-2">
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
-                >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-shrink-0 p-3 w-80 bg-gray-100 rounded-md">
-            <h2 class="text-sm font-medium text-gray-900">
-              Backlog
-            </h2>
-            <ul class="mt-2">
-              <li>
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
-                >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="mt-2">
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
-                >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="mt-2">
-                <a
-                  href=""
-                  class="block p-5 bg-white rounded-md shadow"
-                >
-                  <div class="">
-                    <p>Test title and test description</p>
-                    <span />
-                  </div>
-                  <div class="flex justify-between items-baseline">
-                    <div class="text-sm text-gray-600">
-                      Sep 14
-                    </div>
-                    <div class="mt-2">
-                      <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
-                        <svg
-                          class="h-2 w-2 text-teal-500"
-                          viewBox="0 0 8 8"
-                          fill="currentColor"
-                        >
-                          <circle
-                            cx="4"
-                            cy="4"
-                            r="3"
-                          />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium text-teal-500">Feature Request</span>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
+                  <li
+                    v-for="(task) in column.tasks"
+                    :key="task.id"
+                  >
+                    <a
+                      href=""
+                      class="block p-5 bg-white rounded-md shadow"
+                    >
+                      <div class="">
+                        <p>{{ task.title }}</p>
+                        <span />
+                      </div>
+                      <div class="flex justify-between items-baseline">
+                        <div class="text-sm text-gray-600">
+                          Sep 14
+                        </div>
+                        <div class="mt-2">
+                          <span class="px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded">
+                            <svg
+                              class="h-2 w-2 text-teal-500"
+                              viewBox="0 0 8 8"
+                              fill="currentColor"
+                            >
+                              <circle
+                                cx="4"
+                                cy="4"
+                                r="3"
+                              />
+                            </svg>
+                            <span class="ml-2 text-sm font-medium text-teal-500">{{ task.type }}</span>
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </draggable>
+              </ul>
+            </div>
           </div>
         </main>
       </div>
@@ -420,7 +166,121 @@
 </template>
 
 <script>
+import draggable from "vuedraggable";
 export default {
-    
+  components: {
+    draggable
+  },
+  data() {
+    return {
+      columns: [
+        {
+          title: "Backlog",
+          tasks: [
+            {
+              id: 1,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request"
+            },
+            {
+              id: 2,
+              title: "Provide documentation on integrations",
+              date: "Sep 12"
+            },
+            {
+              id: 3,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design"
+            },
+            {
+              id: 4,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request"
+            },
+            {
+              id: 5,
+              title: "Test checkout flow",
+              date: "Sep 15",
+              type: "QA"
+            }
+          ]
+        },
+        {
+          title: "In Progress",
+          tasks: [
+            {
+              id: 6,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design"
+            },
+            {
+              id: 7,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request"
+            },
+            {
+              id: 8,
+              title: "Provide documentation on integrations",
+              date: "Sep 12",
+              type: "Backend"
+            }
+          ]
+        },
+        {
+          title: "Completed",
+          tasks: [
+            {
+              id: 9,
+              title: "Provide documentation on integrations",
+              date: "Sep 12"
+            },
+            {
+              id: 10,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design"
+            },
+            {
+              id: 11,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request"
+            },
+            {
+              id: 12,
+              title: "Design shopping cart dropdown",
+              date: "Sep 9",
+              type: "Design"
+            },
+            {
+              id: 13,
+              title: "Add discount code to checkout page",
+              date: "Sep 14",
+              type: "Feature Request"
+            }
+          ]
+        },
+      ]
+    };
+  }
 }
 </script>
+
+<style scoped>
+.column-width {
+  min-width: 320px;
+  width: 320px;
+}
+/* Unfortunately @apply cannot be setup in codesandbox, 
+but you'd use "@apply border opacity-50 border-blue-500 bg-gray-200" here */
+.ghost-card {
+  opacity: 0.5;
+  background: #F7FAFC;
+  border: 1px solid #4299e1;
+}
+</style>
