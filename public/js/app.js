@@ -2902,6 +2902,340 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -62602,28 +62936,29 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "flex1 min-w-0 bg-white" }, [
+    _c("div", { staticClass: "flex-1 min-w-0 bg-white" }, [
       _c("div", { staticClass: "border-b-2 border-gray-200" }, [
         _c("header", { staticClass: "px-6" }, [
           _c(
             "div",
             {
               staticClass:
-                "flex justify-between items-center border-b border-gray-200 "
+                "flex justify-between items-center py-3 border-b border-gray-200 "
             },
             [
-              _c("div", [
-                _c("div", { staticClass: "relative" }, [
+              _c("div", { staticClass: "flex-1" }, [
+                _c("div", { staticClass: "relative w-64" }, [
                   _c(
                     "span",
                     {
-                      staticClass: "absolute inset-y-0 left-0 flex items-center"
+                      staticClass:
+                        "absolute inset-y-0 pl-3 left-0 flex items-center"
                     },
                     [
                       _c(
                         "svg",
                         {
-                          staticClass: "h-4 w-4 text-gray-500",
+                          staticClass: "h-5 w-5 text-gray-600",
                           attrs: {
                             fill: "none",
                             "stroke-linecap": "round",
@@ -62646,19 +62981,639 @@ var render = function() {
                   _vm._v(" "),
                   _c("input", {
                     staticClass:
-                      "rounded-md border border-gray-400 pl-10 pr-4 py-3 text-gray-900 placeholder-gray-600 ",
-                    attrs: { type: "" }
+                      "rounded-md border border-gray-400 pl-10 pr-4 py-2 text-sm text-gray-900 placeholder-gray-600 ",
+                    attrs: { placeholder: "Search", type: "" }
                   })
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div")
+              ])
             ]
-          )
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center justify-between py-2" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex" }, [
+              _c("span", [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-800 rounded-md"
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-5 w-5",
+                        attrs: {
+                          fill: "none",
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          stroke: "currentColor",
+                          viewBox: "0 0 24 24"
+                        }
+                      },
+                      [_c("path", { attrs: { d: "M12 4v16m8-8H4" } })]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "ml-1" }, [_vm._v("Create Job")])
+                  ]
+                )
+              ])
+            ])
+          ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", {}, [_vm._v("\n      ghjgh\n    ")])
+      _c("div", {}, [
+        _c("main", { staticClass: "p-3 flex" }, [
+          _c(
+            "div",
+            { staticClass: "flex-shrink-0 p-3 w-80 bg-gray-100 rounded-md" },
+            [
+              _c("h2", { staticClass: "text-sm font-medium text-gray-900" }, [
+                _vm._v("\n            Backlog\n          ")
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "mt-2" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "mt-2" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "mt-2" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "flex-shrink-0 p-3 w-80 bg-gray-100 rounded-md" },
+            [
+              _c("h2", { staticClass: "text-sm font-medium text-gray-900" }, [
+                _vm._v("\n            Backlog\n          ")
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "mt-2" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "mt-2" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(6),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "mt-2" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(7),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "flex-shrink-0 p-3 w-80 bg-gray-100 rounded-md" },
+            [
+              _c("h2", { staticClass: "text-sm font-medium text-gray-900" }, [
+                _vm._v("\n            Backlog\n          ")
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "mt-2" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(8),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "mt-2" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(9),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "mt-2" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "block p-5 bg-white rounded-md shadow",
+                      attrs: { href: "" }
+                    },
+                    [
+                      _vm._m(10),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between items-baseline" },
+                        [
+                          _c("div", { staticClass: "text-sm text-gray-600" }, [
+                            _vm._v(
+                              "\n                    Sep 14\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "h-2 w-2 text-teal-500",
+                                    attrs: {
+                                      viewBox: "0 0 8 8",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("circle", {
+                                      attrs: { cx: "4", cy: "4", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "ml-2 text-sm font-medium text-teal-500"
+                                  },
+                                  [_vm._v("Feature Request")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
     ])
   ])
 }
@@ -62731,6 +63686,108 @@ var staticRenderFns = [
           ])
         ]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c(
+        "h2",
+        { staticClass: "text-2xl font-semibold text-gray-900 leading-tight" },
+        [_vm._v("\n              All Jobs\n            ")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("p", [_vm._v("Test title and test description")]),
+      _vm._v(" "),
+      _c("span")
     ])
   }
 ]
