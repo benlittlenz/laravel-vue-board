@@ -128,7 +128,6 @@ $dropdown-bg:                           $ls-color-black;
     .dropdown-container {
         margin: 10px 5px 0 0;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
-        border: none;
     }
 
     .dropdown-item {
@@ -153,16 +152,16 @@ $dropdown-bg:                           $ls-color-black;
         float: left;
         min-width: 10rem;
         padding: .5rem;
-        margin: .125rem 0 0 .125rem;
+        margin: .125rem 0 0 -2px;
         font-size: 1rem;
         color: $dropdown-link-color;
         text-align: left;
         list-style: none;
         background-color: white !important;
         background-clip: padding-box;
-        border-radius: .25rem;
-        box-shadow: $shadow !important;
-        border: none;
+        box-shadow: 1px 1px 15px 5px #e2e8f0;
+        border: 1px solid #edf2f7;
+        border-radius: 6px;
 
         &.align-right {
             right: 0;

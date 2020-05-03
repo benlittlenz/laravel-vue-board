@@ -12,18 +12,18 @@
         class="no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200"
       >
         <svg
-          class="h-4 w-4 fill-current mr-2 text-gray-800"
+          class="w-5 h-5 text-gray-600 mr-2"
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
-          xmlns="http://www.w3.org/2000/svg"
+          stroke-width="2"
           stroke="currentColor"
           viewBox="0 0 24 24"
-        ><path
-          d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-        /></svg>  
+        ><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg> 
         
-        Details
+        <p class="text-gray-900">
+          Details
+        </p>
       </router-link>
     </VDropdownItem>
     <VDropdownItem>
@@ -32,17 +32,18 @@
         class="no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200"
       >
         <svg
-          class="h-4 w-4 fill-current mr-2 text-gray-800"
+          class="w-5 h-5 text-gray-600 mr-2"
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
-          xmlns="http://www.w3.org/2000/svg"
+          stroke-width="2"
           stroke="currentColor"
           viewBox="0 0 24 24"
-        ><path
-          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-        /></svg>  
-        Edit
+        ><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg> 
+        
+        <p class="text-gray-900">
+          Edit
+        </p>
       </router-link>
     </VDropdownItem>
     <VDropdownItem>
@@ -51,25 +52,18 @@
         class="no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200"
       >
         <svg
-          class="h-4 w-4 fill-current mr-2 text-gray-800"
+          class="w-5 h-5 text-gray-600 mr-2"
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
-          xmlns="http://www.w3.org/2000/svg"
+          stroke-width="2"
           stroke="currentColor"
           viewBox="0 0 24 24"
-        ><path
-          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-        /></svg>  
-        Delete
-      </router-link>
-    </VDropdownItem>
-    <VDropdownItem>
-      <router-link
-        :to="`${url}/edit`"
-        class="no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200"
-      >
-        Mark as Inactive
+        ><path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
+        
+        <p class="text-gray-900">
+          Delete
+        </p>
       </router-link>
     </VDropdownItem>
   </VDropdown>

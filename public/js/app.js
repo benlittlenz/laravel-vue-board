@@ -2817,135 +2817,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuedraggable */ "./node_modules/vuedraggable/dist/vuedraggable.common.js");
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuedraggable__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _Kanban_TaskCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Kanban/TaskCard.vue */ "./resources/js/components/Kanban/TaskCard.vue");
+/* harmony import */ var _Kanban_KanbanSideNav_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Kanban/KanbanSideNav.vue */ "./resources/js/components/Kanban/KanbanSideNav.vue");
+/* harmony import */ var _Kanban_KanbanHeader_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Kanban/KanbanHeader.vue */ "./resources/js/components/Kanban/KanbanHeader.vue");
 //
 //
 //
@@ -2985,9 +2859,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    draggable: vuedraggable__WEBPACK_IMPORTED_MODULE_0___default.a
+    draggable: vuedraggable__WEBPACK_IMPORTED_MODULE_0___default.a,
+    TaskCard: _Kanban_TaskCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    KanbanSideNav: _Kanban_KanbanSideNav_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    KanbanHeader: _Kanban_KanbanHeader_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
@@ -2997,7 +2877,7 @@ __webpack_require__.r(__webpack_exports__);
           id: 1,
           title: "Add discount code to checkout page",
           date: "Sep 14",
-          type: "Feature Request"
+          type: "Completed"
         }, {
           id: 2,
           title: "Provide documentation on integrations",
@@ -3006,7 +2886,7 @@ __webpack_require__.r(__webpack_exports__);
           id: 3,
           title: "Design shopping cart dropdown",
           date: "Sep 9",
-          type: "Design"
+          type: "New"
         }, {
           id: 4,
           title: "Add discount code to checkout page",
@@ -3062,6 +2942,34 @@ __webpack_require__.r(__webpack_exports__);
           title: "Add discount code to checkout page",
           date: "Sep 14",
           type: "Feature Request"
+        }]
+      }, {
+        title: "Invoiced",
+        tasks: [{
+          id: 9,
+          title: "Provide documentation on integrations",
+          date: "Sep 12",
+          type: "Invoice Sent"
+        }, {
+          id: 10,
+          title: "Design shopping cart dropdown",
+          date: "Sep 9",
+          type: "Invoice Sent"
+        }, {
+          id: 11,
+          title: "Add discount code to checkout page",
+          date: "Sep 14",
+          type: "Paid"
+        }, {
+          id: 12,
+          title: "Design shopping cart dropdown",
+          date: "Sep 9",
+          type: "Invoice Sent"
+        }, {
+          id: 13,
+          title: "Add discount code to checkout page",
+          date: "Sep 14",
+          type: "Paid"
         }]
       }]
     };
@@ -3706,6 +3614,241 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
     getItems: 'getItems'
   }))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/CardBadge.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kanban/CardBadge.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    color: {
+      type: String,
+      "default": "teal"
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/KanbanHeader.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kanban/KanbanHeader.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/TaskCard.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kanban/TaskCard.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CardBadge_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CardBadge.vue */ "./resources/js/components/Kanban/CardBadge.vue");
+/* harmony import */ var _reusecore_Dropdown_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusecore/Dropdown.vue */ "./resources/js/components/reusecore/Dropdown.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    CardBadge: _CardBadge_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Dropdown: _reusecore_Dropdown_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  props: {
+    task: {
+      type: Object,
+      "default": function _default() {
+        return {};
+      }
+    }
+  },
+  computed: {
+    badgeColor: function badgeColor() {
+      var mappings = {
+        New: "purple",
+        "In Progress": "teal",
+        Completed: "green",
+        Paid: 'orange',
+        "Invoice Sent": 'pink',
+        "default": "teal"
+      };
+      return mappings[this.task.type] || mappings["default"];
+    }
+  }
 });
 
 /***/ }),
@@ -5242,12 +5385,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Dropdown_VdropdownItem_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Dropdown/VdropdownItem.vue */ "./resources/js/components/Dropdown/VdropdownItem.vue");
 /* harmony import */ var _Dropdown_VDropdown_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Dropdown/VDropdown.vue */ "./resources/js/components/Dropdown/VDropdown.vue");
 /* harmony import */ var _Dropdown_DotIcon_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Dropdown/DotIcon.vue */ "./resources/js/components/Dropdown/DotIcon.vue");
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -10239,7 +10376,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".column-width[data-v-7d362c9d] {\n  min-width: 320px;\n  width: 320px;\n}\n\n/* Unfortunately @apply cannot be setup in codesandbox, \nbut you'd use \"@apply border opacity-50 border-blue-500 bg-gray-200\" here */\n.ghost-card[data-v-7d362c9d] {\n  opacity: 0.5;\n  background: #F7FAFC;\n  border: 1px solid #4299e1;\n}\n", ""]);
+exports.push([module.i, ".column-width[data-v-7d362c9d] {\n  min-width: 320px;\n  width: 320px;\n}\n.ghost-card[data-v-7d362c9d] {\n  opacity: 0.5;\n  background: #F7FAFC;\n  border: 1px solid #4299e1;\n}\n", ""]);
 
 // exports
 
@@ -66483,364 +66620,92 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "h-screen flex" }, [
-    _c(
-      "div",
-      {
-        staticClass:
-          "w-64 px-8 py-3 bg-gray-100 border-r border-gray-200 overflow-auto"
-      },
-      [
-        _c("nav", { staticClass: "mt-8" }, [
-          _c(
-            "h2",
-            {
-              staticClass:
-                "text-xs font-semibold text-gray-600 uppercase tracking-wide"
-            },
-            [_vm._v("\n        Issues\n      ")]
-          ),
+  return _c(
+    "div",
+    { staticClass: "h-screen flex" },
+    [
+      _c("KanbanSideNav"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex-1 min-w-0 flex flex-col bg-white z-0" },
+        [
+          _c("KanbanHeader"),
           _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "mt-4 -ml-1 flex items-center text-sm font-medium text-gray-600"
-            },
-            [
-              _c(
-                "svg",
-                {
-                  staticClass: "h-4 w-4 text-gray-500",
-                  attrs: {
-                    fill: "none",
-                    "stroke-linecap": "round",
-                    "stroke-linejoin": "round",
-                    "stroke-width": "2",
-                    stroke: "currentColor",
-                    viewBox: "0 0 24 24"
-                  }
-                },
-                [_c("path", { attrs: { d: "M12 4v16m8-8H4" } })]
-              ),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-1" }, [_vm._v("Create Job")])
-            ]
-          )
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "flex-1 min-w-0 flex flex-col bg-white" }, [
-      _c("div", { staticClass: "flex-shrink-0 border-b-2 border-gray-200" }, [
-        _c("header", { staticClass: "px-6" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "flex justify-between items-center py-3 border-b border-gray-200 "
-            },
-            [
-              _c("div", { staticClass: "flex-1" }, [
-                _c("div", { staticClass: "relative w-64" }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass:
-                        "absolute inset-y-0 pl-3 left-0 flex items-center"
-                    },
-                    [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "h-5 w-5 text-gray-600",
-                          attrs: {
-                            fill: "none",
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round",
-                            "stroke-width": "2",
-                            stroke: "currentColor",
-                            viewBox: "0 0 24 24"
-                          }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            }
-                          })
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass:
-                      "rounded-md border border-gray-400 pl-10 pr-4 py-2 text-sm text-gray-900 placeholder-gray-600 ",
-                    attrs: { placeholder: "Search", type: "" }
-                  })
-                ])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex items-center justify-between py-2" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex" }, [
-              _c("span", [
-                _c(
-                  "button",
+          _c("div", { staticClass: "flex-1 overflow-auto" }, [
+            _c(
+              "main",
+              { staticClass: "p-3 h-full inline-flex overflow-hidden" },
+              _vm._l(_vm.columns, function(column) {
+                return _c(
+                  "div",
                   {
+                    key: column.title,
                     staticClass:
-                      "flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-800 rounded-md"
+                      "ml-3 flex-shrink-0 flex flex-col py-3 w-72 bg-gray-100 rounded-md"
                   },
                   [
                     _c(
-                      "svg",
+                      "h2",
                       {
-                        staticClass: "h-5 w-5",
-                        attrs: {
-                          fill: "none",
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          "stroke-width": "2",
-                          stroke: "currentColor",
-                          viewBox: "0 0 24 24"
-                        }
+                        staticClass:
+                          "px-3 pb-1 text-sm font-medium text-gray-700"
                       },
-                      [_c("path", { attrs: { d: "M12 4v16m8-8H4" } })]
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(column.title) +
+                            "\n          "
+                        )
+                      ]
                     ),
                     _vm._v(" "),
-                    _c("span", { staticClass: "ml-1" }, [_vm._v("Create Job")])
-                  ]
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex-1 overflow-auto" }, [
-        _c(
-          "main",
-          { staticClass: "p-3 h-full inline-flex overflow-hidden" },
-          _vm._l(_vm.columns, function(column) {
-            return _c(
-              "div",
-              {
-                key: column.title,
-                staticClass:
-                  "ml-3 flex-shrink-0 flex flex-col py-3 w-72 bg-gray-100 rounded-md"
-              },
-              [
-                _c(
-                  "h2",
-                  {
-                    staticClass: "px-3 pb-1 text-sm font-medium text-gray-700"
-                  },
-                  [
-                    _vm._v(
-                      "\n            " + _vm._s(column.title) + "\n          "
+                    _c(
+                      "div",
+                      { staticClass: "flex-1 min-h-0 overflow-y-auto" },
+                      [
+                        _c(
+                          "ul",
+                          { staticClass: "mt-2 " },
+                          [
+                            _c(
+                              "draggable",
+                              {
+                                attrs: {
+                                  list: column.tasks,
+                                  animation: 200,
+                                  "ghost-class": "ghost-card",
+                                  group: "tasks"
+                                }
+                              },
+                              _vm._l(column.tasks, function(task) {
+                                return _c("TaskCard", {
+                                  key: task.id,
+                                  staticClass: "mt-3 cursor-move",
+                                  attrs: { task: task }
+                                })
+                              }),
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ]
                     )
                   ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-1 min-h-0 overflow-y-auto" }, [
-                  _c(
-                    "ul",
-                    { staticClass: "mt-2 " },
-                    [
-                      _c(
-                        "draggable",
-                        {
-                          attrs: {
-                            list: column.tasks,
-                            animation: 200,
-                            "ghost-class": "ghost-card",
-                            group: "tasks"
-                          }
-                        },
-                        _vm._l(column.tasks, function(task) {
-                          return _c("li", { key: task.id }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "block p-5 bg-white rounded-md shadow",
-                                attrs: { href: "" }
-                              },
-                              [
-                                _c("div", {}, [
-                                  _c("p", [_vm._v(_vm._s(task.title))]),
-                                  _vm._v(" "),
-                                  _c("span")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "flex justify-between items-baseline"
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "text-sm text-gray-600" },
-                                      [
-                                        _vm._v(
-                                          "\n                        Sep 14\n                      "
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "mt-2" }, [
-                                      _c(
-                                        "span",
-                                        {
-                                          staticClass:
-                                            "px-2 py-1 leading-tight inline-flex items-center bg-teal-100 rounded"
-                                        },
-                                        [
-                                          _c(
-                                            "svg",
-                                            {
-                                              staticClass:
-                                                "h-2 w-2 text-teal-500",
-                                              attrs: {
-                                                viewBox: "0 0 8 8",
-                                                fill: "currentColor"
-                                              }
-                                            },
-                                            [
-                                              _c("circle", {
-                                                attrs: {
-                                                  cx: "4",
-                                                  cy: "4",
-                                                  r: "3"
-                                                }
-                                              })
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass:
-                                                "ml-2 text-sm font-medium text-teal-500"
-                                            },
-                                            [_vm._v(_vm._s(task.type))]
-                                          )
-                                        ]
-                                      )
-                                    ])
-                                  ]
-                                )
-                              ]
-                            )
-                          ])
-                        }),
-                        0
-                      )
-                    ],
-                    1
-                  )
-                ])
-              ]
+                )
+              }),
+              0
             )
-          }),
-          0
-        )
-      ])
-    ])
-  ])
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-2 -mx-3" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "flex justify-between items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lgbg-gray-200",
-          attrs: { href: "#" }
-        },
-        [
-          _c("span", [_vm._v("All")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "text-xs font-semibold text-gray-700" }, [
-            _vm._v("36")
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass:
-            "flex justify-between items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lgbg-gray-200",
-          attrs: { href: "#" }
-        },
-        [
-          _c("span", [_vm._v("Asigned to me")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "text-xs font-semibold text-gray-700" }, [
-            _vm._v("2")
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass:
-            "flex justify-between items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lgbg-gray-200",
-          attrs: { href: "#" }
-        },
-        [
-          _c("span", [_vm._v("Created by me")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "text-xs font-semibold text-gray-700" }, [
-            _vm._v("4")
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass:
-            "flex justify-between items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lgbg-gray-200",
-          attrs: { href: "#" }
-        },
-        [
-          _c("span", [_vm._v("Archived")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "text-xs font-semibold text-gray-700" }, [
-            _vm._v("12")
-          ])
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c(
-        "h2",
-        { staticClass: "text-2xl font-semibold text-gray-900 leading-tight" },
-        [_vm._v("\n              All Jobs\n            ")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -67872,6 +67737,368 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/CardBadge.vue?vue&type=template&id=2c751b34&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kanban/CardBadge.vue?vue&type=template&id=2c751b34& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mt-2" }, [
+    _c(
+      "span",
+      {
+        staticClass: "px-2 py-1 leading-tight inline-flex items-center rounded",
+        class: "bg-" + _vm.color + "-100 text-" + _vm.color + "-700"
+      },
+      [
+        _c("span", {
+          staticClass: "w-2 h-2 rounded-full mr-1",
+          class: "bg-" + _vm.color + "-400"
+        }),
+        _vm._v(" "),
+        _c(
+          "span",
+          { staticClass: "text-sm font-medium" },
+          [_vm._t("default")],
+          2
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/KanbanHeader.vue?vue&type=template&id=2cf79efe&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kanban/KanbanHeader.vue?vue&type=template&id=2cf79efe& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "flex-shrink-0 border-b-2 border-gray-200" },
+    [
+      _c("header", { staticClass: "px-6" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex justify-between items-center py-3 border-b border-gray-200 "
+          },
+          [
+            _c("div", { staticClass: "flex-1" }, [
+              _c("div", { staticClass: "relative w-64" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "absolute inset-y-0 pl-3 left-0 flex items-center"
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-5 w-5 text-gray-600",
+                        attrs: {
+                          fill: "none",
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          stroke: "currentColor",
+                          viewBox: "0 0 24 24"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass:
+                    "rounded-md border border-gray-400 pl-10 pr-4 py-2 text-sm text-gray-900 placeholder-gray-600 ",
+                  attrs: { placeholder: "Search", type: "" }
+                })
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex items-center justify-between py-2" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex" }, [
+            _c("span", [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-800 rounded-md"
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "h-5 w-5",
+                      attrs: {
+                        fill: "none",
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "stroke-width": "2",
+                        stroke: "currentColor",
+                        viewBox: "0 0 24 24"
+                      }
+                    },
+                    [_c("path", { attrs: { d: "M12 4v16m8-8H4" } })]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-1" }, [_vm._v("Create Job")])
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c(
+        "h2",
+        { staticClass: "text-2xl font-semibold text-gray-900 leading-tight" },
+        [_vm._v("\n          All Jobs\n        ")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=template&id=6e6402f0&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=template&id=6e6402f0& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass:
+        "w-64 px-8 py-3 bg-gray-100 border-r border-gray-200 overflow-auto"
+    },
+    [
+      _c("nav", { staticClass: "mt-8" }, [
+        _c(
+          "h2",
+          {
+            staticClass:
+              "text-xs font-semibold text-gray-600 uppercase tracking-wide"
+          },
+          [_vm._v("\n      Issues\n    ")]
+        ),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "mt-4 -ml-1 flex items-center text-sm font-medium text-gray-600"
+          },
+          [
+            _c(
+              "svg",
+              {
+                staticClass: "h-4 w-4 text-gray-500",
+                attrs: {
+                  fill: "none",
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  "stroke-width": "2",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }
+              },
+              [_c("path", { attrs: { d: "M12 4v16m8-8H4" } })]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "ml-1" }, [_vm._v("Create Job")])
+          ]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-2 -mx-3" }, [
+      _c(
+        "a",
+        {
+          staticClass:
+            "flex justify-between items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lgbg-gray-200",
+          attrs: { href: "#" }
+        },
+        [
+          _c("span", [_vm._v("All")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-xs font-semibold text-gray-700" }, [
+            _vm._v("36")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "flex justify-between items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lgbg-gray-200",
+          attrs: { href: "#" }
+        },
+        [
+          _c("span", [_vm._v("Asigned to me")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-xs font-semibold text-gray-700" }, [
+            _vm._v("2")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "flex justify-between items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lgbg-gray-200",
+          attrs: { href: "#" }
+        },
+        [
+          _c("span", [_vm._v("Created by me")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-xs font-semibold text-gray-700" }, [
+            _vm._v("4")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "flex justify-between items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lgbg-gray-200",
+          attrs: { href: "#" }
+        },
+        [
+          _c("span", [_vm._v("Archived")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-xs font-semibold text-gray-700" }, [
+            _vm._v("12")
+          ])
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/TaskCard.vue?vue&type=template&id=9da9e7dc&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kanban/TaskCard.vue?vue&type=template&id=9da9e7dc& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("li", { staticClass: "block p-5 bg-white rounded-md shadow z-0" }, [
+    _c("div", { staticClass: "flex justify-between" }, [
+      _c("p", [_vm._v(_vm._s(_vm.task.title))]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex " }, [_c("Dropdown")], 1)
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "flex justify-between items-baseline" },
+      [
+        _c("div", { staticClass: "text-sm text-gray-600" }, [
+          _vm._v("\n      Sep 14\n    ")
+        ]),
+        _vm._v(" "),
+        _vm.task.type
+          ? _c("CardBadge", { attrs: { color: _vm.badgeColor } }, [
+              _vm._v("\n      " + _vm._s(_vm.task.type) + "\n    ")
+            ])
+          : _vm._e()
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -70603,12 +70830,12 @@ var render = function() {
               _c(
                 "svg",
                 {
-                  staticClass: "h-4 w-4 fill-current mr-2 text-gray-800",
+                  staticClass: "w-5 h-5 text-gray-600 mr-2",
                   attrs: {
                     fill: "none",
                     "stroke-linecap": "round",
                     "stroke-linejoin": "round",
-                    xmlns: "http://www.w3.org/2000/svg",
+                    "stroke-width": "2",
                     stroke: "currentColor",
                     viewBox: "0 0 24 24"
                   }
@@ -70622,7 +70849,10 @@ var render = function() {
                   })
                 ]
               ),
-              _vm._v("  \n      \n      Details\n    ")
+              _vm._v(" "),
+              _c("p", { staticClass: "text-gray-900" }, [
+                _vm._v("\n        Details\n      ")
+              ])
             ]
           )
         ],
@@ -70643,12 +70873,12 @@ var render = function() {
               _c(
                 "svg",
                 {
-                  staticClass: "h-4 w-4 fill-current mr-2 text-gray-800",
+                  staticClass: "w-5 h-5 text-gray-600 mr-2",
                   attrs: {
                     fill: "none",
                     "stroke-linecap": "round",
                     "stroke-linejoin": "round",
-                    xmlns: "http://www.w3.org/2000/svg",
+                    "stroke-width": "2",
                     stroke: "currentColor",
                     viewBox: "0 0 24 24"
                   }
@@ -70657,12 +70887,15 @@ var render = function() {
                   _c("path", {
                     attrs: {
                       d:
-                        "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                        "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                     }
                   })
                 ]
               ),
-              _vm._v("  \n      Edit\n    ")
+              _vm._v(" "),
+              _c("p", { staticClass: "text-gray-900" }, [
+                _vm._v("\n        Edit\n      ")
+              ])
             ]
           )
         ],
@@ -70683,12 +70916,12 @@ var render = function() {
               _c(
                 "svg",
                 {
-                  staticClass: "h-4 w-4 fill-current mr-2 text-gray-800",
+                  staticClass: "w-5 h-5 text-gray-600 mr-2",
                   attrs: {
                     fill: "none",
                     "stroke-linecap": "round",
                     "stroke-linejoin": "round",
-                    xmlns: "http://www.w3.org/2000/svg",
+                    "stroke-width": "2",
                     stroke: "currentColor",
                     viewBox: "0 0 24 24"
                   }
@@ -70697,29 +70930,16 @@ var render = function() {
                   _c("path", {
                     attrs: {
                       d:
-                        "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        "M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
                     }
                   })
                 ]
               ),
-              _vm._v("  \n      Delete\n    ")
+              _vm._v(" "),
+              _c("p", { staticClass: "text-gray-900" }, [
+                _vm._v("\n        Delete\n      ")
+              ])
             ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "VDropdownItem",
-        [
-          _c(
-            "router-link",
-            {
-              staticClass:
-                "no-underline text-sm text-gray-600 flex items-center py-3 hover:bg-gray-200",
-              attrs: { to: _vm.url + "/edit" }
-            },
-            [_vm._v("\n      Mark as Inactive\n    ")]
           )
         ],
         1
@@ -95127,6 +95347,282 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ItemsIndex_vue_vue_type_template_id_1bbce0ac___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ItemsIndex_vue_vue_type_template_id_1bbce0ac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/CardBadge.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Kanban/CardBadge.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CardBadge_vue_vue_type_template_id_2c751b34___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CardBadge.vue?vue&type=template&id=2c751b34& */ "./resources/js/components/Kanban/CardBadge.vue?vue&type=template&id=2c751b34&");
+/* harmony import */ var _CardBadge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardBadge.vue?vue&type=script&lang=js& */ "./resources/js/components/Kanban/CardBadge.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CardBadge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CardBadge_vue_vue_type_template_id_2c751b34___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CardBadge_vue_vue_type_template_id_2c751b34___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Kanban/CardBadge.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/CardBadge.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Kanban/CardBadge.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CardBadge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./CardBadge.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/CardBadge.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CardBadge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/CardBadge.vue?vue&type=template&id=2c751b34&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/Kanban/CardBadge.vue?vue&type=template&id=2c751b34& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CardBadge_vue_vue_type_template_id_2c751b34___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./CardBadge.vue?vue&type=template&id=2c751b34& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/CardBadge.vue?vue&type=template&id=2c751b34&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CardBadge_vue_vue_type_template_id_2c751b34___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CardBadge_vue_vue_type_template_id_2c751b34___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/KanbanHeader.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Kanban/KanbanHeader.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _KanbanHeader_vue_vue_type_template_id_2cf79efe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./KanbanHeader.vue?vue&type=template&id=2cf79efe& */ "./resources/js/components/Kanban/KanbanHeader.vue?vue&type=template&id=2cf79efe&");
+/* harmony import */ var _KanbanHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./KanbanHeader.vue?vue&type=script&lang=js& */ "./resources/js/components/Kanban/KanbanHeader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _KanbanHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _KanbanHeader_vue_vue_type_template_id_2cf79efe___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _KanbanHeader_vue_vue_type_template_id_2cf79efe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Kanban/KanbanHeader.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/KanbanHeader.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/Kanban/KanbanHeader.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./KanbanHeader.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/KanbanHeader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/KanbanHeader.vue?vue&type=template&id=2cf79efe&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/Kanban/KanbanHeader.vue?vue&type=template&id=2cf79efe& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanHeader_vue_vue_type_template_id_2cf79efe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./KanbanHeader.vue?vue&type=template&id=2cf79efe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/KanbanHeader.vue?vue&type=template&id=2cf79efe&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanHeader_vue_vue_type_template_id_2cf79efe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanHeader_vue_vue_type_template_id_2cf79efe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/KanbanSideNav.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Kanban/KanbanSideNav.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _KanbanSideNav_vue_vue_type_template_id_6e6402f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./KanbanSideNav.vue?vue&type=template&id=6e6402f0& */ "./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=template&id=6e6402f0&");
+/* harmony import */ var _KanbanSideNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./KanbanSideNav.vue?vue&type=script&lang=js& */ "./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _KanbanSideNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _KanbanSideNav_vue_vue_type_template_id_6e6402f0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _KanbanSideNav_vue_vue_type_template_id_6e6402f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Kanban/KanbanSideNav.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanSideNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./KanbanSideNav.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanSideNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=template&id=6e6402f0&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=template&id=6e6402f0& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanSideNav_vue_vue_type_template_id_6e6402f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./KanbanSideNav.vue?vue&type=template&id=6e6402f0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/KanbanSideNav.vue?vue&type=template&id=6e6402f0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanSideNav_vue_vue_type_template_id_6e6402f0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanSideNav_vue_vue_type_template_id_6e6402f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/TaskCard.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Kanban/TaskCard.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TaskCard_vue_vue_type_template_id_9da9e7dc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TaskCard.vue?vue&type=template&id=9da9e7dc& */ "./resources/js/components/Kanban/TaskCard.vue?vue&type=template&id=9da9e7dc&");
+/* harmony import */ var _TaskCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TaskCard.vue?vue&type=script&lang=js& */ "./resources/js/components/Kanban/TaskCard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TaskCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TaskCard_vue_vue_type_template_id_9da9e7dc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TaskCard_vue_vue_type_template_id_9da9e7dc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Kanban/TaskCard.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/TaskCard.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Kanban/TaskCard.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TaskCard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/TaskCard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Kanban/TaskCard.vue?vue&type=template&id=9da9e7dc&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/Kanban/TaskCard.vue?vue&type=template&id=9da9e7dc& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskCard_vue_vue_type_template_id_9da9e7dc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./TaskCard.vue?vue&type=template&id=9da9e7dc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kanban/TaskCard.vue?vue&type=template&id=9da9e7dc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskCard_vue_vue_type_template_id_9da9e7dc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskCard_vue_vue_type_template_id_9da9e7dc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
