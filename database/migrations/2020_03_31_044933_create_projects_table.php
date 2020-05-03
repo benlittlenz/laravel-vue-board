@@ -16,20 +16,32 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('company_id')->nullable()->index();
-            $table->unsignedInteger('client_id')->nullable();
+
+            $table->unsignedInteger('client_id')->nullable()->constrained('clients');
+            //$table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->string('title');
-            $table->text('description')->nullable(false);
+            $table->text('description')->nullable();
             $table->string('address')->nullable();
             $table->string('suburb')->nullable();
             $table->string('city')->nullable();
-            $table->text('notes')->nullable();
+            $table->boolean('active')->default(0);
+            $table->string('status')->default('New');
             $table->timestamps();
+
 
             // $table->foreign('company_id')
             //     ->references('id')
             //     ->on('companies')
             //     ->onDelete('cascade');
         });
+
+        //    Schema::table('projects', function($table) {
+            
+        // });
     }
 
     /**

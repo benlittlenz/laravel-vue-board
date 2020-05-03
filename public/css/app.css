@@ -13956,6 +13956,10 @@ video {
   transition-duration: 1000ms;
 }
 
+.modal-height {
+  max-height: calc(100vh - 250px);
+}
+
 .width-100 {
   width: 32rem;
 }
