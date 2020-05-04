@@ -2978,10 +2978,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/PlanButtons.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard/PlanButtons.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3047,6 +3047,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['name', 'users', 'cost', 'active'],
+  methods: {
+    updatePlan: function updatePlan() {
+      this.$emit('onUpdatePlan', this.name);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PlanButtons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PlanButtons */ "./resources/js/components/Dashboard/PlanButtons.vue");
 //
 //
 //
@@ -3103,78 +3124,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    PlanButtons: _PlanButtons__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      picked: '',
+      activePlan: ''
+    };
+  },
+  methods: {
+    updateActivePlan: function updateActivePlan(plan) {
+      this.activePlan = plan;
+    }
+  }
+});
 
 /***/ }),
 
@@ -67187,6 +67153,127 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/PlanButtons.vue?vue&type=template&id=64d14522&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard/PlanButtons.vue?vue&type=template&id=64d14522& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass:
+        "box w-56 bg-white rounded-lg shadow-md p-6 hover:cursor-pointer mb-8 hover:bg-green-200 focus:outline-none",
+      attrs: { tabindex: "0" },
+      on: { click: _vm.updatePlan }
+    },
+    [
+      _c("div", { staticClass: "flex justify-between items-center mb-3  " }, [
+        _c(
+          "h1",
+          { staticClass: "uppercase text-base tracking-wide text-blue-800" },
+          [_vm._v("\n      " + _vm._s(_vm.name) + "\n    ")]
+        ),
+        _vm._v(" "),
+        _c("div", [
+          _c(
+            "svg",
+            {
+              staticClass: "w-6 h-6",
+              attrs: {
+                width: "200px",
+                height: "200px",
+                viewBox: "0 0 200 200",
+                version: "1.1",
+                xmlns: "http://www.w3.org/2000/svg",
+                "xmlns:xlink": "http://www.w3.org/1999/xlink"
+              }
+            },
+            [
+              _c(
+                "g",
+                {
+                  attrs: {
+                    id: "Page-1",
+                    stroke: "none",
+                    "stroke-width": "1",
+                    fill: "none",
+                    "fill-rule": "evenodd"
+                  }
+                },
+                [
+                  _c(
+                    "g",
+                    {
+                      attrs: { id: "checkmark-outline", "fill-rule": "nonzero" }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          id: "Shape",
+                          d:
+                            "M31.1442786,171.840796 C5.2779518,146.858262 -5.09578082,109.862896 4.01023318,75.0738981 C13.1162472,40.2848999 40.2848999,13.1162472 75.0738981,4.01023318 C109.862896,-5.09578082 146.858262,5.2779518 171.840796,31.1442786 C209.549474,70.1869539 209.010186,132.247241 170.628714,170.628714 C132.247241,209.010186 70.1869539,209.549474 31.1442786,171.840796 Z",
+                          fill: "#97EBDC"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("polygon", {
+                        attrs: {
+                          id: "Path",
+                          fill: "#00836D",
+                          points:
+                            "66.6666667 89.4527363 89.5522388 112.437811 132.338308 69.6517413 146.268657 83.7810945 89.5522388 140.298507 52.7363184 103.482587 66.6666667 89.3532338"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-1 font-semibold text-blue-800" }, [
+        _c("span", { staticClass: "text-3xl mr-2 tracking-wide" }, [
+          _vm._v(_vm._s(_vm.users))
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "text-2xl tracking-normal" }, [
+          _vm._v("Users")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", {}, [
+        _c("span", { staticClass: "text-xl text-blue-600" }, [_vm._v("$")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "text-xl font-semibold text-blue-700" }, [
+          _vm._v(_vm._s(_vm.cost))
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "text-blue-600 mx-1" }, [_vm._v("/")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "text-lg text-blue-600" }, [_vm._v("month")])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=template&id=1509a328&":
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=template&id=1509a328& ***!
@@ -67209,280 +67296,84 @@ var render = function() {
       "div",
       { staticClass: "w-custom mx-auto py-8 flex justify-between flex-wrap" },
       [
-        _c(
-          "div",
-          {
-            staticClass:
-              "box w-56 bg-white rounded-lg shadow-md p-6 hover:cursor-pointer mb-8 hover:bg-green-200 focus:outline-none",
-            attrs: { tabindex: "0" }
+        _c("PlanButtons", {
+          attrs: {
+            name: "Small",
+            users: "1-5",
+            cost: "25",
+            active: _vm.activePlan
           },
-          [
-            _c(
-              "div",
-              { staticClass: "flex justify-between items-center mb-3  " },
-              [
-                _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "uppercase text-base tracking-wide text-blue-800"
-                  },
-                  [_vm._v("\n          Small\n        ")]
-                ),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-6 h-6",
-                      attrs: {
-                        width: "200px",
-                        height: "200px",
-                        viewBox: "0 0 200 200",
-                        version: "1.1",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        "xmlns:xlink": "http://www.w3.org/1999/xlink"
-                      }
-                    },
-                    [
-                      _c(
-                        "g",
-                        {
-                          attrs: {
-                            id: "Page-1",
-                            stroke: "none",
-                            "stroke-width": "1",
-                            fill: "none",
-                            "fill-rule": "evenodd"
-                          }
-                        },
-                        [
-                          _c(
-                            "g",
-                            {
-                              attrs: {
-                                id: "checkmark-outline",
-                                "fill-rule": "nonzero"
-                              }
-                            },
-                            [
-                              _c("path", {
-                                attrs: {
-                                  id: "Shape",
-                                  d:
-                                    "M31.1442786,171.840796 C5.2779518,146.858262 -5.09578082,109.862896 4.01023318,75.0738981 C13.1162472,40.2848999 40.2848999,13.1162472 75.0738981,4.01023318 C109.862896,-5.09578082 146.858262,5.2779518 171.840796,31.1442786 C209.549474,70.1869539 209.010186,132.247241 170.628714,170.628714 C132.247241,209.010186 70.1869539,209.549474 31.1442786,171.840796 Z",
-                                  fill: "#97EBDC"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("polygon", {
-                                attrs: {
-                                  id: "Path",
-                                  fill: "#00836D",
-                                  points:
-                                    "66.6666667 89.4527363 89.5522388 112.437811 132.338308 69.6517413 146.268657 83.7810945 89.5522388 140.298507 52.7363184 103.482587 66.6666667 89.3532338"
-                                }
-                              })
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._m(2)
-          ]
-        ),
+          on: { onUpdatePlan: _vm.updateActivePlan }
+        }),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "box w-56 bg-white rounded-lg shadow-md p-6 hover:cursor-pointer mb-8 hover:bg-green-200 focus:outline-none",
-            attrs: { tabindex: "0" }
+        _c("PlanButtons", {
+          attrs: {
+            name: "Medium",
+            users: "5-15",
+            cost: "25",
+            active: _vm.activePlan
           },
-          [
-            _c(
-              "div",
-              { staticClass: "flex justify-between items-center mb-3  " },
-              [
-                _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "uppercase text-base tracking-wide text-blue-800"
-                  },
-                  [_vm._v("\n          Medium\n        ")]
-                ),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-6 h-6",
-                      attrs: {
-                        width: "200px",
-                        height: "200px",
-                        viewBox: "0 0 200 200",
-                        version: "1.1",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        "xmlns:xlink": "http://www.w3.org/1999/xlink"
-                      }
-                    },
-                    [
-                      _c(
-                        "g",
-                        {
-                          attrs: {
-                            id: "Page-1",
-                            stroke: "none",
-                            "stroke-width": "1",
-                            fill: "none",
-                            "fill-rule": "evenodd"
-                          }
-                        },
-                        [
-                          _c(
-                            "g",
-                            {
-                              attrs: {
-                                id: "checkmark-outline",
-                                "fill-rule": "nonzero"
-                              }
-                            },
-                            [
-                              _c("path", {
-                                attrs: {
-                                  id: "Shape",
-                                  d:
-                                    "M31.1442786,171.840796 C5.2779518,146.858262 -5.09578082,109.862896 4.01023318,75.0738981 C13.1162472,40.2848999 40.2848999,13.1162472 75.0738981,4.01023318 C109.862896,-5.09578082 146.858262,5.2779518 171.840796,31.1442786 C209.549474,70.1869539 209.010186,132.247241 170.628714,170.628714 C132.247241,209.010186 70.1869539,209.549474 31.1442786,171.840796 Z",
-                                  fill: "#97EBDC"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("polygon", {
-                                attrs: {
-                                  id: "Path",
-                                  fill: "#00836D",
-                                  points:
-                                    "66.6666667 89.4527363 89.5522388 112.437811 132.338308 69.6517413 146.268657 83.7810945 89.5522388 140.298507 52.7363184 103.482587 66.6666667 89.3532338"
-                                }
-                              })
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _vm._m(4)
-          ]
-        ),
+          on: { onUpdatePlan: _vm.updateActivePlan }
+        }),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "box w-56 bg-white rounded-lg shadow-md p-6 hover:cursor-pointer mb-8 hover:bg-green-200 focus:outline-none",
-            attrs: { tabindex: "0" }
+        _c("PlanButtons", {
+          attrs: {
+            name: "Large",
+            users: "15-30",
+            cost: "40",
+            active: _vm.activePlan
           },
-          [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "flex justify-between items-center mb-3 text-center"
-              },
-              [
-                _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "uppercase text-base tracking-wide text-blue-800 text-center"
-                  },
-                  [_vm._v("\n          Large\n        ")]
-                ),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-6 h-6",
-                      attrs: {
-                        width: "200px",
-                        height: "200px",
-                        viewBox: "0 0 200 200",
-                        version: "1.1",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        "xmlns:xlink": "http://www.w3.org/1999/xlink"
-                      }
-                    },
-                    [
-                      _c(
-                        "g",
-                        {
-                          attrs: {
-                            id: "Page-1",
-                            stroke: "none",
-                            "stroke-width": "1",
-                            fill: "none",
-                            "fill-rule": "evenodd"
-                          }
-                        },
-                        [
-                          _c(
-                            "g",
-                            {
-                              attrs: {
-                                id: "checkmark-outline",
-                                "fill-rule": "nonzero"
-                              }
-                            },
-                            [
-                              _c("path", {
-                                attrs: {
-                                  id: "Shape",
-                                  d:
-                                    "M31.1442786,171.840796 C5.2779518,146.858262 -5.09578082,109.862896 4.01023318,75.0738981 C13.1162472,40.2848999 40.2848999,13.1162472 75.0738981,4.01023318 C109.862896,-5.09578082 146.858262,5.2779518 171.840796,31.1442786 C209.549474,70.1869539 209.010186,132.247241 170.628714,170.628714 C132.247241,209.010186 70.1869539,209.549474 31.1442786,171.840796 Z",
-                                  fill: "#97EBDC"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("polygon", {
-                                attrs: {
-                                  id: "Path",
-                                  fill: "#00836D",
-                                  points:
-                                    "66.6666667 89.4527363 89.5522388 112.437811 132.338308 69.6517413 146.268657 83.7810945 89.5522388 140.298507 52.7363184 103.482587 66.6666667 89.3532338"
-                                }
-                              })
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(5),
-            _vm._v(" "),
-            _vm._m(6)
-          ]
-        )
-      ]
-    )
+          on: { onUpdatePlan: _vm.updateActivePlan }
+        })
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.picked,
+          expression: "picked"
+        }
+      ],
+      attrs: { id: "one", type: "radio", value: "One" },
+      domProps: { checked: _vm._q(_vm.picked, "One") },
+      on: {
+        change: function($event) {
+          _vm.picked = "One"
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("label", { attrs: { for: "one" } }, [_vm._v("One")]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.picked,
+          expression: "picked"
+        }
+      ],
+      attrs: { id: "two", type: "radio", value: "Two" },
+      domProps: { checked: _vm._q(_vm.picked, "Two") },
+      on: {
+        change: function($event) {
+          _vm.picked = "Two"
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("label", { attrs: { for: "two" } }, [_vm._v("Two")]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("span", [_vm._v("Picked: " + _vm._s(_vm.picked))])
   ])
 }
 var staticRenderFns = [
@@ -67513,90 +67404,6 @@ var staticRenderFns = [
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-1 font-semibold text-blue-800" }, [
-      _c("span", { staticClass: "text-3xl mr-2 tracking-wide" }, [
-        _vm._v("1-5")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-2xl tracking-normal" }, [_vm._v("Users")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("span", { staticClass: "text-xl text-blue-600" }, [_vm._v("$")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-xl font-semibold text-blue-700" }, [
-        _vm._v("25")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-blue-600 mx-1" }, [_vm._v("/")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-lg text-blue-600" }, [_vm._v("month")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-1 font-semibold text-blue-800" }, [
-      _c("span", { staticClass: "text-3xl mr-2 tracking-wide" }, [
-        _vm._v("5-15")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-2xl tracking-normal" }, [_vm._v("Users")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("span", { staticClass: "text-xl text-blue-600" }, [_vm._v("$")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-xl font-semibold text-blue-700" }, [
-        _vm._v("35")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-blue-600 mx-1" }, [_vm._v("/")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-lg text-blue-600" }, [_vm._v("month")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-1 font-semibold text-blue-800" }, [
-      _c("span", { staticClass: "text-3xl mr-2 tracking-wide" }, [
-        _vm._v("20-40")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-2xl tracking-normal" }, [_vm._v("Users")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("span", { staticClass: "text-xl text-blue-600" }, [_vm._v("$")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-xl font-semibold text-blue-700" }, [
-        _vm._v("55")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-blue-600 mx-1" }, [_vm._v("/")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text-lg text-blue-600" }, [_vm._v("month")])
-    ])
   }
 ]
 render._withStripped = true
@@ -96141,6 +95948,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Kanban_vue_vue_type_template_id_7d362c9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Kanban_vue_vue_type_template_id_7d362c9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Dashboard/PlanButtons.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Dashboard/PlanButtons.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PlanButtons_vue_vue_type_template_id_64d14522___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PlanButtons.vue?vue&type=template&id=64d14522& */ "./resources/js/components/Dashboard/PlanButtons.vue?vue&type=template&id=64d14522&");
+/* harmony import */ var _PlanButtons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlanButtons.vue?vue&type=script&lang=js& */ "./resources/js/components/Dashboard/PlanButtons.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PlanButtons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PlanButtons_vue_vue_type_template_id_64d14522___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PlanButtons_vue_vue_type_template_id_64d14522___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Dashboard/PlanButtons.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Dashboard/PlanButtons.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/Dashboard/PlanButtons.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlanButtons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlanButtons.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/PlanButtons.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlanButtons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Dashboard/PlanButtons.vue?vue&type=template&id=64d14522&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/Dashboard/PlanButtons.vue?vue&type=template&id=64d14522& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlanButtons_vue_vue_type_template_id_64d14522___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlanButtons.vue?vue&type=template&id=64d14522& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/PlanButtons.vue?vue&type=template&id=64d14522&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlanButtons_vue_vue_type_template_id_64d14522___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlanButtons_vue_vue_type_template_id_64d14522___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
