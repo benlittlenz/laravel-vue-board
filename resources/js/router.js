@@ -24,12 +24,15 @@ import ItemEdit from './components/Items/ItemEdit'
 
 import JobModal from './components/reusecore/Modals/JobModal'
 
+import RadioButtons from './components/Dashboard/RadioButtons'
+
 Vue.use(VueRouter)
 
 export default new VueRouter({
     routes: [
         { path: '/home', component: Kanban },
         { path: '/jobmodal', component: JobModal },
+        { path: '/radio', component: RadioButtons },
         //Projects
         { path: '/jobs', component: ProjectIndex },
         { path: '/jobs/create', component: ProjectCreate },

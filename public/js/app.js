@@ -2978,6 +2978,206 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dropdown/DotIcon.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dropdown/DotIcon.vue?vue&type=script&lang=js& ***!
@@ -5697,11 +5897,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "JobModal",
   data: function data() {
     return {
-      showModal: true
+      showModal: true,
+      currentTab: 'ss'
     };
   }
 });
@@ -66947,6 +67187,424 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=template&id=1509a328&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=template&id=1509a328& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "min-h-screen" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "w-custom mx-auto py-8 flex justify-between flex-wrap" },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "box w-56 bg-white rounded-lg shadow-md p-6 hover:cursor-pointer mb-8 hover:bg-green-200 focus:outline-none",
+            attrs: { tabindex: "0" }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "flex justify-between items-center mb-3  " },
+              [
+                _c(
+                  "h1",
+                  {
+                    staticClass:
+                      "uppercase text-base tracking-wide text-blue-800"
+                  },
+                  [_vm._v("\n          Small\n        ")]
+                ),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "w-6 h-6",
+                      attrs: {
+                        width: "200px",
+                        height: "200px",
+                        viewBox: "0 0 200 200",
+                        version: "1.1",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        "xmlns:xlink": "http://www.w3.org/1999/xlink"
+                      }
+                    },
+                    [
+                      _c(
+                        "g",
+                        {
+                          attrs: {
+                            id: "Page-1",
+                            stroke: "none",
+                            "stroke-width": "1",
+                            fill: "none",
+                            "fill-rule": "evenodd"
+                          }
+                        },
+                        [
+                          _c(
+                            "g",
+                            {
+                              attrs: {
+                                id: "checkmark-outline",
+                                "fill-rule": "nonzero"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  id: "Shape",
+                                  d:
+                                    "M31.1442786,171.840796 C5.2779518,146.858262 -5.09578082,109.862896 4.01023318,75.0738981 C13.1162472,40.2848999 40.2848999,13.1162472 75.0738981,4.01023318 C109.862896,-5.09578082 146.858262,5.2779518 171.840796,31.1442786 C209.549474,70.1869539 209.010186,132.247241 170.628714,170.628714 C132.247241,209.010186 70.1869539,209.549474 31.1442786,171.840796 Z",
+                                  fill: "#97EBDC"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("polygon", {
+                                attrs: {
+                                  id: "Path",
+                                  fill: "#00836D",
+                                  points:
+                                    "66.6666667 89.4527363 89.5522388 112.437811 132.338308 69.6517413 146.268657 83.7810945 89.5522388 140.298507 52.7363184 103.482587 66.6666667 89.3532338"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2)
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "box w-56 bg-white rounded-lg shadow-md p-6 hover:cursor-pointer mb-8 hover:bg-green-200 focus:outline-none",
+            attrs: { tabindex: "0" }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "flex justify-between items-center mb-3  " },
+              [
+                _c(
+                  "h1",
+                  {
+                    staticClass:
+                      "uppercase text-base tracking-wide text-blue-800"
+                  },
+                  [_vm._v("\n          Medium\n        ")]
+                ),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "w-6 h-6",
+                      attrs: {
+                        width: "200px",
+                        height: "200px",
+                        viewBox: "0 0 200 200",
+                        version: "1.1",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        "xmlns:xlink": "http://www.w3.org/1999/xlink"
+                      }
+                    },
+                    [
+                      _c(
+                        "g",
+                        {
+                          attrs: {
+                            id: "Page-1",
+                            stroke: "none",
+                            "stroke-width": "1",
+                            fill: "none",
+                            "fill-rule": "evenodd"
+                          }
+                        },
+                        [
+                          _c(
+                            "g",
+                            {
+                              attrs: {
+                                id: "checkmark-outline",
+                                "fill-rule": "nonzero"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  id: "Shape",
+                                  d:
+                                    "M31.1442786,171.840796 C5.2779518,146.858262 -5.09578082,109.862896 4.01023318,75.0738981 C13.1162472,40.2848999 40.2848999,13.1162472 75.0738981,4.01023318 C109.862896,-5.09578082 146.858262,5.2779518 171.840796,31.1442786 C209.549474,70.1869539 209.010186,132.247241 170.628714,170.628714 C132.247241,209.010186 70.1869539,209.549474 31.1442786,171.840796 Z",
+                                  fill: "#97EBDC"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("polygon", {
+                                attrs: {
+                                  id: "Path",
+                                  fill: "#00836D",
+                                  points:
+                                    "66.6666667 89.4527363 89.5522388 112.437811 132.338308 69.6517413 146.268657 83.7810945 89.5522388 140.298507 52.7363184 103.482587 66.6666667 89.3532338"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _vm._m(4)
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "box w-56 bg-white rounded-lg shadow-md p-6 hover:cursor-pointer mb-8 hover:bg-green-200 focus:outline-none",
+            attrs: { tabindex: "0" }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex justify-between items-center mb-3 text-center"
+              },
+              [
+                _c(
+                  "h1",
+                  {
+                    staticClass:
+                      "uppercase text-base tracking-wide text-blue-800 text-center"
+                  },
+                  [_vm._v("\n          Large\n        ")]
+                ),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "w-6 h-6",
+                      attrs: {
+                        width: "200px",
+                        height: "200px",
+                        viewBox: "0 0 200 200",
+                        version: "1.1",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        "xmlns:xlink": "http://www.w3.org/1999/xlink"
+                      }
+                    },
+                    [
+                      _c(
+                        "g",
+                        {
+                          attrs: {
+                            id: "Page-1",
+                            stroke: "none",
+                            "stroke-width": "1",
+                            fill: "none",
+                            "fill-rule": "evenodd"
+                          }
+                        },
+                        [
+                          _c(
+                            "g",
+                            {
+                              attrs: {
+                                id: "checkmark-outline",
+                                "fill-rule": "nonzero"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  id: "Shape",
+                                  d:
+                                    "M31.1442786,171.840796 C5.2779518,146.858262 -5.09578082,109.862896 4.01023318,75.0738981 C13.1162472,40.2848999 40.2848999,13.1162472 75.0738981,4.01023318 C109.862896,-5.09578082 146.858262,5.2779518 171.840796,31.1442786 C209.549474,70.1869539 209.010186,132.247241 170.628714,170.628714 C132.247241,209.010186 70.1869539,209.549474 31.1442786,171.840796 Z",
+                                  fill: "#97EBDC"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("polygon", {
+                                attrs: {
+                                  id: "Path",
+                                  fill: "#00836D",
+                                  points:
+                                    "66.6666667 89.4527363 89.5522388 112.437811 132.338308 69.6517413 146.268657 83.7810945 89.5522388 140.298507 52.7363184 103.482587 66.6666667 89.3532338"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(5),
+            _vm._v(" "),
+            _vm._m(6)
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "w-custom mx-auto pt-8 pb-6 md:flex justify-between items-end border-b-2 border-gray-600"
+      },
+      [
+        _c("div", { staticClass: "text-2xl text-blue-800" }, [
+          _vm._v("\n      Change Plan\n    ")
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c(
+            "a",
+            {
+              staticClass: "no-underline text-blue-800 hover:underline",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Cancel you plan")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-1 font-semibold text-blue-800" }, [
+      _c("span", { staticClass: "text-3xl mr-2 tracking-wide" }, [
+        _vm._v("1-5")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-2xl tracking-normal" }, [_vm._v("Users")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("span", { staticClass: "text-xl text-blue-600" }, [_vm._v("$")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-xl font-semibold text-blue-700" }, [
+        _vm._v("25")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-blue-600 mx-1" }, [_vm._v("/")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-lg text-blue-600" }, [_vm._v("month")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-1 font-semibold text-blue-800" }, [
+      _c("span", { staticClass: "text-3xl mr-2 tracking-wide" }, [
+        _vm._v("5-15")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-2xl tracking-normal" }, [_vm._v("Users")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("span", { staticClass: "text-xl text-blue-600" }, [_vm._v("$")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-xl font-semibold text-blue-700" }, [
+        _vm._v("35")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-blue-600 mx-1" }, [_vm._v("/")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-lg text-blue-600" }, [_vm._v("month")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-1 font-semibold text-blue-800" }, [
+      _c("span", { staticClass: "text-3xl mr-2 tracking-wide" }, [
+        _vm._v("20-40")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-2xl tracking-normal" }, [_vm._v("Users")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("span", { staticClass: "text-xl text-blue-600" }, [_vm._v("$")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-xl font-semibold text-blue-700" }, [
+        _vm._v("55")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-blue-600 mx-1" }, [_vm._v("/")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-lg text-blue-600" }, [_vm._v("month")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dropdown/DotIcon.vue?vue&type=template&id=4e5731af&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dropdown/DotIcon.vue?vue&type=template&id=4e5731af& ***!
@@ -71264,42 +71922,54 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "overflow-y-auto modal-height" }, [
-                      _c("form", {}, [
-                        _vm._m(0),
-                        _vm._v(" "),
-                        _c(
+                    _vm.currentTab === "client"
+                      ? _c(
                           "div",
-                          {
-                            staticClass:
-                              "flex items-center justify-end p-4 rounded-b"
-                          },
+                          { staticClass: "overflow-y-auto modal-height" },
                           [
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "text-red-500 hover:text-red-700 bg-transparent border border-solid border-red-500 hover:border-red-700 active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-2 mb-1",
-                                staticStyle: { transition: "all .15s ease" },
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.toggleModal()
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                Close\n              "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _vm._m(1)
+                            _c("form", {}, [
+                              _vm._m(0),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex items-center justify-end p-4 rounded-b"
+                                },
+                                [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "text-red-500 hover:text-red-700 bg-transparent border border-solid border-red-500 hover:border-red-700 active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-2 mb-1",
+                                      staticStyle: {
+                                        transition: "all .15s ease"
+                                      },
+                                      attrs: { type: "button" },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.toggleModal()
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                Close\n              "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _vm._m(1)
+                                ]
+                              )
+                            ])
                           ]
                         )
-                      ])
-                    ])
+                      : _c(
+                          "div",
+                          { staticClass: "overflow-y-auto modal-height" },
+                          [_vm._m(2), _vm._v(" "), _vm._m(3)]
+                        )
                   ]
                 )
               ]
@@ -71523,6 +72193,55 @@ var staticRenderFns = [
           "bg-green-600 hover:bg-green-700 rounded-lg text-white font-bold uppercase px-3 py-3 text-sm outline-none focus:outline-none mr-1 mb-1",
         staticStyle: { transition: "all .15s ease" },
         attrs: { value: "Create Client", type: "submit" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "md:w-1/2 px-3" }, [
+      _c(
+        "label",
+        {
+          staticClass:
+            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+          attrs: { for: "grid-last-name" }
+        },
+        [_vm._v("\n              City\n            ")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass:
+          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 mb-3 px-4",
+        attrs: {
+          id: "grid-last-name",
+          type: "text",
+          name: "city",
+          placeholder: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "px-3" }, [
+      _c(
+        "label",
+        {
+          staticClass:
+            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+          attrs: { for: "grid-last-name" }
+        },
+        [_vm._v("\n              Client Description\n            ")]
+      ),
+      _vm._v(" "),
+      _c("textarea", {
+        staticClass:
+          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+        attrs: { id: "grid-last-name", placeholder: "", row: "4" }
       })
     ])
   }
@@ -95427,6 +96146,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Dashboard/RadioButtons.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/Dashboard/RadioButtons.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RadioButtons_vue_vue_type_template_id_1509a328___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RadioButtons.vue?vue&type=template&id=1509a328& */ "./resources/js/components/Dashboard/RadioButtons.vue?vue&type=template&id=1509a328&");
+/* harmony import */ var _RadioButtons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RadioButtons.vue?vue&type=script&lang=js& */ "./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RadioButtons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RadioButtons_vue_vue_type_template_id_1509a328___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RadioButtons_vue_vue_type_template_id_1509a328___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Dashboard/RadioButtons.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RadioButtons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./RadioButtons.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RadioButtons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Dashboard/RadioButtons.vue?vue&type=template&id=1509a328&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/Dashboard/RadioButtons.vue?vue&type=template&id=1509a328& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RadioButtons_vue_vue_type_template_id_1509a328___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./RadioButtons.vue?vue&type=template&id=1509a328& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard/RadioButtons.vue?vue&type=template&id=1509a328&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RadioButtons_vue_vue_type_template_id_1509a328___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RadioButtons_vue_vue_type_template_id_1509a328___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Dropdown/DotIcon.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/Dropdown/DotIcon.vue ***!
@@ -97061,6 +97849,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Items_ItemCreate__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/Items/ItemCreate */ "./resources/js/components/Items/ItemCreate.vue");
 /* harmony import */ var _components_Items_ItemEdit__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/Items/ItemEdit */ "./resources/js/components/Items/ItemEdit.vue");
 /* harmony import */ var _components_reusecore_Modals_JobModal__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/reusecore/Modals/JobModal */ "./resources/js/components/reusecore/Modals/JobModal.vue");
+/* harmony import */ var _components_Dashboard_RadioButtons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/Dashboard/RadioButtons */ "./resources/js/components/Dashboard/RadioButtons.vue");
 
  //Dashboaard
 
@@ -97081,6 +97870,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
@@ -97089,6 +97879,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   }, {
     path: '/jobmodal',
     component: _components_reusecore_Modals_JobModal__WEBPACK_IMPORTED_MODULE_16__["default"]
+  }, {
+    path: '/radio',
+    component: _components_Dashboard_RadioButtons__WEBPACK_IMPORTED_MODULE_17__["default"]
   }, //Projects
   {
     path: '/jobs',

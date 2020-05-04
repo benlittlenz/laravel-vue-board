@@ -8,6 +8,19 @@
 
 .modal-height {
     max-height: calc(100vh - 250px);
+    min-height: calc(100vh - 250px);
+}
+
+.w-custom {
+    width: 56rem;
+}
+
+.shadow-outline-green {
+     box-shadow: 0px 0px 0px 3px rgba(5, 202, 160, 0.8);
+}
+
+.box:focus {
+    box-shadow: 0px 0px 0px 3px rgba(5, 202, 160, 0.8);
 }
 
 .width-100 {

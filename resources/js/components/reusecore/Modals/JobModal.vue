@@ -34,7 +34,10 @@
           </div>
 
           <!--body-->
-          <div class="overflow-y-auto modal-height">
+          <div 
+            v-if="currentTab === 'client'"
+            class="overflow-y-auto modal-height"
+          >
             <form class="">
               <div 
                 class="relative px-6 flex-auto"
@@ -203,6 +206,42 @@
               </div>
             </form>
           </div>
+          <div
+            v-else
+            class="overflow-y-auto modal-height"
+          >
+            <div class="md:w-1/2 px-3">
+              <label
+                class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                City
+              </label>
+              <input
+                id="grid-last-name"
+                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 mb-3 px-4"
+                type="text"
+                name="city"
+                placeholder=""
+              >
+            </div>
+
+            <div class="px-3">
+              <label
+                
+                class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                Client Description
+              </label>
+              <textarea
+                id="grid-last-name"
+                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+                placeholder=""
+                row="4"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -220,7 +259,7 @@ export default {
   data() {
     return {
       showModal: true,
-
+    currentTab: 'ss',
     }
   },
 
