@@ -1,14 +1,15 @@
 <template>
   <div
     class="box w-56 bg-white rounded-lg shadow-md p-6 hover:cursor-pointer mb-8 hover:bg-green-200 focus:outline-none"
+
     tabindex="0"
     @click="updatePlan"
   >
     <div class="flex justify-between items-center mb-3  ">
-      <h1 class="uppercase text-base tracking-wide text-blue-800">
+      <h1 class="uppercase text-base tracking-wide text-blue-800 my-2">
         {{ name }}
       </h1>
-      <div>
+      <div v-if="active === name">
         <svg
           class="w-6 h-6"
           width="200px"

@@ -10,7 +10,7 @@
     />
     <ProjectNav :user="currentUser" />
     <div
-      class="h-screen z-0"
+      class="h-screen z-0 bg-gray-200"
     >
       <router-view class="py-10 px-20 z-0" />
     </div>

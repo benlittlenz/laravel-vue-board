@@ -1,5 +1,5 @@
 <template>
-  <li class="block p-5 bg-white rounded-md shadow z-0"">
+  <li class="block p-5 bg-white rounded-md shadow z-0">
     <div class="flex justify-between">
       <p>{{ task.title }}</p>
       <div class="flex ">

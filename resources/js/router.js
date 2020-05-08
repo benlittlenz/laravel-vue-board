@@ -11,7 +11,7 @@ import ClientDetails from './components/Clients/ClientDetails'
 import ClientEdit from './components/Clients/ClientEdit'
 //Projects
 import ProjectIndex from './components/Projects/ProjectIndex.vue'
-import ProjectDetails from './components/Projects/ProjectDetails'
+import ProjectDetailsNew from './components/Projects/ProjectDetailsNew'
 import ProjectCreate from './components/Projects/ProjectCreate'
 import ProjectEdit from './components/Projects/ProjectEdit'
 
@@ -25,6 +25,8 @@ import ItemEdit from './components/Items/ItemEdit'
 import JobModal from './components/reusecore/Modals/JobModal'
 
 import RadioButtons from './components/Dashboard/RadioButtons'
+import DashboardSection from './components/Dashboard/DashboardSection'
+
 
 Vue.use(VueRouter)
 
@@ -33,10 +35,11 @@ export default new VueRouter({
         { path: '/home', component: Kanban },
         { path: '/jobmodal', component: JobModal },
         { path: '/radio', component: RadioButtons },
+        { path: '/section', component: DashboardSection },
         //Projects
         { path: '/jobs', component: ProjectIndex },
         { path: '/jobs/create', component: ProjectCreate },
-        { path: '/jobs/:id', component: ProjectDetails },
+        { path: '/jobs/:id', component: ProjectDetailsNew },
         { path: '/jobs/:id/edit', component: ProjectEdit },
 
         //Clients
