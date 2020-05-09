@@ -4046,6 +4046,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -4131,8 +4133,67 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'ProjectContacts'
+  name: 'ProjectContacts',
+  data: function data() {
+    return {
+      loading: true,
+      modal: false,
+      contacts: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/job_contacts').then(function (res) {
+      console.log('res', res);
+      _this.loading = false;
+      res.data.data.filter(function (contact) {
+        console.log('contact', contact);
+
+        if (contact.project_id == _this.$route.params.id) {
+          _this.contacts.push(contact);
+        }
+      });
+    })["catch"](function (err) {
+      console.log(err);
+    });
+  }
 });
 
 /***/ }),
@@ -5118,6 +5179,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
@@ -5217,9 +5292,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ProjectTimesheets',
+  data: function data() {
+    return {
+      loading: true,
+      modal: false
+    };
+  },
   methods: {
     formatDate: function formatDate(date) {
       return moment__WEBPACK_IMPORTED_MODULE_0___default()(date).utc().format('DD/MM/YYYY HH:m');
@@ -69201,238 +69314,326 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm.loading
+      ? _c("div", [_vm._v("\n    Loading..\n  ")])
+      : _c("div", { staticClass: "flex flex-col" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+                },
+                [
+                  _c(
+                    "table",
+                    { staticClass: "min-w-full table-fixed" },
+                    [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _vm._l(_vm.contacts, function(contact) {
+                        return _c(
+                          "tbody",
+                          { key: contact.id, staticClass: "bg-white" },
+                          [
+                            _c("tr", [
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "px-6 py-4 border-b border-gray-200 w-1/6"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "flex items-center" },
+                                    [
+                                      _c("div", { staticClass: "ml-4" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "text-sm leading-5 font-medium text-gray-900 break-all"
+                                          },
+                                          [
+                                            _c(
+                                              "p",
+                                              { staticClass: "break-words" },
+                                              [
+                                                _vm._v(
+                                                  "\n                        " +
+                                                    _vm._s(contact.name) +
+                                                    "\n                      "
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "px-6 py-4 border-b border-gray-200 w-1/4"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "w-full text-sm leading-5 text-gray-900 break-words"
+                                    },
+                                    [
+                                      _c("p", { staticClass: "break-words" }, [
+                                        _vm._v(
+                                          "\n                    " +
+                                            _vm._s(contact.phone_number) +
+                                            "\n                  "
+                                        )
+                                      ])
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "px-6 py-4 border-b border-gray-200 w-1/4"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "w-full text-sm leading-5 text-gray-900 break-words"
+                                    },
+                                    [
+                                      _c("p", { staticClass: "break-words" }, [
+                                        _vm._v(
+                                          "\n                    " +
+                                            _vm._s(contact.mobile_number) +
+                                            "\n\n                  "
+                                        )
+                                      ])
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "px-6 py-4 border-b border-gray-200 w-2/6"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "w-full text-sm leading-5 text-gray-900 break-words"
+                                    },
+                                    [
+                                      _c("p", { staticClass: "break-words" }, [
+                                        _vm._v(
+                                          "\n                    " +
+                                            _vm._s(contact.email) +
+                                            "\n\n                  "
+                                        )
+                                      ])
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _vm._m(1, true),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium"
+                                },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "text-red-700 hover:text-red-900",
+                                      attrs: { href: "#" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.modal = !_vm.modal
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Delete")]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _vm.modal
+                                ? _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "absolute bg-white text-white rounded-lg z-20 p-8 right-0 mt-2 mr-20 mt-8 width-80 border border-gray-300 mt-2"
+                                    },
+                                    [
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "text-lg leading-6 font-medium text-gray-900 text-center"
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                  Are you sure you wish to delete this contact record?\n                "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex items-center mt-6 justify-end"
+                                        },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base \n                    leading-6 font-medium text-gray-800 shadow-sm hover:text-gray-900 focus:outline-none focus:border-blue-300 \n                    focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5",
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.modal = !_vm.modal
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                    Cancel\n                  "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 \n                    bg-red-700 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5",
+                                              on: { click: _vm.destroy }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                    Delete\n                  "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            ])
+                          ]
+                        )
+                      })
+                    ],
+                    2
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "flex flex-col" }, [
+    return _c("thead", [
+      _c("tr", [
         _c(
-          "div",
+          "th",
           {
             staticClass:
-              "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
           },
-          [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
-              },
-              [
-                _c("table", { staticClass: "min-w-full table-fixed" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c(
-                        "th",
-                        {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                        },
-                        [
-                          _vm._v(
-                            "\n                Contact Name\n              "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "th",
-                        {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                        },
-                        [
-                          _vm._v(
-                            "\n                Contact Phone\n              "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "th",
-                        {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                        },
-                        [
-                          _vm._v(
-                            "\n                Contact Mobile\n              "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "th",
-                        {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                        },
-                        [
-                          _vm._v(
-                            "\n                Contact Email\n              "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("th", {
-                        staticClass:
-                          "px-6 py-3 border-b border-gray-200 bg-gray-50"
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", { staticClass: "bg-white" }, [
-                    _c("tr", [
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 border-b border-gray-200 w-1/6"
-                        },
-                        [
-                          _c("div", { staticClass: "flex items-center" }, [
-                            _c("div", { staticClass: "ml-4" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "text-sm leading-5 font-medium text-gray-900 break-all"
-                                },
-                                [
-                                  _c("p", { staticClass: "break-words" }, [
-                                    _vm._v(
-                                      "\n                        Ben Little\n                      "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ])
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 border-b border-gray-200 w-1/4"
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-full text-sm leading-5 text-gray-900 break-words"
-                            },
-                            [
-                              _c("p", { staticClass: "break-words" }, [
-                                _vm._v(
-                                  "\n                    (09) 478 5665\n                  "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 border-b border-gray-200 w-1/4"
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-full text-sm leading-5 text-gray-900 break-words"
-                            },
-                            [
-                              _c("p", { staticClass: "break-words" }, [
-                                _vm._v(
-                                  "\n                    021 4555 5666\n                  "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 border-b border-gray-200 w-2/6"
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-full text-sm leading-5 text-gray-900 break-words"
-                            },
-                            [
-                              _c("p", { staticClass: "break-words" }, [
-                                _vm._v(
-                                  "\n                    ben@little.com\n                  "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium"
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "text-indigo-600 hover:text-indigo-900",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("Edit")]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium"
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "text-red-700 hover:text-red-900",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("Delete")]
-                          )
-                        ]
-                      )
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ]
-        )
+          [_vm._v("\n                Contact Name\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Contact Phone\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Contact Mobile\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Contact Email\n              ")]
+        ),
+        _vm._v(" "),
+        _c("th", {
+          staticClass: "px-6 py-3 border-b border-gray-200 bg-gray-50"
+        })
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticClass:
+          "px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium"
+      },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "text-indigo-600 hover:text-indigo-900",
+            attrs: { href: "#" }
+          },
+          [_vm._v("Edit")]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -70696,11 +70897,9 @@ var render = function() {
       "div",
       { staticClass: "max-w-4xl bg-white flex-1  border-b border-gray-200" },
       [
-        _c("h3", { staticClass: "text-gray-800 text-xl font-semibold" }, [
-          _vm._v("\n      Project Title\n    ")
-        ]),
-        _vm._v(" "),
         _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
         _vm._v(" "),
         _c("div", { staticClass: "flex mt-10 " }, [
           _c("span", { staticClass: "flex items-center " }, [
@@ -70786,7 +70985,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(1)
+        _vm._m(2)
       ]
     ),
     _vm._v(" "),
@@ -70824,7 +71023,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(2)
+        _vm._m(3)
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "md:flex-1 md:pl-3" }, [
@@ -70859,7 +71058,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(3),
+        _vm._m(4),
         _vm._v(" "),
         _c("span", { staticClass: "text-xs mb-4 font-thin text-red-600" })
       ])
@@ -70906,11 +71105,40 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(4)
+      _vm._m(5)
     ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex items-center" }, [
+      _c("h3", { staticClass: "text-gray-800 text-xl font-semibold" }, [
+        _vm._v("\n        Project Title\n      ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ml-8" }, [
+        _c(
+          "span",
+          {
+            staticClass:
+              "px-2 py-1 leading-tight inline-flex items-center rounded bg-green-100 text-green-700"
+          },
+          [
+            _c("span", {
+              staticClass: "w-2 h-2 rounded-full mr-1 bg-green-400"
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-sm font-medium" }, [
+              _vm._v("\n            Low priority\n          ")
+            ])
+          ]
+        )
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -71041,214 +71269,299 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("div", { staticClass: "flex flex-col" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+        },
+        [
+          _c("h1", [_vm._v("Timesheets")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+            },
+            [
+              _c("table", { staticClass: "min-w-full table-fixed" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("tbody", { staticClass: "bg-white" }, [
+                  _c("tr", [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _vm._m(5),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticClass:
+                          "px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium"
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-red-700 hover:text-red-900",
+                            attrs: { href: "#" },
+                            on: {
+                              click: function($event) {
+                                _vm.modal = !_vm.modal
+                              }
+                            }
+                          },
+                          [_vm._v("Delete")]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm.modal
+                      ? _c(
+                          "div",
+                          {
+                            staticClass:
+                              "absolute bg-white text-white rounded-lg z-20 p-8 right-0 mt-2 mr-20 mt-8 width-80 border border-gray-300"
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "text-lg leading-6 font-medium text-gray-900 text-center"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Are you sure you wish to delete this timesheet record?\n                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex items-center mt-6 justify-end"
+                              },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base \n                    leading-6 font-medium text-gray-800 shadow-sm hover:text-gray-900 focus:outline-none focus:border-blue-300 \n                    focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.modal = !_vm.modal
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                    Cancel\n                  "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 \n                    bg-red-700 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5",
+                                    on: { click: _vm.destroy }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                    Delete\n                  "
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      : _vm._e()
+                  ])
+                ])
+              ])
+            ]
+          )
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "flex flex-col" }, [
+    return _c("thead", [
+      _c("tr", [
         _c(
-          "div",
+          "th",
           {
             staticClass:
-              "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
           },
-          [
-            _c("h1", [_vm._v("Timesheets")]),
-            _vm._v(" "),
+          [_vm._v("\n                Staff Name\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Start Time\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Finish Time\n              ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+          },
+          [_vm._v("\n                Total Hours\n              ")]
+        ),
+        _vm._v(" "),
+        _c("th", {
+          staticClass: "px-6 py-3 border-b border-gray-200 bg-gray-50"
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      { staticClass: "px-6 py-4 border-b border-gray-200 w-2/6" },
+      [
+        _c("div", { staticClass: "flex items-center" }, [
+          _c("div", { staticClass: "ml-4" }, [
             _c(
               "div",
               {
                 staticClass:
-                  "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+                  "text-sm leading-5 font-medium text-gray-900 break-all"
               },
               [
-                _c("table", { staticClass: "min-w-full table-fixed" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c(
-                        "th",
-                        {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                        },
-                        [_vm._v("\n                Staff Name\n              ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "th",
-                        {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                        },
-                        [_vm._v("\n                Start Time\n              ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "th",
-                        {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                        },
-                        [
-                          _vm._v(
-                            "\n                Finish Time\n              "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "th",
-                        {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                        },
-                        [
-                          _vm._v(
-                            "\n                Total Hours\n              "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("th", {
-                        staticClass:
-                          "px-6 py-3 border-b border-gray-200 bg-gray-50"
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", { staticClass: "bg-white" }, [
-                    _c("tr", [
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 border-b border-gray-200 w-2/6"
-                        },
-                        [
-                          _c("div", { staticClass: "flex items-center" }, [
-                            _c("div", { staticClass: "ml-4" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "text-sm leading-5 font-medium text-gray-900 break-all"
-                                },
-                                [
-                                  _c("p", { staticClass: "break-words" }, [
-                                    _vm._v(
-                                      "\n                        Ben Little\n                      "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ])
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 border-b border-gray-200 w-2/6"
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-full text-sm leading-5 text-gray-900 break-words"
-                            },
-                            [
-                              _c("p", { staticClass: "break-words" }, [
-                                _vm._v(
-                                  "\n                    22/05/20 11:40am\n                  "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 border-b border-gray-200 w-2/6"
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-full text-sm leading-5 text-gray-900 break-words"
-                            },
-                            [
-                              _c("p", { staticClass: "break-words" }, [
-                                _vm._v(
-                                  "\n                    22/05/20 12:40pm\n                  "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 border-b border-gray-200 w-2/6"
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-full text-sm leading-5 text-gray-900 break-words"
-                            },
-                            [
-                              _c("p", { staticClass: "break-words" }, [
-                                _vm._v(
-                                  "\n                    1 Hour\n                  "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        {
-                          staticClass:
-                            "px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium"
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "text-indigo-600 hover:text-indigo-900",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("Edit")]
-                          )
-                        ]
-                      )
-                    ])
-                  ])
+                _c("p", { staticClass: "break-words" }, [
+                  _vm._v(
+                    "\n                        Ben Little\n                      "
+                  )
                 ])
               ]
             )
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      { staticClass: "px-6 py-4 border-b border-gray-200 w-2/6" },
+      [
+        _c(
+          "div",
+          { staticClass: "w-full text-sm leading-5 text-gray-900 break-words" },
+          [
+            _c("p", { staticClass: "break-words" }, [
+              _vm._v(
+                "\n                    22/05/20 11:40am\n                  "
+              )
+            ])
           ]
         )
-      ])
-    ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      { staticClass: "px-6 py-4 border-b border-gray-200 w-2/6" },
+      [
+        _c(
+          "div",
+          { staticClass: "w-full text-sm leading-5 text-gray-900 break-words" },
+          [
+            _c("p", { staticClass: "break-words" }, [
+              _vm._v(
+                "\n                    22/05/20 12:40pm\n                  "
+              )
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      { staticClass: "px-6 py-4 border-b border-gray-200 w-2/6" },
+      [
+        _c(
+          "div",
+          { staticClass: "w-full text-sm leading-5 text-gray-900 break-words" },
+          [
+            _c("p", { staticClass: "break-words" }, [
+              _vm._v("\n                    1 Hour\n                  ")
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticClass:
+          "px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium"
+      },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "text-indigo-600 hover:text-indigo-900",
+            attrs: { href: "#" }
+          },
+          [_vm._v("Edit")]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -99065,7 +99378,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /*!***************************************!*\
   !*** ./resources/js/store/actions.js ***!
   \***************************************/
-/*! exports provided: getProjects, getClients, getStaff, getItems, createProject, createClient, createItem, closeModal */
+/*! exports provided: getProjects, getClients, getStaff, getItems, getJobContacts, createProject, createClient, createItem, closeModal */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99074,6 +99387,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClients", function() { return getClients; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaff", function() { return getStaff; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getItems", function() { return getItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobContacts", function() { return getJobContacts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createProject", function() { return createProject; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createClient", function() { return createClient; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createItem", function() { return createItem; });
@@ -99203,28 +99517,26 @@ var getItems = /*#__PURE__*/function () {
   return function getItems(_x4) {
     return _ref8.apply(this, arguments);
   };
-}(); //CREATE
-
-var createProject = /*#__PURE__*/function () {
-  var _ref11 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(_ref9, _ref10) {
-    var commit, data;
+}();
+var getJobContacts = /*#__PURE__*/function () {
+  var _ref10 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(_ref9, id) {
+    var commit, res;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
             commit = _ref9.commit;
-            data = _ref10.data;
-            console.log("DATA", data);
-            commit('CREATE_PROJECT', {
-              data: data
-            });
-            _context5.next = 6;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/projects', data);
+            console.log("DATA", id);
+            _context5.next = 4;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("api/job_contacts/".concat(id));
 
-          case 6:
-            return _context5.abrupt("return", _context5.sent);
+          case 4:
+            res = _context5.sent;
+            console.log("RES", res);
+            commit('PUSH_JOB_CONTACTS', res.data.data);
+            return _context5.abrupt("return", res);
 
-          case 7:
+          case 8:
           case "end":
             return _context5.stop();
         }
@@ -99232,25 +99544,26 @@ var createProject = /*#__PURE__*/function () {
     }, _callee5);
   }));
 
-  return function createProject(_x5, _x6) {
-    return _ref11.apply(this, arguments);
+  return function getJobContacts(_x5, _x6) {
+    return _ref10.apply(this, arguments);
   };
-}();
-var createClient = /*#__PURE__*/function () {
-  var _ref14 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(_ref12, _ref13) {
+}(); //CREATE
+
+var createProject = /*#__PURE__*/function () {
+  var _ref13 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(_ref11, _ref12) {
     var commit, data;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
-            commit = _ref12.commit;
-            data = _ref13.data;
+            commit = _ref11.commit;
+            data = _ref12.data;
             console.log("DATA", data);
-            commit('CREATE_CLIENT', {
+            commit('CREATE_PROJECT', {
               data: data
             });
             _context6.next = 6;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/clients', data);
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/projects', data);
 
           case 6:
             return _context6.abrupt("return", _context6.sent);
@@ -99263,25 +99576,25 @@ var createClient = /*#__PURE__*/function () {
     }, _callee6);
   }));
 
-  return function createClient(_x7, _x8) {
-    return _ref14.apply(this, arguments);
+  return function createProject(_x7, _x8) {
+    return _ref13.apply(this, arguments);
   };
 }();
-var createItem = /*#__PURE__*/function () {
-  var _ref17 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7(_ref15, _ref16) {
+var createClient = /*#__PURE__*/function () {
+  var _ref16 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7(_ref14, _ref15) {
     var commit, data;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee7$(_context7) {
       while (1) {
         switch (_context7.prev = _context7.next) {
           case 0:
-            commit = _ref15.commit;
-            data = _ref16.data;
+            commit = _ref14.commit;
+            data = _ref15.data;
             console.log("DATA", data);
-            commit('CREATE_ITEM', {
+            commit('CREATE_CLIENT', {
               data: data
             });
             _context7.next = 6;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/items', data);
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/clients', data);
 
           case 6:
             return _context7.abrupt("return", _context7.sent);
@@ -99294,21 +99607,30 @@ var createItem = /*#__PURE__*/function () {
     }, _callee7);
   }));
 
-  return function createItem(_x9, _x10) {
-    return _ref17.apply(this, arguments);
+  return function createClient(_x9, _x10) {
+    return _ref16.apply(this, arguments);
   };
 }();
-var closeModal = /*#__PURE__*/function () {
-  var _ref19 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(_ref18) {
-    var commit;
+var createItem = /*#__PURE__*/function () {
+  var _ref19 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(_ref17, _ref18) {
+    var commit, data;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
       while (1) {
         switch (_context8.prev = _context8.next) {
           case 0:
-            commit = _ref18.commit;
-            commit('RESET_DATA');
+            commit = _ref17.commit;
+            data = _ref18.data;
+            console.log("DATA", data);
+            commit('CREATE_ITEM', {
+              data: data
+            });
+            _context8.next = 6;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/items', data);
 
-          case 2:
+          case 6:
+            return _context8.abrupt("return", _context8.sent);
+
+          case 7:
           case "end":
             return _context8.stop();
         }
@@ -99316,8 +99638,30 @@ var closeModal = /*#__PURE__*/function () {
     }, _callee8);
   }));
 
-  return function closeModal(_x11) {
+  return function createItem(_x11, _x12) {
     return _ref19.apply(this, arguments);
+  };
+}();
+var closeModal = /*#__PURE__*/function () {
+  var _ref21 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee9(_ref20) {
+    var commit;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee9$(_context9) {
+      while (1) {
+        switch (_context9.prev = _context9.next) {
+          case 0:
+            commit = _ref20.commit;
+            commit('RESET_DATA');
+
+          case 2:
+          case "end":
+            return _context9.stop();
+        }
+      }
+    }, _callee9);
+  }));
+
+  return function closeModal(_x13) {
+    return _ref21.apply(this, arguments);
   };
 }();
 
@@ -99327,7 +99671,7 @@ var closeModal = /*#__PURE__*/function () {
 /*!***************************************!*\
   !*** ./resources/js/store/getters.js ***!
   \***************************************/
-/*! exports provided: projects, clients, staff, items */
+/*! exports provided: projects, clients, staff, items, jobContacts */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99336,6 +99680,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clients", function() { return clients; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staff", function() { return staff; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "items", function() { return items; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jobContacts", function() { return jobContacts; });
 var projects = function projects(state) {
   return state.projects;
 };
@@ -99347,6 +99692,9 @@ var staff = function staff(state) {
 };
 var items = function items(state) {
   return state.items;
+};
+var jobContacts = function jobContacts(state) {
+  return state.jobContacts;
 };
 
 /***/ }),
@@ -99387,7 +99735,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!*****************************************!*\
   !*** ./resources/js/store/mutations.js ***!
   \*****************************************/
-/*! exports provided: PUSH_PROJECTS, PUSH_CLIENTS, PUSH_STAFF, PUSH_ITEMS, CREATE_PROJECT, CREATE_CLIENT, CREATE_ITEM, RESET_DATA */
+/*! exports provided: PUSH_PROJECTS, PUSH_CLIENTS, PUSH_STAFF, PUSH_ITEMS, PUSH_JOB_CONTACTS, CREATE_PROJECT, CREATE_CLIENT, CREATE_ITEM, RESET_DATA */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99396,6 +99744,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PUSH_CLIENTS", function() { return PUSH_CLIENTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PUSH_STAFF", function() { return PUSH_STAFF; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PUSH_ITEMS", function() { return PUSH_ITEMS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PUSH_JOB_CONTACTS", function() { return PUSH_JOB_CONTACTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_PROJECT", function() { return CREATE_PROJECT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_CLIENT", function() { return CREATE_CLIENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_ITEM", function() { return CREATE_ITEM; });
@@ -99412,6 +99761,9 @@ var PUSH_STAFF = function PUSH_STAFF(state, staff) {
 };
 var PUSH_ITEMS = function PUSH_ITEMS(state, items) {
   state.items = items;
+};
+var PUSH_JOB_CONTACTS = function PUSH_JOB_CONTACTS(state, jobContacts) {
+  state.jobContacts = jobContacts;
 }; //CREATING
 
 var CREATE_PROJECT = function CREATE_PROJECT(state, project) {
@@ -99448,7 +99800,8 @@ __webpack_require__.r(__webpack_exports__);
   projects: [],
   clients: [],
   staff: [],
-  items: []
+  items: [],
+  jobContacts: []
 });
 
 /***/ }),

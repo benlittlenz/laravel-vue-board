@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Item;
+use App\JobContacts;
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
@@ -32,5 +33,10 @@ class Company extends Model
     public function items()
     {
         return $this->hasMany(Item::class)->orderBy('created_at', 'desc');
+    }
+
+    public function jobContacts()
+    {
+        return $this->hasMany(JobContacts::class);
     }
 }

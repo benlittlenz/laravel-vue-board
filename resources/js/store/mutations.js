@@ -16,6 +16,10 @@ export const PUSH_ITEMS = (state, items) => {
     state.items = items;
 }
 
+export const PUSH_JOB_CONTACTS = (state, jobContacts) => {
+    state.jobContacts = jobContacts;
+}
+
 
 //CREATING
 export const CREATE_PROJECT = (state, project) => {

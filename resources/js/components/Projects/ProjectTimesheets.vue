@@ -69,6 +69,38 @@
                     class="text-indigo-600 hover:text-indigo-900"
                   >Edit</a>
                 </td>
+                <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+                  <a
+                    href="#"
+                    class="text-red-700 hover:text-red-900"
+                    @click="modal = ! modal"
+                  >Delete</a>
+                </td>
+                <div 
+                  v-if="modal"
+                  class="absolute bg-white text-white rounded-lg z-20 p-8 right-0 mt-2 mr-20 mt-8 width-80 border border-gray-300"
+                >
+                  <p class="text-lg leading-6 font-medium text-gray-900 text-center">
+                    Are you sure you wish to delete this timesheet record?
+                  </p>
+                  <div class="flex items-center mt-6 justify-end">
+                    <button
+                      class="mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base 
+                      leading-6 font-medium text-gray-800 shadow-sm hover:text-gray-900 focus:outline-none focus:border-blue-300 
+                      focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                      @click="modal = !modal"
+                    >
+                      Cancel
+                    </button>
+                    <button 
+                      class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 
+                      bg-red-700 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                      @click="destroy"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
               </tr>
             </tbody>
           </table>
@@ -84,6 +116,12 @@ import moment from 'moment';
 export default {
     name: 'ProjectTimesheets',
 
+    data() {
+        return {
+            loading: true,
+            modal: false,
+        }
+    },
 
     methods: {
       formatDate(date) {

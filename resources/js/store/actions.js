@@ -11,7 +11,6 @@ export const getProjects = async ({ commit }) => {
 export const getClients = async ({ commit }) => {
     let res = await axios.get('/api/clients');
     commit('PUSH_CLIENTS', res.data.data)
-
     return res;
 }
 
@@ -26,6 +25,14 @@ export const getItems = async ({ commit }) => {
     let res = await axios.get('api/items');
     console.log(res)
     commit('PUSH_ITEMS', res.data.data)
+    return res;
+}
+
+export const getJobContacts = async ({ commit }, id) => {
+    console.log("DATA", id)
+    let res = await axios.get(`api/job_contacts/${id}`);
+    console.log("RES", res)
+    commit('PUSH_JOB_CONTACTS', res.data.data)
     return res;
 }
 
@@ -50,8 +57,6 @@ export const createItem = async ({ commit }, { data }) => {
 
     return await axios.post('/api/items', data)
 }
-
-
 
 
 export const closeModal = async({commit}) => {

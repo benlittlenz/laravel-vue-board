@@ -52,3 +52,4 @@ Route::post('/staff','UserController@store');
 
 
 
+Route::get('/job_contacts','JobContactController@index');

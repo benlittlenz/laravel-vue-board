@@ -6,6 +6,7 @@ use App\User;
 use App\Timer;
 use App\Client;
 use App\Company;
+use App\JobContacts;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
@@ -40,5 +41,10 @@ class Project extends Model
     public function timers()
     {
         return $this->hasMany(Timer::class);
+    }
+
+    public function jobContacts()
+    {
+        return $this->hasMany(JobContacts::class);
     }
 }

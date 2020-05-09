@@ -13,3 +13,7 @@ export const staff = state => {
 export const items = state => {
     return state.items
 }
+
+export const jobContacts = state => {
+    return state.jobContacts
+}

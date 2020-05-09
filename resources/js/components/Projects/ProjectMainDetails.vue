@@ -1,9 +1,23 @@
 <template>
   <div class="ml-6">
     <div class="max-w-4xl bg-white flex-1  border-b border-gray-200">
-      <h3 class="text-gray-800 text-xl font-semibold">
-        Project Title
-      </h3>
+      <div class="flex items-center">
+        <h3 class="text-gray-800 text-xl font-semibold">
+          Project Title
+        </h3>
+        <div class="ml-8">
+          <span 
+            class="px-2 py-1 leading-tight inline-flex items-center rounded bg-green-100 text-green-700"
+          >
+            <span
+              class="w-2 h-2 rounded-full mr-1 bg-green-400"
+            />
+            <span class="text-sm font-medium">
+              Low priority
+            </span>
+          </span>
+        </div>
+      </div>
       <div class="mt-4 w-5/6">
         <p>To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc,</p>
       </div>
