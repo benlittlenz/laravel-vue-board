@@ -1,112 +1,250 @@
 <template>
   <div class="bg-white shadow overflow-hidden sm:rounded-lg flex">
-    <DetailsSideNav />
-    <div class="mr-12">
-      <div 
-        v-if="modal"
-        class="bg-black opacity-25 absolute right-0 left-0 top-0 bottom-0 z-10"
-        @click="modal = ! modal"
-      />
-    </div>
-    <div class="max-w-4xl bg-white">
-      <div class="flex items-center">
-        <svg
-          class="text-indigo-900"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M17 5.5H20C21.1046 5.5 22 6.39543 22 7.5V19.5C22 20.6046 21.1046 21.5 20 21.5H4C2.89543 21.5 2 20.6046 2 19.5V7.5C2 6.39543 2.89543 5.5 4 5.5H7C7 3.84315 8.34315 2.5 10 2.5H14C15.6569 2.5 17 3.84315 17 5.5ZM14 4.5H10C9.44772 4.5 9 4.94772 9 5.5H15C15 4.94772 14.5523 4.5 14 4.5ZM20 7.5H4V9.5H20V7.5ZM4 19.5V11.5H7V13.5H11V11.5H13V13.5H17V11.5H20V19.5H4Z"
-            fill="currentColor"
-          />
-        </svg>
-        <h3 class="ml-4 text-xl font-bold text-gray-700 leading-normal">
-          Project Title
-        </h3>
-      </div>
-      <div class="mt-4">
-        <p>To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc,</p>
-      </div>
-
-      <div class="flex mt-10">
-        <span class="flex items-center ">
-          <svg  
-            class="text-indigo-700"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 9C7.44772 9 7 9.44771 7 10C7 10.5523 7.44772 11 8 11H16C16.5523 11 17 10.5523 17 10C17 9.44771 16.5523 9 16 9H8Z"
-              fill="currentColor"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z"
-              fill="currentColor"
-            />
-          </svg>
-          <p class="text-gray-800 ml-2 font-semibold text-sm">Start Date</p>
-          <span class="ml-12 flex items-center ">
-            <svg
-              class="text-indigo-700"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+    <div class="flex">
+      <nav
+        id="nav"
+        class="w-48 relative"
+      >
+        <span
+          class="absolute h-10 w-full bg-white rounded-lg shadow ease-out transition-transform transition-medium"
+          :style="{ transform: `translateY(calc(100% * ${selected}))` }"
+        />
+        <ul class="relative">
+          <li>
+            <button
+              type="button"
+              :aria-selected="selected === 0"
+              class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
+              @click="select(0)"
             >
-              <path
-                d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z"
+              <svg
+                :class="selected === 0 ? 'text-indigo-400' : 'text-gray-500'"
+                class="h-6 w-6 transition-all ease-out transition-medium"
+                viewBox="0 0 24 24"
                 fill="currentColor"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.707 2.293a1 1 0 00-1.414 0l-9 9a1 1 0 101.414 1.414L4 12.414V21a1 1 0 001 1h5a1 1 0 001-1v-6h2v6a1 1 0 001 1h5a1 1 0 001-1v-8.586l.293.293a1 1 0 001.414-1.414l-9-9zM18 10.414l-6-6-6 6V20h3v-6a1 1 0 011-1h4a1 1 0 011 1v6h3v-9.586z"
+                />
+              </svg>
+              <span
+                :class="selected === 0 ? 'text-indigo-600' : 'text-gray-700'"
+                class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+              >
+                Job Summary
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              :aria-selected="selected === 1"
+              class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
+              @click="select(1)"
+            >
+              <svg
+                :class="selected === 1 ? 'text-indigo-400' : 'text-gray-500'"
+                class="h-6 w-6 transition-all ease-out transition-medium"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 16H11V18H13V16Z"
+                  fill="currentColor"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V20C19 21.1046 18.1046 22 17 22H7C5.89543 22 5 21.1046 5 20V4ZM7 4H17V20H7L7 4Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span
+                :class="selected === 1 ? 'text-indigo-600' : 'text-gray-700'"
+                class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+              >
+                Contacts
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              :aria-selected="selected === 2"
+              class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
+              @click="select(2)"
+            >
+              <svg
+                :class="selected === 2 ? 'text-indigo-400' : 'text-gray-500'"
+                class="h-6 w-6 transition-all ease-out transition-medium"
+                viewBox="0 0 24 24"
                 fill="currentColor"
-              />
-            </svg>
-            <p class="text-gray-800 ml-2 font-semibold text-sm">Finish Date</p>
-          </span>
-        </span>
-      </div>
-      <span class="flex items-center">
-        <p class="text-gray-600 font-semibold text-xs mt-1">21/08/2020</p>
-        <p class="text-gray-600 font-semibold text-xs mt-1 ml-20">21/08/2020</p>
-      </span>
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 7a1 1 0 011-1h8a1 1 0 011 1v8a1 1 0 11-2 0V8h-7a1 1 0 01-1-1z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M20.707 7.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0L9 12.414l-5.293 5.293a1 1 0 01-1.414-1.414l6-6a1 1 0 011.414 0L13 13.586l6.293-6.293a1 1 0 011.414 0z"
+                />
+              </svg>
+              <span
+                :class="selected === 2 ? 'text-indigo-600' : 'text-gray-700'"
+                class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+              >
+                Costings
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              :aria-selected="selected === 3"
+              class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
+              @click="select(3)"
+            >
+              <svg
+                :class="selected === 3 ? 'text-indigo-400' : 'text-gray-500'"
+                class="h-6 w-6 transition-all ease-out transition-medium"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7 10a3 3 0 013-3h8a3 3 0 013 3v8a3 3 0 01-3 3h-8a3 3 0 01-3-3v-8zm3-1a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1v-8a1 1 0 00-1-1h-8z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3 6a3 3 0 013-3h10a1 1 0 110 2H6a1 1 0 00-1 1v10a1 1 0 11-2 0V6z"
+                />
+              </svg>
+              <span
+                :class="selected === 3 ? 'text-indigo-600' : 'text-gray-700'"
+                class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+              >
+                Files & Notes
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              :aria-selected="selected === 4"
+              class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
+              @click="select(4)"
+            >
+              <svg
+                :class="selected === 4 ? 'text-indigo-400' : 'text-gray-500'"
+                class="h-6 w-6 transition-all ease-out transition-medium"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M4 5a3 3 0 013-3h10a3 3 0 013 3v16a1 1 0 01-1.447.894L12 18.618l-6.553 3.276A1 1 0 014 21V5zm3-1a1 1 0 00-1 1v14.382l5.553-2.776a1 1 0 01.894 0L18 19.382V5a1 1 0 00-1-1H7z"
+                />
+              </svg>
+              <span
+                :class="selected === 4 ? 'text-indigo-600' : 'text-gray-700'"
+                class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+              >
+                Tasks
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              :aria-selected="selected === 5"
+              class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
+              @click="select(5)"
+            >
+              <svg
+                :class="selected === 5 ? 'text-indigo-400' : 'text-gray-500'"
+                class="h-6 w-6 transition-all ease-out transition-medium"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13 11.586l2.536 2.535a1 1 0 11-1.415 1.415l-2.828-2.829A.997.997 0 0111 12V8a1 1 0 112 0v3.586z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5 1a1 1 0 011 1v1.998c3.918-2.945 9.506-2.635 13.071.93 3.905 3.906 3.905 10.238 0 14.143-3.905 3.905-10.237 3.905-14.142 0A9.972 9.972 0 012 12a1 1 0 112 0 8 8 0 101.777-5.029A1 1 0 014 6.341V2a1 1 0 011-1z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M11.293 12.707A.997.997 0 0111 12V8a1 1 0 112 0v3.586l2.536 2.535a1 1 0 11-1.415 1.415l-2.828-2.829zM5.934 1.643A1 1 0 004 2v4.342a1 1 0 001.777.63A8 8 0 114 12v-.001a1 1 0 10-2 0c0 2.558.977 5.119 2.929 7.071 3.905 3.905 10.237 3.905 14.142 0 3.844-3.844 3.904-10.04.18-13.957A10.004 10.004 0 006 3.999V2a.998.998 0 00-.066-.357zM5 2.25z"
+                />
+              </svg>
+              <span
+                :class="selected === 5 ? 'text-indigo-600' : 'text-gray-700'"
+                class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+              >
+                Timesheets
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
+    <div 
+      v-if="selected === 0"
+      class="w-full"
+    >
+      <ProjectMainDetails />
+    </div>
+    <div 
+      v-if="selected === 5"
+      class="w-full"
+    >
+      <ProjectTimesheets />
+    </div>
+    <div 
+      v-if="selected === 1"
+      class="w-full"
+    >
+      <ProjectContacts />
+    </div>
   </div>
 </template>
 
 <script>
-import DetailsSideNav from './DetailsSideNav'
+import ProjectMainDetails from './ProjectMainDetails'
+import ProjectTimesheets from './ProjectTimesheets'
+import ProjectContacts from './ProjectContacts'
 
 export default {
     name: 'ProjectDetails',
 
     components: {
-        DetailsSideNav
+        ProjectMainDetails,
+        ProjectTimesheets,
+        ProjectContacts
     },
 
     data() {
         return {
-            project: [],
-            timesheets: [],
-            notes: [],
-            loading: true,
-            modal: false,
-            id: null
+            selected: 0
         }
-    },
+  },
+  methods: {
+    select(i) {
+      this.selected = i;
+    }
+  }
 }
 </script>
