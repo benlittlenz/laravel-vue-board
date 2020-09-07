@@ -9,6 +9,7 @@ import vSelect from 'vue-select'
 import vClickOutside from 'v-click-outside'
 import Vuelidate from 'vuelidate'
 import Notifications from 'vue-notification'
+import Editor from 'vue-editor-js'
 
 require('./bootstrap');
 
@@ -21,6 +22,7 @@ Vue.use(vClickOutside)
 Vue.use(Vuex);
 Vue.use(Vuelidate)
 Vue.use(Notifications)
+Vue.use(Editor)
 Vue.component('v-select', vSelect)
 
 const app = new Vue({

@@ -10,8 +10,8 @@
       <div
         class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
       >
-        <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-          <table class="min-w-full table-fixed">
+        <div class="relative align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+          <table class=" min-w-full table-fixed">
             <thead>
               <tr>
                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
@@ -33,7 +33,7 @@
             <tbody
               v-for="contact in contacts"
               :key="contact.id"
-              class="bg-white"
+              class="bg-white "
             >
               <tr>
                 <td class="px-6 py-4 border-b border-gray-200 w-1/6">
@@ -58,7 +58,6 @@
                   <div class="w-full text-sm leading-5 text-gray-900 break-words">
                     <p class="break-words">
                       {{ contact.mobile_number }}
-
                     </p>
                   </div>
                 </td>
@@ -66,7 +65,6 @@
                   <div class="w-full text-sm leading-5 text-gray-900 break-words">
                     <p class="break-words">
                       {{ contact.email }}
-
                     </p>
                   </div>
                 </td>
@@ -83,33 +81,33 @@
                     @click="modal = ! modal"
                   >Delete</a>
                 </td>
-                <div 
-                  v-if="modal"
-                  class="absolute bg-white text-white rounded-lg z-20 p-8 right-0 mt-2 mr-20 mt-8 width-80 border border-gray-300 mt-2"
-                >
-                  <p class="text-lg leading-6 font-medium text-gray-900 text-center">
-                    Are you sure you wish to delete this contact record?
-                  </p>
-                  <div class="flex items-center mt-6 justify-end">
-                    <button
-                      class="mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base 
-                      leading-6 font-medium text-gray-800 shadow-sm hover:text-gray-900 focus:outline-none focus:border-blue-300 
-                      focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                      @click="modal = !modal"
-                    >
-                      Cancel
-                    </button>
-                    <button 
-                      class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 
-                      bg-red-700 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                      @click="destroy"
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </div>
               </tr>
             </tbody>
+            <div 
+              v-if="modal"
+              class="absolute bg-white text-white rounded-lg z-20 p-8 right-0 mr-20 width-80 border border-gray-300"
+            >
+              <p class="text-lg leading-6 font-medium text-gray-900 text-center">
+                Are you sure you wish to delete this contact record?
+              </p>
+              <div class="flex items-center mt-6 justify-end">
+                <button
+                  class="mr-2 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base 
+                      leading-6 font-medium text-gray-800 shadow-sm hover:text-gray-900 focus:outline-none focus:border-blue-300 
+                      focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                  @click="modal = !modal"
+                >
+                  Cancel
+                </button>
+                <button 
+                  class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 
+                      bg-red-700 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                  @click="destroy"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
           </table>
         </div>
       </div>

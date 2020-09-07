@@ -26,13 +26,13 @@ import JobModal from './components/reusecore/Modals/JobModal'
 
 import RadioButtons from './components/Dashboard/RadioButtons'
 import DashboardSection from './components/Dashboard/DashboardSection'
-
+import Test from './components/Dashboard/Test'
 
 Vue.use(VueRouter)
 
 export default new VueRouter({
     routes: [
-        { path: '/home', component: Kanban },
+        { path: '/home', component: Test },
         { path: '/jobmodal', component: JobModal },
         { path: '/radio', component: RadioButtons },
         { path: '/section', component: DashboardSection },
